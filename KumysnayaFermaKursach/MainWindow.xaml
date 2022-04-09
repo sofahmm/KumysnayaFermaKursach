@@ -7,8 +7,59 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <StackPanel>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="400*"/>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="#FF004130"/>
+        <StackPanel Grid.Row="0"
+                    Orientation="Horizontal">
+            <StackPanel HorizontalAlignment="Left"
+                        VerticalAlignment="Center">
+                <Image Source="Img/logo.png"
+                       Height="75"
+                       Width="75"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center">
+                <Label Content="Кумысная ферма"
+                   Margin="200 0 0 0"
+                   FontSize="24"
+                   FontWeight="DemiBold"
+                   OpacityMask="Black"
+                   Foreground="#FFCC8884"
+                   FontFamily="Comic Sans MS">
+                    <Label.BitmapEffect>
+                        <DropShadowBitmapEffect Color="Black" 
+                                            Direction="320" 
+                                            ShadowDepth="10" 
+                                            Opacity=".5" 
+                                            Softness="9" />
+                    </Label.BitmapEffect>
+                </Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right">
+                <Button x:Name="BackBtn"
+                    Click="BackBtn_Click"
+                    Content="Назад"
+                    Margin="60 0 0 0"
+                    Width="80"
+                    Background="#FF004130"
+                    BorderBrush="#FF004130"/>
+                <Button x:Name="NextBtn"
+                    Click="NextBtn_Click"
+                    Content="Вперед"
+                    Margin="60 0 0 0"
+                    Width="80"
+                    Background="#FF004130"
+                    BorderBrush="#FF004130"/>
+            </StackPanel>
         </StackPanel>
+        <Image Source="Img/logo.png"
+               Grid.Row="1"
+               HorizontalAlignment="Right"
+               VerticalAlignment="Bottom"
+               Height="75"
+               Width="75"/>
     </Grid>
 </Window>
