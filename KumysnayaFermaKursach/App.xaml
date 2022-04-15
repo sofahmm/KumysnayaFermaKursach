@@ -13,6 +13,9 @@
         <Style TargetType="Label">
             <Setter Property="FontFamily" Value="Comic Sans MS"/>
         </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+        </Style>
         
     </Application.Resources>
 </Application>

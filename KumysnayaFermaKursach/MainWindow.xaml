@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KumysnayaFermaKursach"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="810">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="46*"/>
             <RowDefinition Height="373*"/>
+            <RowDefinition Height="46*"/>
         </Grid.RowDefinitions>
         <Rectangle Fill="#FF004130"/>
         <StackPanel Grid.Row="0"
@@ -56,14 +57,13 @@
             </StackPanel>
         </StackPanel>
         <Image Source="Img/logo.png"
-               Grid.Row="1"
                HorizontalAlignment="Right"
                VerticalAlignment="Bottom"
                Height="75"
-               Width="75"/>
+               Width="75"
+               Grid.Row="2"/>
         <StackPanel Grid.Row="1">
             <Frame x:Name="navFr"/>
         </StackPanel>
-
     </Grid>
 </Window>

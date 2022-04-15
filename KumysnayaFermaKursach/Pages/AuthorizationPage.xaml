@@ -50,6 +50,14 @@
                         Width="150"
                         Margin="5 0 0 0"/>
             </StackPanel>
+            <TextBlock Margin="5"
+                       HorizontalAlignment="Center">
+                    <Hyperlink 
+                        Foreground="Black"
+                        FontSize="20"
+                        FontWeight="Bold"
+                        NavigateUri="MenuUserPage.xaml">Я клиент</Hyperlink>
+            </TextBlock>
         </StackPanel>
     </Grid>
 </Page>
