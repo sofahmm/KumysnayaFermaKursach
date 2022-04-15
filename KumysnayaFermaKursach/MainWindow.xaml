@@ -8,8 +8,8 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50*"/>
-            <RowDefinition Height="400*"/>
+            <RowDefinition Height="46*"/>
+            <RowDefinition Height="373*"/>
         </Grid.RowDefinitions>
         <Rectangle Fill="#FF004130"/>
         <StackPanel Grid.Row="0"
@@ -61,5 +61,9 @@
                VerticalAlignment="Bottom"
                Height="75"
                Width="75"/>
+        <StackPanel Grid.Row="1">
+            <Frame x:Name="navFr"/>
+        </StackPanel>
+
     </Grid>
 </Window>

@@ -23,6 +23,7 @@ namespace KumysnayaFermaKursach
         public MainWindow()
         {
             InitializeComponent();
+            navFr.Navigate(new Pages.AuthorizationPage());
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)

@@ -24,5 +24,15 @@ namespace KumysnayaFermaKursach.Pages
         {
             InitializeComponent();
         }
+
+        private void AuthBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RegistrBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
