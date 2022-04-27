@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KumysnayaFermaKursach"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="810">
+        Title="MainWindow" Height="520" Width="810">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="46*"/>
             <RowDefinition Height="373*"/>
-            <RowDefinition Height="46*"/>
+            <!--<RowDefinition Height="46*"/>-->
         </Grid.RowDefinitions>
-        <Rectangle Fill="#FF004130"/>
+        <Rectangle Fill="#FFFF7A00"/>
         <StackPanel Grid.Row="0"
                     Orientation="Horizontal">
             <StackPanel HorizontalAlignment="Left"
@@ -23,20 +23,11 @@
             </StackPanel>
             <StackPanel HorizontalAlignment="Center">
                 <Label Content="Кумысная ферма"
-                   Margin="200 0 0 0"
-                   FontSize="24"
-                   FontWeight="DemiBold"
-                   OpacityMask="Black"
-                   Foreground="#FFCC8884"
-                   FontFamily="Comic Sans MS">
-                    <Label.BitmapEffect>
-                        <DropShadowBitmapEffect Color="Black" 
-                                            Direction="320" 
-                                            ShadowDepth="10" 
-                                            Opacity=".5" 
-                                            Softness="9" />
-                    </Label.BitmapEffect>
-                </Label>
+                       Margin="200 10 0 0"
+                       VerticalAlignment="Center"
+                       FontSize="24"
+                       FontWeight="DemiBold"
+                       Foreground="#000000"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Right">
@@ -45,25 +36,23 @@
                     Content="Назад"
                     Margin="60 0 0 0"
                     Width="80"
-                    Background="#FF004130"
-                    BorderBrush="#FF004130"/>
+                    FontWeight="DemiBold"
+                    Background="#FFFF7A00"
+                    BorderBrush="#FFFF7A00"/>
                 <Button x:Name="NextBtn"
                     Click="NextBtn_Click"
                     Content="Вперед"
                     Margin="60 0 0 0"
                     Width="80"
-                    Background="#FF004130"
-                    BorderBrush="#FF004130"/>
+                    FontWeight="DemiBold"
+                    Background="#FFFF7A00"
+                    BorderBrush="#FFFF7A00"/>
             </StackPanel>
+
         </StackPanel>
-        <Image Source="Img/logo.png"
-               HorizontalAlignment="Right"
-               VerticalAlignment="Bottom"
-               Height="75"
-               Width="75"
-               Grid.Row="2"/>
         <StackPanel Grid.Row="1">
-            <Frame x:Name="navFr"/>
+            <Frame x:Name="navFr"
+                   NavigationUIVisibility="Hidden"/>
         </StackPanel>
     </Grid>
 </Window>

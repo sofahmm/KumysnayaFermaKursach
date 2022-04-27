@@ -13,30 +13,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace KumysnayaFermaKursach
+namespace KumysnayaFermaKursach.Pages
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for OurProductsPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class OurProductsPage : Page
     {
-        public MainWindow()
+        public OurProductsPage()
         {
             InitializeComponent();
-            navFr.Navigate(new Pages.AuthorizationPage());
         }
 
-        private void BackBtn_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void NextBtn_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void saveBtn_Click(object sender, RoutedEventArgs e)
+        private void CreateOrderBtn_Click(object sender, RoutedEventArgs e)
         {
 
         }

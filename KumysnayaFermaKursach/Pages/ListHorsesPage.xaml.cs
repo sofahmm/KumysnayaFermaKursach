@@ -24,5 +24,25 @@ namespace KumysnayaFermaKursach.Pages
         {
             InitializeComponent();
         }
+
+        private void SortAge_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void SortPoroda_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void SortType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void AddHorseBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddHorsePage());
+        }
     }
 }

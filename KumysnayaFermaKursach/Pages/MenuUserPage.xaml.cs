@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using KumysnayaFermaKursach.Pages;
+
 
 
 namespace KumysnayaFermaKursach.Pages
@@ -28,7 +30,7 @@ namespace KumysnayaFermaKursach.Pages
 
         private void HorsesList_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new ListHorsesPage());
         }
 
         private void OrdersBtn_Click(object sender, RoutedEventArgs e)
@@ -47,6 +49,16 @@ namespace KumysnayaFermaKursach.Pages
         }
 
         private void CreateOrderBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void OurProductsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new OurProductsPage());
+        }
+
+        private void MineOrdersBtn_Click(object sender, RoutedEventArgs e)
         {
 
         }

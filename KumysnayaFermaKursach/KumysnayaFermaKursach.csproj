@@ -67,6 +67,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\AddHorsePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AuthorizationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -79,12 +83,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\OurProductsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\RegistrationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\AddHorsePage.xaml.cs">
+      <DependentUpon>AddHorsePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AuthorizationPage.xaml.cs">
       <DependentUpon>AuthorizationPage.xaml</DependentUpon>
     </Compile>
@@ -93,6 +104,9 @@
     </Compile>
     <Compile Include="Pages\MenuUserPage.xaml.cs">
       <DependentUpon>MenuUserPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\OurProductsPage.xaml.cs">
+      <DependentUpon>OurProductsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\RegistrationPage.xaml.cs">
       <DependentUpon>RegistrationPage.xaml</DependentUpon>
@@ -129,7 +143,20 @@
     <Resource Include="Img\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Pages\User.png" />
+    <Resource Include="Img\User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\authHorse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\addHorse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\vipechka.jpg" />
+    <Resource Include="Img\Kymys.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\Kyrt.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
