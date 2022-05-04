@@ -1,0 +1,144 @@
+﻿<Page x:Class="KumysnayaFermaKursovaya.Pages.MenuUserPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KumysnayaFermaKursovaya.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MenuUserPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0"
+                    Orientation="Vertical"
+                    Background="#FFE26D00">
+            <Button x:Name="HorsesListBtn"
+                    Click="HorsesListBtn_Click"
+                    Height="40"
+                    Content="Список лошадей"
+                    FontSize="16"
+                    Background="#FFFF7A00"
+                    BorderBrush="Black"
+                    Margin="5"/>
+            <Button x:Name="OurProductsBtn"
+                    Click="OurProductsBtn_Click"
+                    Height="40"
+                    Content="Наша продукция"
+                    FontSize="16"
+                    Margin="5"
+                    Background="#FFFF7A00"
+                    BorderBrush="Black"/>
+            <Button x:Name="OrdersBtn"
+                    Click="OrdersBtn_Click"
+                    Height="40"
+                    Margin="5"
+                    Content="Заказы"
+                    FontSize="16"
+                    Background="#FFFF7A00"
+                    BorderBrush="Black"/>
+            <Button x:Name="MineOrdersBtn"
+                    Click="MineOrdersBtn_Click"
+                    Height="40"
+                    Margin="5"
+                    Content="Мои заказы"
+                    FontSize="16"
+                    Background="#FFFF7A00"
+                    BorderBrush="Black"/>
+            <Button x:Name="CreateOrderBtn"
+                    Click="CreateOrderBtn_Click"
+                    Height="40"
+                    Margin="5"
+                    Content="Сделать заказ"
+                    FontSize="16"
+                    Background="#FFFF7A00"
+                    BorderBrush="Black"/>
+            <Button x:Name="AboutUsBtn"
+                    Click="AboutUsBtn_Click"
+                    Height="40"
+                    Margin="5"
+                    Content="О нас"
+                    FontSize="16"
+                   Background="#FFFF7A00"
+                    BorderBrush="Black"/>
+            <Label Content="kumysnayaFerma97@gmail.com"
+                   Foreground="White"
+                   BorderBrush="Black"/>
+            <Label Content="+7(987)724 94-34"
+                   Foreground="White"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Stretch"
+                    
+                    Margin="10 30 0 0"
+                    Grid.Column="2">
+            <Image Source="/Img/User.png" 
+                   Height="150"
+                   HorizontalAlignment="Right" />
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                <Label Content="ID:"
+                       FontWeight="Bold"/>
+                <Label Content="100000"
+                       Name="IdLbl"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Column="1"
+                    Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel HorizontalAlignment="Left">
+                    <Label Content="Имя:"
+                       Margin="5 0 0 0"
+                       FontSize="22"
+                       HorizontalContentAlignment="Right"
+                       FontWeight="DemiBold"/>
+                    <Label Content="Фамилия:"
+                       FontSize="22"
+                       HorizontalContentAlignment="Right"
+                       FontWeight="DemiBold"
+                       Margin="5 5 0 0"/>
+                    <Label Content="Должность:"
+                       FontSize="22"
+                       HorizontalContentAlignment="Right"
+                       FontWeight="DemiBold"
+                       Margin="5 5 0 0"/>
+                    <TextBlock Text="Количество отработанных часов:"
+                           FontSize="22"
+                           TextAlignment="Right"
+                           FontWeight="DemiBold"
+                           Width="170"
+                           Margin="10 5 0 0"
+                           TextWrapping="WrapWithOverflow"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Right">
+                    <Label Content="Енокентий"
+                       FontSize="20"
+                       Margin="5 5 0 0"/>
+                    <Label Content="Енокентий"
+                       FontSize="20"
+                       Margin="5 5 0 0"/>
+                    <Label Content="Енокентий"
+                       FontSize="20"
+                       Margin="5 5 0 0"/>
+                    <Label Content="Енокентий"
+                       FontSize="20"
+                       Margin="5 10 0 0"/>
+                </StackPanel>
+            </StackPanel>
+            <TextBlock Text="Не забывайте соблюдать правила гигиены!            Хорошего Вам дня!"
+                       HorizontalAlignment="Center"
+                       Margin="30"
+                       TextAlignment="Center"
+                       Foreground="#FFFF7A00"
+                       FontWeight="Bold"
+                       TextWrapping="Wrap"
+                       FontSize="20"/>
+        </StackPanel>
+    </Grid>
+</Page>

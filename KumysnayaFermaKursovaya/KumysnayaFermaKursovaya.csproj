@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Img\addHorse.png" />
+    <None Remove="Img\authHorse.png" />
+    <None Remove="Img\Kymys.jpg" />
+    <None Remove="Img\Kyrt.jpg" />
+    <None Remove="Img\logo.png" />
+    <None Remove="Img\User.png" />
+    <None Remove="Img\vipechka.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Img\addHorse.png" />
+    <Resource Include="Img\authHorse.png" />
+    <Resource Include="Img\Kymys.jpg" />
+    <Resource Include="Img\Kyrt.jpg" />
+    <Resource Include="Img\logo.png" />
+    <Resource Include="Img\User.png" />
+    <Resource Include="Img\vipechka.jpg" />
+  </ItemGroup>
+
+</Project>
