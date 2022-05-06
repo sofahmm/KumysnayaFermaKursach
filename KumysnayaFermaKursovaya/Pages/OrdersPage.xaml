@@ -1,0 +1,61 @@
+﻿<Page x:Class="KumysnayaFermaKursovaya.Pages.OrdersPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KumysnayaFermaKursovaya.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="OrdersPage">
+
+    <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        Margin="0 15 0 0">
+                <ComboBox Height="25"
+                          Width="150"
+                          Margin="50 0 50 0">
+                </ComboBox>
+                <ComboBox Height="25"
+                          Width="150"
+                          Margin="50 0 50 0">
+                </ComboBox>
+                <ComboBox Height="25"
+                          Width="150"
+                          Margin="50 0 50 0">
+                </ComboBox>
+            </StackPanel>
+            <StackPanel>
+                <DataGrid x:Name="OrdersLV">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID:"
+                                            FontFamily="Arial"
+                                            FontWeight="Bold"
+                                            Width="160"/>
+                        <DataGridTextColumn Header="ФИО заказчика:"
+                                            FontFamily="Arial"
+                                            FontWeight="Bold"
+                                            Width="160"/>
+                        <DataGridTextColumn Header="Товар:"
+                                            FontFamily="Arial"
+                                            FontWeight="Bold"
+                                            Width="160"/>
+                        <DataGridTextColumn Header="Дата:"
+                                            FontFamily="Arial"
+                                            FontWeight="Bold"
+                                            Width="160"/>
+                        <DataGridTextColumn Header="Сумма:"
+                                            FontFamily="Arial"
+                                            FontWeight="Bold"
+                                            Width="160"/>
+                        <DataGridTextColumn Header="Статус:"
+                                            FontFamily="Arial"
+                                            FontWeight="Bold"
+                                            Width="160"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

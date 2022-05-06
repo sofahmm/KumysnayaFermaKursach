@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E8587A6C-3947-4651-B2DD-31EE9492BE3A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Core</RootNamespace>
+    <AssemblyName>Core</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.4.2.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DB\DbConnection.cs" />
+    <Compile Include="DB\ToGetData.cs" />
+    <Compile Include="MyDb\Breed.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyDb\Employee.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyDb\EmployeeHorse.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyDb\Gender.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyDb\Horse.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyDb\HorseType.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyDb\KumysnayaModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KumysnayaModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyDb\KumysnayaModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyDb\KumysnayaModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KumysnayaModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MyDb\Order.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyDb\Post.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyDb\Product.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyDb\ProductCategory.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyDb\SposobOplati.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyDb\StatusOrder.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyDb\sysdiagrams.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyDb\Unit.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyDb\User.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="MyDb\KumysnayaModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KumysnayaModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="MyDb\KumysnayaModel.edmx.diagram">
+      <DependentUpon>KumysnayaModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MyDb\KumysnayaModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KumysnayaModel.edmx</DependentUpon>
+      <LastGenOutput>KumysnayaModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="MyDb\KumysnayaModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KumysnayaModel.edmx</DependentUpon>
+      <LastGenOutput>KumysnayaModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

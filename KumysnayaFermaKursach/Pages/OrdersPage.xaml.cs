@@ -16,30 +16,13 @@ using System.Windows.Shapes;
 namespace KumysnayaFermaKursach
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for OrdersPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class OrdersPage : Page
     {
-        public MainWindow()
+        public OrdersPage()
         {
             InitializeComponent();
-            navFr.Navigate(new Pages.AuthorizationPage());
-
-        }
-
-        private void BackBtn_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void NextBtn_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void saveBtn_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

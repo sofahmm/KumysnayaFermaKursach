@@ -4,6 +4,23 @@
              xmlns:local="clr-namespace:KumysnayaFermaKursach"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-       
+        <Style TargetType="Grid">
+            <Setter Property="Background" Value="White"/>
+        </Style>
+        <Style TargetType="Border" x:Key="StackBorder">
+            <Setter Property="CornerRadius" Value="70"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="Arial"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="Arial"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Arial"/>
+        </Style>
+        <Style TargetType="Border">
+            <Setter Property="CornerRadius" Value="10"/>
+        </Style>
     </Application.Resources>
 </Application>

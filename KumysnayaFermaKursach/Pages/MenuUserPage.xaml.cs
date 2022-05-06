@@ -35,7 +35,7 @@ namespace KumysnayaFermaKursach.Pages
 
         private void OrdersBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new OrdersPage());
         }
 
         private void ProductListBtn_Click(object sender, RoutedEventArgs e)
@@ -50,7 +50,7 @@ namespace KumysnayaFermaKursach.Pages
 
         private void CreateOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new AddOrderPage());
         }
 
         private void OurProductsBtn_Click(object sender, RoutedEventArgs e)
