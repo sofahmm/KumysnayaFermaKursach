@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Core.DB;
 
 namespace KumysnayaFermaKursach.Pages
 {
@@ -23,6 +24,9 @@ namespace KumysnayaFermaKursach.Pages
         public AddHorsePage()
         {
             InitializeComponent();
+            porodaCB.ItemsSource = ToGetData.GetBreeds();
+            TypeCB.ItemsSource = ToGetData.GetHorseTypes();
+            DataContext = this;
         }
 
         private void saveBtn_Click(object sender, RoutedEventArgs e)

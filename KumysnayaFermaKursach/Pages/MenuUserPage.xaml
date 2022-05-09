@@ -118,6 +118,7 @@
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Right">
                     <Label Content="Енокентий"
+                           Name="LblName"
                        FontSize="20"
                        Margin="5 5 0 0"/>
                     <Label Content="Енокентий"

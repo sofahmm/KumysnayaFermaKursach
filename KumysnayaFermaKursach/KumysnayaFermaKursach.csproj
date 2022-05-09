@@ -42,6 +42,8 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -67,6 +69,67 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DB\Breed.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\DBConnection.cs" />
+    <Compile Include="DB\Employee.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\EmployeeHorse.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Gender.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Horse.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\HorseType.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\KumysnayaModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KumysnayaModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\KumysnayaModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\KumysnayaModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KumysnayaModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Order.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Post.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Product.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ProductCategory.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\SposobOplati.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\StatusOrder.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\sysdiagrams.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Unit.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\User.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -147,6 +210,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="DB\KumysnayaModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KumysnayaModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DB\KumysnayaModel.edmx.diagram">
+      <DependentUpon>KumysnayaModel.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -155,9 +225,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DB\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Img\logo.png" />
@@ -177,6 +244,27 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Img\Kyrt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{e8587a6c-3947-4651-b2dd-31ee9492be3a}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DB\KumysnayaModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KumysnayaModel.edmx</DependentUpon>
+      <LastGenOutput>KumysnayaModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DB\KumysnayaModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KumysnayaModel.edmx</DependentUpon>
+      <LastGenOutput>KumysnayaModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

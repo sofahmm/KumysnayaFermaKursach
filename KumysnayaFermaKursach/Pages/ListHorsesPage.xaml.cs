@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Core.DB;
+using System.Collections.ObjectModel;
+using System.Text.RegularExpressions;
 
 namespace KumysnayaFermaKursach.Pages
 {
@@ -23,6 +26,9 @@ namespace KumysnayaFermaKursach.Pages
         public ListHorsesPage()
         {
             InitializeComponent();
+            var horses = ToGetData.GetHorses();
+            HorsesLV.ItemsSource = horses;
+            DataContext = this;
         }
 
         private void SortAge_SelectionChanged(object sender, SelectionChangedEventArgs e)

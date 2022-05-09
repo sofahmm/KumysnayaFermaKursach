@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Core.DB;
+using Core.MyDb;
 
 namespace KumysnayaFermaKursach.Pages
 {
@@ -20,14 +22,23 @@ namespace KumysnayaFermaKursach.Pages
     /// </summary>
     public partial class AuthorizationPage : Page
     {
+        
         public AuthorizationPage()
         {
             InitializeComponent();
+            
         }
 
         private void authBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            if (ToGetData.IsCorrectUser(idTb.Text.ToString(), passwordTb.Text.ToString()))
+            {
+                App.user = ToGetData.GetUser(idTb.Text.ToString(), passwordTb.Text.ToString());
+                NavigationService.Navigate(new Pages.MenuUserPage());
+            }
+                
+            else if (ToGetData.IsUncurrentUser(idTb.Text.ToString(), passwordTb.ToString()))
+                MessageBox.Show("Введите верные данные!");
         }
 
         private void regBtn_Click(object sender, RoutedEventArgs e)

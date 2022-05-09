@@ -13,8 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using KumysnayaFermaKursach.Pages;
-
-
+using KumysnayaFermaKursach.DB;
+using System.Collections.ObjectModel;
+using Core.DB;
 
 namespace KumysnayaFermaKursach.Pages
 {
@@ -23,9 +24,14 @@ namespace KumysnayaFermaKursach.Pages
     /// </summary>
     public partial class MenuUserPage : Page
     {
+        
+        public static ObservableCollection<User> user { get; set; }
         public MenuUserPage()
         {
             InitializeComponent();
+            IdLbl.Content = App.user.IdEmployee;
+            LblName.Content = App.user.Employee.Post;
+            
         }
 
         private void HorsesList_Click(object sender, RoutedEventArgs e)

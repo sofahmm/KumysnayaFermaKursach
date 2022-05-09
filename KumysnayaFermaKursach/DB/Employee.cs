@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Core.MyDb
+namespace KumysnayaFermaKursach.DB
 {
     using System;
     using System.Collections.Generic;

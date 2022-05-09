@@ -7,17 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Core.MyDb
+namespace KumysnayaFermaKursach.DB
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class ProductCategory
     {
-        public int ID { get; set; }
-        public Nullable<int> IdEmployee { get; set; }
-        public Nullable<int> Password { get; set; }
+        public ProductCategory()
+        {
+            this.Product = new HashSet<Product>();
+        }
     
-        public virtual Employee Employee { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
+    
+        public virtual ICollection<Product> Product { get; set; }
     }
 }

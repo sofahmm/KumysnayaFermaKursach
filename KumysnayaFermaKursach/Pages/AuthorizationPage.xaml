@@ -40,7 +40,7 @@
                                FontSize="24"
                                Margin="45 0 0 0"
                                VerticalAlignment="Center"/>
-                        <TextBox x:Name="idBtn"
+                        <TextBox x:Name="idTb"
                                      Margin="27 5 5 0"
                                      Background="#FFF39137"
                                      BorderBrush="#FFF39137"
@@ -51,7 +51,7 @@
                         <Label Content="Password:"
                            FontWeight="Bold"
                                FontSize="20"/>
-                        <TextBox x:Name="passwordBtn"
+                        <TextBox x:Name="passwordTb"
                                     Margin="5 5 5 0"
                                     Background="#FFF39137"
                                     BorderBrush="#FFF39137"

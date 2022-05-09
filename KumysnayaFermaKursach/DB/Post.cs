@@ -7,17 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Core.MyDb
+namespace KumysnayaFermaKursach.DB
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Post
     {
-        public int ID { get; set; }
-        public Nullable<int> IdEmployee { get; set; }
-        public Nullable<int> Password { get; set; }
+        public Post()
+        {
+            this.Employee = new HashSet<Employee>();
+        }
     
-        public virtual Employee Employee { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
+    
+        public virtual ICollection<Employee> Employee { get; set; }
     }
 }

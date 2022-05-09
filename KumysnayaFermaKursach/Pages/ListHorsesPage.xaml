@@ -46,7 +46,8 @@
                 </ComboBox>
             </StackPanel>
             <DataGrid Height="250"
-                      x:Name="HorsesLV">
+                      x:Name="HorsesLV"
+                      ItemsSource="{Binding Horse}">
                 <DataGrid.Columns>
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
@@ -56,23 +57,28 @@
                     <DataGridTextColumn Header="ID:"
                                         FontFamily="Arial"
                                         FontWeight="Bold"
-                                        Width="160"/>
+                                        Width="160" 
+                                        Binding="{Binding ID}"/>
                     <DataGridTextColumn Header="Имя:"
                                         FontFamily="Arial"
                                         FontWeight="Bold"
-                                        Width="160"/>
+                                        Width="160"
+                                        Binding="{Binding Name}"/>
                     <DataGridTextColumn Header="Возраст:"
                                         FontFamily="Arial"
                                         FontWeight="Bold"
-                                        Width="160"/>
+                                        Width="160"
+                                        Binding="{Binding Age}"/>
                     <DataGridTextColumn Header="Порода:"
                                         FontFamily="Arial"
                                         FontWeight="Bold"
-                                        Width="160"/>
+                                        Width="160"
+                                        Binding="{Binding Breed}"/>
                     <DataGridTextColumn Header="Тип:"
                                         FontFamily="Arial"
                                         FontWeight="Bold"
-                                        Width="160"/>
+                                        Width="160"
+                                        Binding="{Binding HorseType}"/>
                 </DataGrid.Columns>
             </DataGrid>
             <Button x:Name="AddHorseBtn"
