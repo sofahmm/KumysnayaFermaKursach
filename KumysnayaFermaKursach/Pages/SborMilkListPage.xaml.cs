@@ -12,31 +12,22 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Core.DB;
 
 namespace KumysnayaFermaKursach.Pages
 {
     /// <summary>
-    /// Interaction logic for AddHorsePage.xaml
+    /// Interaction logic for SborMilkListPage.xaml
     /// </summary>
-    public partial class AddHorsePage : Page
+    public partial class SborMilkListPage : Page
     {
-        public AddHorsePage()
+        public SborMilkListPage()
         {
             InitializeComponent();
-            porodaCB.ItemsSource = ToGetData.GetBreeds();
-            TypeCB.ItemsSource = ToGetData.GetHorseTypes();
-            DataContext = this;
         }
 
-        private void saveBtn_Click(object sender, RoutedEventArgs e)
+        private void jf_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void dopInfoBtn_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new MoreInfoHorsePage());
+            NavigationService.Navigate(new SborMolokaPage());
         }
     }
 }

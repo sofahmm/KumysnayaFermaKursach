@@ -13,7 +13,8 @@
             <StackPanel Orientation="Vertical"
                         VerticalAlignment="Center"
                         Margin="45 0 0 0">
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal"
+                            Margin="10">
                     <Label Content="ID:"
                            Margin="67 0 0 0"
                            FontFamily="Arial"
@@ -21,12 +22,14 @@
                            FontWeight="Bold"/>
                     <TextBox x:Name="idTxt"
                              FontFamily="Arial"
-                             FontSize="22"
+                             FontSize="18"
+                             VerticalContentAlignment="Center"
+                             HorizontalContentAlignment="Center"
                              Margin="8 0 0 3"
-                             FontWeight="Bold"
-                             Width="150"/>
+                             Width="210"/>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal"
+                            Margin="10">
                     <Label Content="Кличка:"
                            Margin="12 0 0 0"
                            FontFamily="Arial"
@@ -35,35 +38,41 @@
                     <TextBox x:Name="nameTxt"
                              Margin="2 0 0 3"
                              FontFamily="Arial"
-                             FontSize="22"
-                             FontWeight="Bold"
-                             Width="150"/>
+                             FontSize="18"
+                             VerticalContentAlignment="Center"
+                             HorizontalContentAlignment="Center"
+                             Width="210"/>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal"
+                            Margin="10">
                     <Label Content="Возраст:"
                            FontFamily="Arial"
                            FontSize="24"
                            FontWeight="Bold"/>
                     <TextBox x:Name="ageTxt"
                              FontFamily="Arial"
-                             FontSize="22"
+                             FontSize="18"
+                             VerticalContentAlignment="Center"
+                             HorizontalContentAlignment="Center"
                              Margin="2 0 0 3"
-                             FontWeight="Bold"
-                             Width="150"/>
+                             Width="210"/>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal"
+                            Margin="10">
                     <Label Content="Порода:"
                            Margin="10 0 0 0"
                            FontFamily="Arial"
-                           FontSize="24"
-                           FontWeight="Bold"/>
+                           FontWeight="Bold"
+                           FontSize="24"/>
                     <ComboBox x:Name="porodaCB"
                               Margin=" 0 0 0 3"
-                              Width="150">
+                              VerticalContentAlignment="Center"
+                              Width="210">
 
                     </ComboBox>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal"
+                            Margin="10">
                     <Label Content="Тип:"
                            Margin="57 0 0 0"
                            FontFamily="Arial"
@@ -71,27 +80,61 @@
                            FontWeight="Bold"/>
                     <ComboBox x:Name="TypeCB"
                               Margin="0 0 0 3"
-                              Width="150">
+                              VerticalContentAlignment="Center"
+                              Width="210">
 
                     </ComboBox>
                 </StackPanel>
-                <Button x:Name="saveBtn"
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="dopInfoBtn"
+                            Click="dopInfoBtn_Click"
+                            Width="150"
+                            HorizontalAlignment="Left"
+                            Margin="0 5 5 0"
+                            Content="Доп. информация"
+                            FontFamily="Arial"
+                            FontSize="12"
+                            FontWeight="Bold"
+                            Height="45"
+                            Background="White" 
+                            BorderBrush="#FFFF7A00"
+                            BorderThickness="2">
+                        <Button.Effect>
+                            <DropShadowEffect ShadowDepth="4"
+                                                  Direction="330"
+                                                  Color="Black"
+                                                  Opacity="0.5"
+                                                  BlurRadius="4"/>
+                        </Button.Effect>
+                    </Button>
+
+                    <Button x:Name="saveBtn"
                         Click="saveBtn_Click"
                         Width="150"
-                        HorizontalAlignment="Center"
-                        Margin="0 5 0 0"
+                        HorizontalAlignment="Right"
+                        Margin="5 5 0 0"
                         Content="Сохранить"
                         FontFamily="Arial"
                         FontSize="18"
                         FontWeight="Bold"
                         Height="45"
                         Background="#FFFF7A00" 
-                        BorderBrush="#FFFF7A00"/>
+                        BorderBrush="#FFFF7A00">
+                        <Button.Effect>
+                            <DropShadowEffect ShadowDepth="4"
+                                                  Direction="330"
+                                                  Color="Black"
+                                                  Opacity="0.5"
+                                                  BlurRadius="4"/>
+                        </Button.Effect>
+                    </Button>
+                </StackPanel>
+                
             </StackPanel>
             <StackPanel>
                 <Image Source="/Img/addHorse.png"
                        Height="350"
-                       Margin="0 50 0 0"/>
+                       Margin="70 50 0 0"/>
             </StackPanel>
         </StackPanel>
     </Grid>

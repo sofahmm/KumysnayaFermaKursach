@@ -24,5 +24,15 @@ namespace KumysnayaFermaKursach.Pages
         {
             InitializeComponent();
         }
+
+        private void chernovikBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void createOrderBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KumysnayaFermaKursach"
         mc:Ignorable="d"
-        Title="MainWindow" Height="520" Width="810">
+        Title="MainWindow" Height="520" Width="880">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="46*"/>
@@ -53,7 +53,7 @@
         </StackPanel>
         <StackPanel Grid.Row="1">
             <Frame x:Name="navFr"
-                   NavigationUIVisibility="Hidden"/>
+                   />
         </StackPanel>
     </Grid>
 </Window>

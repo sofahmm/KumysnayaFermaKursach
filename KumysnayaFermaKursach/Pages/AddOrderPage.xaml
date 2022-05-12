@@ -22,17 +22,12 @@
         <StackPanel Grid.Row="0"
                     Grid.Column="0"
                     Orientation="Vertical"
-                    HorizontalAlignment="Left">
+                    HorizontalAlignment="Center">
             <Label Content="ФИО заказчика:"
                    FontFamily="Arial"
                    FontSize="24"
                    FontWeight="DemiBold"
                    Margin="5"/>
-            <!--<Label Content="Категория товара:"
-                   FontFamily="Arial"
-                   FontSize="24"
-                   FontWeight="DemiBold"
-                   Margin="5"/>-->
             <Label Content="Наименование товара:"
                    FontFamily="Arial"
                    FontSize="24"
@@ -46,9 +41,16 @@
             <Label Content="Способ оплаты:"
                    FontFamily="Arial"
                    FontSize="24"
+                   FontWeight="DemiBold"/>
+            <Label Content="Оплата только при получении:"
+                   FontFamily="Arial"
+                   FontSize="12"/>
+            <Label Content="Дата:"
+                   FontFamily="Arial"
+                   FontSize="24"
                    FontWeight="DemiBold"
                    Margin="5"/>
-            <Label Content="Дата:"
+            <Label Content="Телефон для связи:"
                    FontFamily="Arial"
                    FontSize="24"
                    FontWeight="DemiBold"
@@ -62,66 +64,140 @@
         <StackPanel Grid.Row="0"
                     Grid.Column="1"
                     Orientation="Vertical"
-                    HorizontalAlignment="Left">
+                    HorizontalAlignment="Center">
             <TextBox x:Name="FirstNameTb"
-                     Height="27"
-                     Width="280"
-                     Margin="10"/>
-            <!--<ComboBox x:Name="CategoryProductCb"
-                      Height="27"
-                      Width="280"
-                      Margin="5">
-                <ComboBoxItem Content="{Binding }"/>
-            </ComboBox>-->
+                     Height="35"
+                     Width="360"
+                     Margin="10"
+                     BorderBrush="White"
+                     HorizontalContentAlignment="Center"
+                     VerticalContentAlignment="Center">
+                <TextBox.Effect>
+                    <DropShadowEffect ShadowDepth="4"
+                                                  Direction="330"
+                                                  Color="Black"
+                                                  Opacity="0.5"
+                                                  BlurRadius="4"/>
+                </TextBox.Effect>
+            </TextBox>
             <ComboBox x:Name="NameProductCb"
-                      Height="27"
-                      Width="280"
-                      Margin="5">
+                      Height="35"
+                      Width="200"
+                      Margin="13 0 0 0"
+                      HorizontalAlignment="Left"
+                      HorizontalContentAlignment="Center"
+                      VerticalContentAlignment="Center">
                 <ComboBoxItem Content="{Binding Order.IdProduct}"/>
             </ComboBox>
             <StackPanel Orientation="Horizontal"
                         Margin="10">
                 <TextBox x:Name="AmountTb"
-                     Height="27"
-                     Width="225"
-                     Margin="5"/>
+                     Height="35"
+                     Width="100"
+                     Margin="5"
+                     HorizontalContentAlignment="Center"
+                     VerticalContentAlignment="Center"/>
                 <ComboBox x:Name="AmountProductCb"
-                      Height="27"
+                      Height="30"
                       Width="50"
-                      Margin="5">
+                      Margin="5"
+                      HorizontalContentAlignment="Center"
+                      VerticalContentAlignment="Center">
                     <ComboBoxItem Content="{Binding Order.IdUnit}"/>
                 </ComboBox>
             </StackPanel>
 
-            <ComboBox x:Name="SposobOplatyCb"
-                      Height="27"
-                      Width="280"
-                      Margin="5">
-                <ComboBoxItem Content="{Binding Order.IdSposobOplat}"/>
-            </ComboBox>
+            <StackPanel Orientation="Horizontal"
+                        Margin="20 15 15 15">
+                <CheckBox Content="Наличные"
+                          IsChecked="True"
+                          Name="nalichCb"/>
+                <CheckBox Content="Банковская карта"
+                          Name="bankKardCb"
+                          Margin="15 0 0 0"/>
+            </StackPanel>
+            
             <DatePicker x:Name="DateTb"
-                        Width="280"
+                        Width="150"
                         Margin="15 15 15 0"
                         Text="Выберите дату"
+                        HorizontalAlignment="Left"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
                         SelectedDateFormat="Short"/>
             <TextBlock Text="Внимание, в дальнейшем дату изменить нельзя!"
                        Margin="20 0 0 0"/>
-            <Label FontFamily="Arial"
-                   FontSize="24"
-                   FontWeight="DemiBold"
+            <TextBox x:Name="PhoneNumber"
+                     Height="27"
+                     Width="280"
+                     Margin="10"
+                     BorderBrush="White"
+                     HorizontalAlignment="Left"
+                     HorizontalContentAlignment="Center"
+                     VerticalContentAlignment="Center">
+                <TextBox.Effect>
+                    <DropShadowEffect ShadowDepth="4"
+                                                  Direction="330"
+                                                  Color="Black"
+                                                  Opacity="0.5"
+                                                  BlurRadius="4"/>
+                </TextBox.Effect>
+            </TextBox>
+            <Label Name="SumLbl" 
+                   FontFamily="Arial"
+                   FontSize="20"
                    Margin="20"/>
         </StackPanel>
         <StackPanel Grid.Row="1"
                     Grid.Column="0"
                     Orientation="Vertical"
-                    HorizontalAlignment="Left">
-
+                    HorizontalAlignment="Center">
+            <Button HorizontalContentAlignment="Center"
+                    VerticalAlignment="Center"
+                    Height="45"
+                    Width="250"
+                    Margin="5"
+                    Background="#FFFF7A00"
+                    BorderBrush="#FFFF7A00"
+                    Foreground="White"
+                    Content="Сохранить в черновик"
+                    FontSize="18"
+                    x:Name="chernovikBtn"
+                    Click="chernovikBtn_Click">
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="4"
+                                                  Direction="330"
+                                                  Color="Black"
+                                                  Opacity="0.5"
+                                                  BlurRadius="4"/>
+                </Button.Effect>
+            </Button>
         </StackPanel>
         <StackPanel Grid.Row="1"
                     Grid.Column="1"
                     Orientation="Vertical"
-                    HorizontalAlignment="Left">
-
+                    HorizontalAlignment="Center">
+            <Button HorizontalContentAlignment="Center"
+                    VerticalAlignment="Center"
+                    Height="45"
+                    Width="250"
+                    Margin="5 "
+                    Background="#FFFF7A00"
+                    BorderBrush="#FFFF7A00"
+                    Foreground="Black"
+                    FontWeight="DemiBold"
+                    Content="Оформить заказ"
+                    FontSize="18"
+                    x:Name="createOrderBtn"
+                    Click="createOrderBtn_Click">
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="4"
+                                                  Direction="330"
+                                                  Color="Black"
+                                                  Opacity="0.5"
+                                                  BlurRadius="4"/>
+                </Button.Effect>
+            </Button>
         </StackPanel>
     </Grid>
 </Page>

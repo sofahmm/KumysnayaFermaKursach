@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace KumysnayaFermaKursach.Pages
 {
     /// <summary>
-    /// Interaction logic for RegistrationPage.xaml
+    /// Interaction logic for MoreInfoHorseListPage.xaml
     /// </summary>
-    public partial class RegistrationPage : Page
+    public partial class MoreInfoHorseListPage : Page
     {
-        public RegistrationPage()
+        public MoreInfoHorseListPage()
         {
             InitializeComponent();
         }

@@ -15,7 +15,7 @@
                         Height="75">
                 <ComboBox x:Name="SortAge"
                           Height="25"
-                          Width="100"
+                          Width="150"
                           Margin="50 0 50 0"
                           SelectionChanged="SortAge_SelectionChanged">
                     <ComboBoxItem Content="Старше 10"/>
@@ -26,7 +26,7 @@
                 </ComboBox>
                 <ComboBox x:Name="SortPoroda"
                           Height="25"
-                          Width="100"
+                          Width="150"
                           Margin="50 0 50 0"
                           SelectionChanged="SortPoroda_SelectionChanged">
                     <ComboBoxItem Content="Старше 10"/>
@@ -37,7 +37,7 @@
                           HorizontalAlignment="Right"
                           Background="#FFFF7A00"
                           Height="25"
-                          Width="100"
+                          Width="150"
                           Margin="50 0 50 0"
                           SelectionChanged="SortType_SelectionChanged" BorderBrush="#FFFF7A00">
                     <ComboBoxItem Content="Type 1"/>
@@ -47,7 +47,8 @@
             </StackPanel>
             <DataGrid Height="250"
                       x:Name="HorsesLV"
-                      ItemsSource="{Binding Horse}">
+                      ItemsSource="{Binding Horse}"
+                      AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
@@ -57,7 +58,7 @@
                     <DataGridTextColumn Header="ID:"
                                         FontFamily="Arial"
                                         FontWeight="Bold"
-                                        Width="160" 
+                                        Width="80" 
                                         Binding="{Binding ID}"/>
                     <DataGridTextColumn Header="Имя:"
                                         FontFamily="Arial"

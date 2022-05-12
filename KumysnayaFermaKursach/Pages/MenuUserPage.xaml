@@ -26,6 +26,14 @@
                     Background="#FFFF7A00"
                     BorderBrush="Black"
                     Margin="5"/>
+            <Button x:Name="SborkaMilkListBtn"
+                    Click="SborkaMilkListBtn_Click"
+                    Height="40"
+                    Content="Сборка молока"
+                    FontSize="16"
+                    Background="#FFFF7A00"
+                    BorderBrush="Black"
+                    Margin="5"/>
             <Button x:Name="OurProductsBtn"
                     Click="OurProductsBtn_Click"
                     Height="40"
@@ -117,7 +125,7 @@
                            TextWrapping="WrapWithOverflow"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Right">
-                    <Label Content="Енокентий"
+                    <Label Content="{Binding Employee.FullName}"
                            Name="LblName"
                        FontSize="20"
                        Margin="5 5 0 0"/>

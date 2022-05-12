@@ -25,13 +25,14 @@ namespace KumysnayaFermaKursach.Pages
     public partial class MenuUserPage : Page
     {
         
-        public static ObservableCollection<User> user { get; set; }
+        public static Core.MyDb.User user { get; set; }
         public MenuUserPage()
         {
             InitializeComponent();
             IdLbl.Content = App.user.IdEmployee;
-            LblName.Content = App.user.Employee.Post;
-            
+            user = App.user;
+            //LblName.Content = App.user.Employee.Post;
+            DataContext = user;
         }
 
         private void HorsesList_Click(object sender, RoutedEventArgs e)
@@ -67,6 +68,11 @@ namespace KumysnayaFermaKursach.Pages
         private void MineOrdersBtn_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void SborkaMilkListBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new SborMilkListPage());
         }
     }
 }

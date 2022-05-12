@@ -13,72 +13,125 @@
             <StackPanel>
                 <StackPanel Orientation="Horizontal"
                             HorizontalAlignment="Center">
-                    <StackPanel Orientation="Vertical"
+                    <Border BorderBrush="#FFF6C475"
+                            Background="#FFF6C475"
+                            OpacityMask="#FFF6C475"
+                            CornerRadius="20 20 20 20"
+                            BorderThickness="5"
+                            Margin="40 0 0 0"
+                            Height="225"
+                            Width="225">
+                        <StackPanel Orientation="Vertical"
                                 Width="200"
                                 Height="200"
                                 Background="#FFF6C475"
-                                Margin="15">
-                        <Image Source="/Img/vipechka.jpg"
+                                Margin="0 15 0 0">
+                            <Image Source="/Img/vipechka.jpg"
                                Height="75"
-                               Margin="10"/>
-                        <Label Content="Выпечка"
+                               Margin="0 10 0 0"/>
+                            <Label Content="Выпечка"
                                HorizontalContentAlignment="Center"
                                FontFamily="Arial"
                                FontSize="24" 
                                FontWeight="Bold"/>
-                        <Button x:Name="CreateOrderBtn"
+                            <Button x:Name="CreateOrderBtn"
                                 Click="CreateOrderBtn_Click"
                                 Content="Сделать заказ"
                                 Width="150"
                                 Height="45"
                                 FontSize="16"
                                 FontWeight="Bold"
-                                Background="#FFFF7A00"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Vertical"
+                                Background="#FFFF7A00">
+                                <Button.Effect>
+                                    <DropShadowEffect ShadowDepth="4"
+                                                  Direction="330"
+                                                  Color="Black"
+                                                  Opacity="0.5"
+                                                  BlurRadius="4"/>
+                                </Button.Effect>
+                            </Button>
+                        </StackPanel>
+                    </Border>
+                    <Border BorderBrush="#FFF6C475"
+                            Background="#FFF6C475"
+                            OpacityMask="#FFF6C475"
+                            CornerRadius="20 20 20 20"
+                            BorderThickness="5"
+                            Margin="40 0 0 0"
+                            Height="225"
+                            Width="225">
+                        <StackPanel Orientation="Vertical"
                                 Width="200"
                                 Height="200"
                                 Background="#FFF6C475"
-                                Margin="15">
-                        <Image Source="/Img/Kymys.jpg"
+                                Margin="0 15 0 0">
+                            <Image Source="/Img/Kymys.jpg"
                                Height="75"
-                               Margin="10"/>
-                        <Label Content="Выпечка"
+                               Margin="0 10 0 0"/>
+                            <Label Content="Выпечка"
                                HorizontalContentAlignment="Center"
                                FontFamily="Arial"
                                FontSize="24" 
                                FontWeight="Bold"/>
-                        <Button x:Name="CreateOrderBtn3"
+                            <Button x:Name="CreateOrderBtn3"
                                 Click="CreateOrderBtn_Click"
                                 Content="Сделать заказ"
                                 Width="150"
                                 Height="45"
                                 FontSize="16"
                                 FontWeight="Bold"
-                                Background="#FFFF7A00"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Vertical"
+                                Background="#FFFF7A00">
+                                <Button.Effect>
+                                    <DropShadowEffect ShadowDepth="4"
+                                                  Direction="330"
+                                                  Color="Black"
+                                                  Opacity="0.5"
+                                                  BlurRadius="4"/>
+                                </Button.Effect>
+                            </Button>
+                        </StackPanel>
+                    </Border>
+
+                    <Border BorderBrush="#FFF6C475"
+                            Background="#FFF6C475"
+                            OpacityMask="#FFF6C475"
+                            CornerRadius="20 20 20 20"
+                            BorderThickness="5"
+                            Margin="40 0 0 0"
+                            Height="225"
+                            Width="225">
+                        <StackPanel Orientation="Vertical"
                                 Width="200"
                                 Height="200"
                                 Background="#FFF6C475"
-                                Margin="15">
-                        <Image Source="/Img/Kyrt.jpg"
+                                Margin="0 15 0 0">
+                            <Image Source="/Img/Kyrt.jpg"
                                Height="75"
-                               Margin="10"/>
-                        <Label Content="Выпечка"
+                               Margin="0 10 0 0"/>
+                            <Label Content="Выпечка"
                                HorizontalContentAlignment="Center"
                                FontFamily="Arial"
                                FontSize="24" 
                                FontWeight="Bold"/>
-                        <Button x:Name="CreateOrderBtn2"
+                            <Button x:Name="CreateOrderBtn2"
                                 Click="CreateOrderBtn_Click"
                                 Content="Сделать заказ"
                                 Width="150"
                                 Height="45"
                                 FontSize="16"
                                 FontWeight="Bold"
-                                Background="#FFFF7A00"/>
-                    </StackPanel>
+                                Background="#FFFF7A00">
+                                <Button.Effect>
+                                    <DropShadowEffect ShadowDepth="4"
+                                                  Direction="330"
+                                                  Color="Black"
+                                                  Opacity="0.5"
+                                                  BlurRadius="4"/>
+                                </Button.Effect>
+                            </Button>
+                        </StackPanel>
+                    </Border>
+                    
                 </StackPanel>
             </StackPanel>
             <StackPanel>
