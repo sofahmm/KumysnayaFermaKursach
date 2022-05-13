@@ -53,7 +53,10 @@
                                      Background="#FFF39137"
                                      BorderBrush="#FFF39137"
                                      Width="180"
-                                     Height="25">
+                                     Height="25"
+                                 HorizontalContentAlignment="Center"
+                                 VerticalContentAlignment="Center"
+                                 FontWeight="DemiBold">
                             <TextBox.Effect>
                                 <DropShadowEffect ShadowDepth="4"
                                                   Direction="330"
@@ -68,11 +71,14 @@
                            FontWeight="Bold"
                                FontSize="20"/>
                         <TextBox x:Name="passwordTb"
-                                    Margin="5 5 5 0"
-                                    Background="#FFF39137"
-                                    BorderBrush="#FFF39137"
-                                    Width="180"
-                                    Height="25">
+                                 Margin="5 5 5 0"
+                                 Background="#FFF39137"
+                                 BorderBrush="#FFF39137"
+                                 Width="180"
+                                 Height="25"
+                                 HorizontalContentAlignment="Center"
+                                 VerticalContentAlignment="Center"
+                                 FontWeight="DemiBold">
                             <TextBox.Effect>
                                 <DropShadowEffect ShadowDepth="4"
                                                   Direction="330"

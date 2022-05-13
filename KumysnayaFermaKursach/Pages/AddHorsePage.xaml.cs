@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Core.DB;
+using Core.MyDb;
 
 namespace KumysnayaFermaKursach.Pages
 {
@@ -37,6 +38,10 @@ namespace KumysnayaFermaKursach.Pages
         private void dopInfoBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new MoreInfoHorsePage());
+            var mainWin = Application.Current.Windows
+            .Cast<Window>()
+            .FirstOrDefault(window => window is MainWindow) as MainWindow;
+            mainWin.MainLabel.Content = "Дополнительная информация";
         }
     }
 }

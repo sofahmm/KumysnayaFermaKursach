@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using KumysnayaFermaKursach.Pages;
-using KumysnayaFermaKursach.DB;
+using Core.MyDb;
 using System.Collections.ObjectModel;
 using Core.DB;
 
@@ -32,47 +32,80 @@ namespace KumysnayaFermaKursach.Pages
             IdLbl.Content = App.user.IdEmployee;
             user = App.user;
             //LblName.Content = App.user.Employee.Post;
+
+            var mainWin = Application.Current.Windows
+           .Cast<Window>()
+           .FirstOrDefault(window => window is MainWindow) as MainWindow;
+            mainWin.MainLabel.Content = "Меню";
             DataContext = user;
         }
+
+
 
         private void HorsesList_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new ListHorsesPage());
+                 
         }
 
         private void OrdersBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new OrdersPage());
+            var mainWin = Application.Current.Windows
+           .Cast<Window>()
+           .FirstOrDefault(window => window is MainWindow) as MainWindow;
+            mainWin.MainLabel.Content = "Список заказов";
         }
 
         private void ProductListBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            var mainWin = Application.Current.Windows
+           .Cast<Window>()
+           .FirstOrDefault(window => window is MainWindow) as MainWindow;
+            mainWin.MainLabel.Content = "Список продуктов";
         }
 
         private void AboutUsBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            var mainWin = Application.Current.Windows
+           .Cast<Window>()
+           .FirstOrDefault(window => window is MainWindow) as MainWindow;
+            mainWin.MainLabel.Content = "О нас";
         }
 
         private void CreateOrderBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AddOrderPage());
+            var mainWin = Application.Current.Windows
+           .Cast<Window>()
+           .FirstOrDefault(window => window is MainWindow) as MainWindow;
+            mainWin.MainLabel.Content = "Сделать заказ";
         }
 
         private void OurProductsBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new OurProductsPage());
+            var mainWin = Application.Current.Windows
+           .Cast<Window>()
+           .FirstOrDefault(window => window is MainWindow) as MainWindow;
+            mainWin.MainLabel.Content = "Наша продукция";
         }
 
         private void MineOrdersBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            var mainWin = Application.Current.Windows
+           .Cast<Window>()
+           .FirstOrDefault(window => window is MainWindow) as MainWindow;
+            mainWin.MainLabel.Content = "Мои заказы";
         }
 
         private void SborkaMilkListBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new SborMilkListPage());
+            var mainWin = Application.Current.Windows
+           .Cast<Window>()
+           .FirstOrDefault(window => window is MainWindow) as MainWindow;
+            mainWin.MainLabel.Content = "Сбор молока";
         }
     }
 }

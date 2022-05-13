@@ -35,12 +35,16 @@ namespace KumysnayaFermaKursach.Pages
             {
                 App.user = ToGetData.GetUser(idTb.Text.ToString(), passwordTb.Text.ToString());
                 NavigationService.Navigate(new Pages.MenuUserPage());
+                //NavigationService.Navigated += frame_Navigated;
             }
                 
             else if (ToGetData.IsUncurrentUser(idTb.Text.ToString(), passwordTb.ToString()))
                 MessageBox.Show("Введите верные данные!");
         }
-
+        //void frame_Navigated(object sender, NavigationEventArgs e)
+        //{
+        //    NavigationService.RemoveBackEntry();
+        //}
         private void regBtn_Click(object sender, RoutedEventArgs e)
         {
 

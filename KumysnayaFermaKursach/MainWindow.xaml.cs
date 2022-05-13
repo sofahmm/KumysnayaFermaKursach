@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using KumysnayaFermaKursach.Pages;
 
 namespace KumysnayaFermaKursach
 {
@@ -24,22 +25,39 @@ namespace KumysnayaFermaKursach
         {
             InitializeComponent();
             navFr.Navigate(new Pages.AuthorizationPage());
+            navFr.Navigated += ChangeTitle;
+        }
 
+        private void ChangeTitle(object sender, NavigationEventArgs e)
+        {
+            MainLabel.Content = (navFr.Content as Page).Title;
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            if (navFr.CanGoBack)
+            {
+                navFr.GoBack();
+                //MainLabel.Content = "Кумысная ферма";
+            }
+               
+            else
+                MessageBox.Show("Нельзя перейти назад!");
         }
 
         private void NextBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            if (navFr.CanGoForward)
+                navFr.GoForward();
+            else
+                MessageBox.Show("Нельзя перейти вперед!");
         }
 
         private void saveBtn_Click(object sender, RoutedEventArgs e)
         {
 
         }
+
+       
     }
 }

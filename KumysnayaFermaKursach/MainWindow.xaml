@@ -22,7 +22,7 @@
                        Width="75"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center">
-                <Label Content="Кумысная ферма"
+                <Label Content="Кумысная ферма "
                        x:Name="MainLabel"
                        Margin="200 10 0 0"
                        VerticalAlignment="Center"
@@ -53,7 +53,7 @@
         </StackPanel>
         <StackPanel Grid.Row="1">
             <Frame x:Name="navFr"
-                   />
+                  NavigationUIVisibility="Hidden" />
         </StackPanel>
     </Grid>
 </Window>

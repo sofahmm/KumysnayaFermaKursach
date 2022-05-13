@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Core.DB;
+using Core.MyDb;
 using System.Collections.ObjectModel;
 using System.Text.RegularExpressions;
 
@@ -29,6 +30,10 @@ namespace KumysnayaFermaKursach.Pages
             var horses = ToGetData.GetHorses();
             HorsesLV.ItemsSource = horses;
             DataContext = this;
+            var mainWin = Application.Current.Windows
+            .Cast<Window>()
+            .FirstOrDefault(window => window is MainWindow) as MainWindow;
+            mainWin.MainLabel.Content = "Список лошадей";
         }
 
         private void SortAge_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -49,6 +54,10 @@ namespace KumysnayaFermaKursach.Pages
         private void AddHorseBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AddHorsePage());
+            var mainWin = Application.Current.Windows
+            .Cast<Window>()
+            .FirstOrDefault(window => window is MainWindow) as MainWindow;
+            mainWin.MainLabel.Content = "Добавить лошадь ";
         }
     }
 }

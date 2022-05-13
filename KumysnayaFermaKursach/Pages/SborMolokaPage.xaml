@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:KumysnayaFermaKursach.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="SborMolokaPage">
+      Title="Сбор молока">
 
     <Grid>
         <StackPanel>
@@ -98,8 +98,8 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal"
                             Margin="10">
-                    <Label Content="Статус борки:"
-                           Margin="20 0 0 0"
+                    <Label Content="Статус сборки:"
+                           Margin="9 0 0 0"
                            FontFamily="Arial"
                            FontSize="24"
                            FontWeight="Bold"/>

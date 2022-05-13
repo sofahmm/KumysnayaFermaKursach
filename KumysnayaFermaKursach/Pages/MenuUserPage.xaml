@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:KumysnayaFermaKursach.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="MenuUserPage">
+      Title="Меню">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -29,7 +29,7 @@
             <Button x:Name="SborkaMilkListBtn"
                     Click="SborkaMilkListBtn_Click"
                     Height="40"
-                    Content="Сборка молока"
+                    Content="Сбор молока"
                     FontSize="16"
                     Background="#FFFF7A00"
                     BorderBrush="Black"
@@ -140,7 +140,7 @@
                        Margin="5 10 0 0"/>
                 </StackPanel>
             </StackPanel>
-            <TextBlock Text="Не забывайте соблюдать правила гигиены!            Хорошего Вам дня!"
+            <TextBlock Text="Не забывайте соблюдать правила гигиены!                                  Хорошего Вам дня!"
                        HorizontalAlignment="Center"
                        Margin="30"
                        TextAlignment="Center"

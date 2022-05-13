@@ -12,7 +12,7 @@ namespace Core.DB
     {
         public static bool IsCorrectUser(string Id, string password)
         {
-            ObservableCollection<User> users = new ObservableCollection<User>(DbConnection.fermaEntities.User);
+            var users = DbConnection.fermaEntities.User.ToList();
             var currentUser = users.Where(a => a.IdEmployee.ToString() == Id && a.Password.ToString() == password).ToList();
             return currentUser.Count == 1;
         }
