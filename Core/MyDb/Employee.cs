@@ -21,10 +21,11 @@ namespace Core.MyDb
         }
     
         public int ID { get; set; }
-        public string FullName { get; set; }
         public Nullable<int> AmountHours { get; set; }
         public string Photo { get; set; }
         public Nullable<int> IdPost { get; set; }
+        public string FirstName { get; set; }
+        public string Name { get; set; }
     
         public virtual Post Post { get; set; }
         public virtual ICollection<EmployeeHorse> EmployeeHorse { get; set; }

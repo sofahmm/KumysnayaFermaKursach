@@ -125,17 +125,18 @@
                            TextWrapping="WrapWithOverflow"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Right">
-                    <Label Content="{Binding Employee.FullName}"
+                    <Label Content="{Binding Employee.Name}"
                            Name="LblName"
                        FontSize="20"
                        Margin="5 5 0 0"/>
-                    <Label Content="Енокентий"
+                    <Label Content="{Binding Employee.FirstName}"
                        FontSize="20"
                        Margin="5 5 0 0"/>
-                    <Label Content="Енокентий"
+                    <Label Content="{Binding Employee.Post}"
+                           Name="LblPost"
                        FontSize="20"
                        Margin="5 5 0 0"/>
-                    <Label Content="Енокентий"
+                    <Label Content="{Binding Employee.AmountHours}"
                        FontSize="20"
                        Margin="5 10 0 0"/>
                 </StackPanel>

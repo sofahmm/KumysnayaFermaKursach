@@ -26,17 +26,18 @@ namespace KumysnayaFermaKursach.Pages
     {
         
         public static Core.MyDb.User user { get; set; }
+        public static ObservableCollection<Core.MyDb.Horse> Horse { get; set; }
         public MenuUserPage()
         {
             InitializeComponent();
             IdLbl.Content = App.user.IdEmployee;
             user = App.user;
-            //LblName.Content = App.user.Employee.Post;
+            LblPost.Content = App.user.Employee.Post;
 
-            var mainWin = Application.Current.Windows
-           .Cast<Window>()
-           .FirstOrDefault(window => window is MainWindow) as MainWindow;
-            mainWin.MainLabel.Content = "Меню";
+           // var mainWin = Application.Current.Windows
+           //.Cast<Window>()
+           //.FirstOrDefault(window => window is MainWindow) as MainWindow;
+           // mainWin.MainLabel.Content = "Меню";
             DataContext = user;
         }
 

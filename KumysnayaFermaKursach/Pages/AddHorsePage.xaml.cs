@@ -22,12 +22,14 @@ namespace KumysnayaFermaKursach.Pages
     /// </summary>
     public partial class AddHorsePage : Page
     {
+        public static Core.MyDb.Horse horse { get; set; }
+
         public AddHorsePage()
         {
             InitializeComponent();
-            porodaCB.ItemsSource = ToGetData.GetBreeds();
-            TypeCB.ItemsSource = ToGetData.GetHorseTypes();
-            DataContext = this;
+            //porodaCB.ItemsSource = ToGetData.GetBreeds();
+            //TypeCB.ItemsSource = ToGetData.GetHorseTypes();
+            DataContext = horse;
         }
 
         private void saveBtn_Click(object sender, RoutedEventArgs e)
