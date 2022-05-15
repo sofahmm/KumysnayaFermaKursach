@@ -49,6 +49,19 @@ namespace Core.DB
                 return false;
             }
         }
+        public static bool AddMoreInfoHorse(MoreInfoHorse moreInfoHorse)
+        {
+            try
+            {
+                DbConnection.fermaEntities.MoreInfoHorse.Add(moreInfoHorse);
+                DbConnection.fermaEntities.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         public static bool AddHorse(Horse horse)
         {
             try

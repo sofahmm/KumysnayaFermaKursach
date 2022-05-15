@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Core.MyDb;
+using Core.DB;
 
 namespace KumysnayaFermaKursach.Pages
 {
@@ -21,14 +22,31 @@ namespace KumysnayaFermaKursach.Pages
     /// </summary>
     public partial class MoreInfoHorsePage : Page
     {
+        MoreInfoHorse infoHorse;
         public MoreInfoHorsePage()
         {
             InitializeComponent();
+            this.DataContext = this;
+            
+             
+
         }
 
         private void saveBtn_Click(object sender, RoutedEventArgs e)
         {
+            int t = 0;
+            t = Convert.ToInt32(indexBodyTb.Text) / 100;
 
+            var info = new MoreInfoHorse();
+            info.IdHorse = Convert.ToInt32(idTb.Text);
+            info.Date = DateTb.SelectedDate;
+            info.Puls = Convert.ToInt32(pulsTb.Text);
+            info.TemperatureBody = Convert.ToInt32(temperatureTb.Text);
+            info.IndexBody = Convert.ToInt32(indexBodyTb.Text);
+            info.Weight = Convert.ToInt32(weightTb.Text);
+            ToGetData.AddMoreInfoHorse(info);
+            if (Convert.ToInt32(weightTb.Text) / (t*t) > 20)
+                MessageBox.Show("Присутствует избыточный вес!");
         }
     }
 }

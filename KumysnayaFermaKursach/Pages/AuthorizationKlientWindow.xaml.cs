@@ -48,7 +48,9 @@ namespace KumysnayaFermaKursach.Pages
             if (ToGetData.IsCorrectKlient(numberPhoneTb.ToString()))
             {
                 App.klient = ToGetData.GetKlient(numberPhoneTb.ToString());
-                NavigationService.Navigate(new Pages.MenuKlientPage());
+                //  NavigationService.Navigate(new Pages.MenuKlientPage());
+                MenuKlientPage menuKlientPage = new MenuKlientPage();
+
             }
         }
     }
