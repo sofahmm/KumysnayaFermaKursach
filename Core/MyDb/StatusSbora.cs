@@ -12,25 +12,16 @@ namespace Core.MyDb
     using System;
     using System.Collections.Generic;
     
-    public partial class Horse
+    public partial class StatusSbora
     {
-        public Horse()
+        public StatusSbora()
         {
-            this.EmployeeHorse = new HashSet<EmployeeHorse>();
-            this.MoreInfoHorse = new HashSet<MoreInfoHorse>();
             this.SborMilk = new HashSet<SborMilk>();
         }
     
         public int ID { get; set; }
-        public string Name { get; set; }
-        public Nullable<int> IdType { get; set; }
-        public Nullable<System.DateTime> Birthdate { get; set; }
-        public Nullable<int> IdPoroda { get; set; }
+        public string Description { get; set; }
     
-        public virtual ICollection<EmployeeHorse> EmployeeHorse { get; set; }
-        public virtual HorseType HorseType { get; set; }
-        public virtual ICollection<MoreInfoHorse> MoreInfoHorse { get; set; }
         public virtual ICollection<SborMilk> SborMilk { get; set; }
-        public virtual Poroda Poroda { get; set; }
     }
 }

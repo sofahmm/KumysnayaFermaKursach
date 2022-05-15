@@ -10,10 +10,9 @@
 
     <Grid>
         <StackPanel Orientation="Horizontal">
-            <StackPanel VerticalAlignment="Bottom"
-                        Margin="5">
+            <StackPanel VerticalAlignment="Bottom">
                 <Image Source="/Img/dopInfoHorse.png"
-                       Height="250"/>
+                       Height="245"/>
             </StackPanel>
             <StackPanel VerticalAlignment="Center">
                 <StackPanel Orientation="Horizontal"
@@ -25,7 +24,7 @@
                             FontFamily="Arial"
                             FontWeight="Bold"
                             FontSize="24"/>
-                    <TextBox x:Name="idTxt"
+                    <TextBox x:Name="idTb"
                              FontFamily="Arial"
                              FontSize="18"
                              VerticalContentAlignment="Center"

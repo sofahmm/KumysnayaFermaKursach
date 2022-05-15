@@ -67,8 +67,13 @@
                     <ComboBox x:Name="porodaCB"
                               Margin=" 0 0 0 3"
                               VerticalContentAlignment="Center"
-                              Width="210">
-                        <ComboBoxItem Content="{Binding  IdBreed}"/>
+                              Width="210"
+                              ItemsSource="{Binding poroda}">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Name}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
                     </ComboBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal"
@@ -81,7 +86,13 @@
                     <ComboBox x:Name="TypeCB"
                               Margin="0 0 0 3"
                               VerticalContentAlignment="Center"
-                              Width="210">
+                              Width="210"
+                              SelectedItem="{Binding HorseType}">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Name}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
 
                     </ComboBox>
                 </StackPanel>

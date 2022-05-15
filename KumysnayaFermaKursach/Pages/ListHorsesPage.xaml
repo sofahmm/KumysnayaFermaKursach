@@ -69,17 +69,17 @@
                                         FontFamily="Arial"
                                         FontWeight="Bold"
                                         Width="160"
-                                        Binding="{Binding Age}"/>
+                                        Binding="{Binding Birthdate}"/>
                     <DataGridTextColumn Header="Порода:"
                                         FontFamily="Arial"
                                         FontWeight="Bold"
                                         Width="160"
-                                        Binding="{Binding Breed}"/>
+                                        Binding="{Binding Poroda.Name}"/>
                     <DataGridTextColumn Header="Тип:"
                                         FontFamily="Arial"
                                         FontWeight="Bold"
                                         Width="160"
-                                        Binding="{Binding HorseType}"/>
+                                        Binding="{Binding HorseType.Name}"/>
                 </DataGrid.Columns>
             </DataGrid>
             <Button x:Name="AddHorseBtn"

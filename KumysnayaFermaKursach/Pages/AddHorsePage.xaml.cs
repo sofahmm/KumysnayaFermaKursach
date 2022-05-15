@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,13 +24,15 @@ namespace KumysnayaFermaKursach.Pages
     public partial class AddHorsePage : Page
     {
         public static Core.MyDb.Horse horse { get; set; }
-
+        public static ObservableCollection<Poroda> poroda { get; set; }
         public AddHorsePage()
         {
             InitializeComponent();
+            poroda = new ObservableCollection<Poroda>(DbConnection.fermaEntities.Poroda.ToList());
+            //horseTypes = new ObservableCollection<HorseType>(DbConnection.fermaEntities.HorseType.ToList());
             //porodaCB.ItemsSource = ToGetData.GetBreeds();
-            //TypeCB.ItemsSource = ToGetData.GetHorseTypes();
-            DataContext = horse;
+            TypeCB.ItemsSource = ToGetData.GetHorseTypes();
+            this.DataContext = this;
         }
 
         private void saveBtn_Click(object sender, RoutedEventArgs e)

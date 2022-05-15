@@ -5,12 +5,12 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="KumysnaFermaKursModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-        <EntityType Name="Breed">
+        <EntityType Name="Bak">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Vmestimost" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -33,23 +33,15 @@
           <Property Name="IdEmployee" Type="int" Nullable="false" />
           <Property Name="IdHorse" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="Gender">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" />
-        </EntityType>
         <EntityType Name="Horse">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" />
-          <Property Name="IdBreed" Type="int" />
-          <Property Name="Age" Type="int" />
-          <Property Name="IdGender" Type="int" />
           <Property Name="IdType" Type="int" />
+          <Property Name="Birthdate" Type="date" />
+          <Property Name="IdPoroda" Type="int" />
         </EntityType>
         <EntityType Name="HorseType">
           <Key>
@@ -57,6 +49,25 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Konsistention">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="MoreInfoHorse">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdHorse" Type="int" />
+          <Property Name="Weight" Type="int" />
+          <Property Name="IndexBody" Type="int" />
+          <Property Name="TemperatureBody" Type="int" />
+          <Property Name="Puls" Type="int" />
+          <Property Name="Date" Type="datetime" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -71,6 +82,13 @@
           <Property Name="IdSposobOplat" Type="int" />
           <Property Name="IdStatusOrder" Type="int" />
           <Property Name="IdUnit" Type="int" />
+        </EntityType>
+        <EntityType Name="Poroda">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Post">
           <Key>
@@ -94,6 +112,18 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nchar" MaxLength="10" />
         </EntityType>
+        <EntityType Name="SborMilk">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" />
+          <Property Name="IdHorse" Type="int" />
+          <Property Name="IdBak" Type="int" />
+          <Property Name="IdKonsistention" Type="int" />
+          <Property Name="Color" Type="nchar" MaxLength="10" />
+          <Property Name="IdStatus" Type="int" />
+        </EntityType>
         <EntityType Name="SposobOplati">
           <Key>
             <PropertyRef Name="ID" />
@@ -107,6 +137,13 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="StatusSbora">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -169,42 +206,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Horse_Breed">
-          <End Role="Breed" Type="Self.Breed" Multiplicity="0..1" />
-          <End Role="Horse" Type="Self.Horse" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Breed">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Horse">
-              <PropertyRef Name="IdBreed" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Horse_Gender">
-          <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
-          <End Role="Horse" Type="Self.Horse" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Gender">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Horse">
-              <PropertyRef Name="IdGender" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Horse_Gender1">
-          <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
-          <End Role="Horse" Type="Self.Horse" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Gender">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Horse">
-              <PropertyRef Name="IdGender" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Horse_HorseType">
           <End Role="HorseType" Type="Self.HorseType" Multiplicity="0..1" />
           <End Role="Horse" Type="Self.Horse" Multiplicity="*" />
@@ -214,6 +215,30 @@
             </Principal>
             <Dependent Role="Horse">
               <PropertyRef Name="IdType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Horse_Poroda">
+          <End Role="Poroda" Type="Self.Poroda" Multiplicity="0..1" />
+          <End Role="Horse" Type="Self.Horse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poroda">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Horse">
+              <PropertyRef Name="IdPoroda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MoreInfoHorse_Horse">
+          <End Role="Horse" Type="Self.Horse" Multiplicity="0..1" />
+          <End Role="MoreInfoHorse" Type="Self.MoreInfoHorse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Horse">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MoreInfoHorse">
+              <PropertyRef Name="IdHorse" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -277,6 +302,54 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_SborMilk_Bak">
+          <End Role="Bak" Type="Self.Bak" Multiplicity="0..1" />
+          <End Role="SborMilk" Type="Self.SborMilk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bak">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SborMilk">
+              <PropertyRef Name="IdBak" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SborMilk_Horse">
+          <End Role="Horse" Type="Self.Horse" Multiplicity="0..1" />
+          <End Role="SborMilk" Type="Self.SborMilk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Horse">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SborMilk">
+              <PropertyRef Name="IdHorse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SborMilk_Konsistention">
+          <End Role="Konsistention" Type="Self.Konsistention" Multiplicity="0..1" />
+          <End Role="SborMilk" Type="Self.SborMilk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Konsistention">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SborMilk">
+              <PropertyRef Name="IdKonsistention" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SborMilk_StatusSbora">
+          <End Role="StatusSbora" Type="Self.StatusSbora" Multiplicity="0..1" />
+          <End Role="SborMilk" Type="Self.SborMilk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusSbora">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SborMilk">
+              <PropertyRef Name="IdStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_User_Employee">
           <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
@@ -290,18 +363,22 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="KumysnaFermaKursModelStoreContainer">
-          <EntitySet Name="Breed" EntityType="Self.Breed" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bak" EntityType="Self.Bak" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EmployeeHorse" EntityType="Self.EmployeeHorse" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Horse" EntityType="Self.Horse" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HorseType" EntityType="Self.HorseType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Konsistention" EntityType="Self.Konsistention" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MoreInfoHorse" EntityType="Self.MoreInfoHorse" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Poroda" EntityType="Self.Poroda" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ProductCategory" EntityType="Self.ProductCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SborMilk" EntityType="Self.SborMilk" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SposobOplati" EntityType="Self.SposobOplati" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StatusOrder" EntityType="Self.StatusOrder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StatusSbora" EntityType="Self.StatusSbora" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Unit" EntityType="Self.Unit" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
@@ -317,21 +394,17 @@
             <End Role="Horse" EntitySet="Horse" />
             <End Role="EmployeeHorse" EntitySet="EmployeeHorse" />
           </AssociationSet>
-          <AssociationSet Name="FK_Horse_Breed" Association="Self.FK_Horse_Breed">
-            <End Role="Breed" EntitySet="Breed" />
-            <End Role="Horse" EntitySet="Horse" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Horse_Gender" Association="Self.FK_Horse_Gender">
-            <End Role="Gender" EntitySet="Gender" />
-            <End Role="Horse" EntitySet="Horse" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Horse_Gender1" Association="Self.FK_Horse_Gender1">
-            <End Role="Gender" EntitySet="Gender" />
-            <End Role="Horse" EntitySet="Horse" />
-          </AssociationSet>
           <AssociationSet Name="FK_Horse_HorseType" Association="Self.FK_Horse_HorseType">
             <End Role="HorseType" EntitySet="HorseType" />
             <End Role="Horse" EntitySet="Horse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Horse_Poroda" Association="Self.FK_Horse_Poroda">
+            <End Role="Poroda" EntitySet="Poroda" />
+            <End Role="Horse" EntitySet="Horse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MoreInfoHorse_Horse" Association="Self.FK_MoreInfoHorse_Horse">
+            <End Role="Horse" EntitySet="Horse" />
+            <End Role="MoreInfoHorse" EntitySet="MoreInfoHorse" />
           </AssociationSet>
           <AssociationSet Name="FK_Order_Product" Association="Self.FK_Order_Product">
             <End Role="Product" EntitySet="Product" />
@@ -353,6 +426,22 @@
             <End Role="ProductCategory" EntitySet="ProductCategory" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
+          <AssociationSet Name="FK_SborMilk_Bak" Association="Self.FK_SborMilk_Bak">
+            <End Role="Bak" EntitySet="Bak" />
+            <End Role="SborMilk" EntitySet="SborMilk" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SborMilk_Horse" Association="Self.FK_SborMilk_Horse">
+            <End Role="Horse" EntitySet="Horse" />
+            <End Role="SborMilk" EntitySet="SborMilk" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SborMilk_Konsistention" Association="Self.FK_SborMilk_Konsistention">
+            <End Role="Konsistention" EntitySet="Konsistention" />
+            <End Role="SborMilk" EntitySet="SborMilk" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SborMilk_StatusSbora" Association="Self.FK_SborMilk_StatusSbora">
+            <End Role="StatusSbora" EntitySet="StatusSbora" />
+            <End Role="SborMilk" EntitySet="SborMilk" />
+          </AssociationSet>
           <AssociationSet Name="FK_User_Employee" Association="Self.FK_User_Employee">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="User" EntitySet="User" />
@@ -362,14 +451,6 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="KumysnaFermaKursModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-        <EntityType Name="Breed">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Horse" Relationship="Self.FK_Horse_Breed" FromRole="Breed" ToRole="Horse" />
-        </EntityType>
         <EntityType Name="Employee">
           <Key>
             <PropertyRef Name="ID" />
@@ -396,30 +477,20 @@
           <NavigationProperty Name="Employee" Relationship="Self.FK_EmployeeHorse_Employee1" FromRole="EmployeeHorse" ToRole="Employee" />
           <NavigationProperty Name="Horse" Relationship="Self.FK_EmployeeHorse_Horse" FromRole="EmployeeHorse" ToRole="Horse" />
         </EntityType>
-        <EntityType Name="Gender">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Horse" Relationship="Self.FK_Horse_Gender" FromRole="Gender" ToRole="Horse" />
-          <NavigationProperty Name="Horse1" Relationship="Self.FK_Horse_Gender1" FromRole="Gender" ToRole="Horse" />
-        </EntityType>
         <EntityType Name="Horse">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IdBreed" Type="Int32" />
-          <Property Name="Age" Type="Int32" />
-          <Property Name="IdGender" Type="Int32" />
           <Property Name="IdType" Type="Int32" />
-          <NavigationProperty Name="Breed" Relationship="Self.FK_Horse_Breed" FromRole="Horse" ToRole="Breed" />
           <NavigationProperty Name="EmployeeHorse" Relationship="Self.FK_EmployeeHorse_Horse" FromRole="Horse" ToRole="EmployeeHorse" />
-          <NavigationProperty Name="Gender" Relationship="Self.FK_Horse_Gender" FromRole="Horse" ToRole="Gender" />
-          <NavigationProperty Name="Gender1" Relationship="Self.FK_Horse_Gender1" FromRole="Horse" ToRole="Gender" />
           <NavigationProperty Name="HorseType" Relationship="Self.FK_Horse_HorseType" FromRole="Horse" ToRole="HorseType" />
+          <NavigationProperty Name="MoreInfoHorse" Relationship="KumysnaFermaKursModel.FK_MoreInfoHorse_Horse" FromRole="Horse" ToRole="MoreInfoHorse" />
+          <NavigationProperty Name="SborMilk" Relationship="KumysnaFermaKursModel.FK_SborMilk_Horse" FromRole="Horse" ToRole="SborMilk" />
+          <Property Name="Birthdate" Type="DateTime" Precision="0" />
+          <Property Name="IdPoroda" Type="Int32" />
+          <NavigationProperty Name="Poroda" Relationship="KumysnaFermaKursModel.FK_Horse_Poroda" FromRole="Horse" ToRole="Poroda" />
         </EntityType>
         <EntityType Name="HorseType">
           <Key>
@@ -516,18 +587,6 @@
           <Property Name="Password" Type="Int32" />
           <NavigationProperty Name="Employee" Relationship="Self.FK_User_Employee" FromRole="User" ToRole="Employee" />
         </EntityType>
-        <Association Name="FK_Horse_Breed">
-          <End Role="Breed" Type="Self.Breed" Multiplicity="0..1" />
-          <End Role="Horse" Type="Self.Horse" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Breed">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Horse">
-              <PropertyRef Name="IdBreed" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Employee_Post">
           <End Role="Post" Type="Self.Post" Multiplicity="0..1" />
           <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
@@ -573,30 +632,6 @@
             </Principal>
             <Dependent Role="EmployeeHorse">
               <PropertyRef Name="IdHorse" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Horse_Gender">
-          <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
-          <End Role="Horse" Type="Self.Horse" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Gender">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Horse">
-              <PropertyRef Name="IdGender" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Horse_Gender1">
-          <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
-          <End Role="Horse" Type="Self.Horse" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Gender">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Horse">
-              <PropertyRef Name="IdGender" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -673,10 +708,8 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="KumysnaFermaEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Breed" EntityType="Self.Breed" />
           <EntitySet Name="Employee" EntityType="Self.Employee" />
           <EntitySet Name="EmployeeHorse" EntityType="Self.EmployeeHorse" />
-          <EntitySet Name="Gender" EntityType="Self.Gender" />
           <EntitySet Name="Horse" EntityType="Self.Horse" />
           <EntitySet Name="HorseType" EntityType="Self.HorseType" />
           <EntitySet Name="Order" EntityType="Self.Order" />
@@ -688,10 +721,6 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Unit" EntityType="Self.Unit" />
           <EntitySet Name="User" EntityType="Self.User" />
-          <AssociationSet Name="FK_Horse_Breed" Association="Self.FK_Horse_Breed">
-            <End Role="Breed" EntitySet="Breed" />
-            <End Role="Horse" EntitySet="Horse" />
-          </AssociationSet>
           <AssociationSet Name="FK_Employee_Post" Association="Self.FK_Employee_Post">
             <End Role="Post" EntitySet="Post" />
             <End Role="Employee" EntitySet="Employee" />
@@ -707,14 +736,6 @@
           <AssociationSet Name="FK_EmployeeHorse_Horse" Association="Self.FK_EmployeeHorse_Horse">
             <End Role="Horse" EntitySet="Horse" />
             <End Role="EmployeeHorse" EntitySet="EmployeeHorse" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Horse_Gender" Association="Self.FK_Horse_Gender">
-            <End Role="Gender" EntitySet="Gender" />
-            <End Role="Horse" EntitySet="Horse" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Horse_Gender1" Association="Self.FK_Horse_Gender1">
-            <End Role="Gender" EntitySet="Gender" />
-            <End Role="Horse" EntitySet="Horse" />
           </AssociationSet>
           <AssociationSet Name="FK_Horse_HorseType" Association="Self.FK_Horse_HorseType">
             <End Role="HorseType" EntitySet="HorseType" />
@@ -740,21 +761,176 @@
             <End Role="ProductCategory" EntitySet="ProductCategory" />
             <End Role="Product" EntitySet="Product" />
           </AssociationSet>
+          <EntitySet Name="Bak" EntityType="KumysnaFermaKursModel.Bak" />
+          <EntitySet Name="Konsistention" EntityType="KumysnaFermaKursModel.Konsistention" />
+          <EntitySet Name="MoreInfoHorse" EntityType="KumysnaFermaKursModel.MoreInfoHorse" />
+          <EntitySet Name="SborMilk" EntityType="KumysnaFermaKursModel.SborMilk" />
+          <EntitySet Name="StatusSbora" EntityType="KumysnaFermaKursModel.StatusSbora" />
+          <AssociationSet Name="FK_SborMilk_Bak" Association="KumysnaFermaKursModel.FK_SborMilk_Bak">
+            <End Role="Bak" EntitySet="Bak" />
+            <End Role="SborMilk" EntitySet="SborMilk" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MoreInfoHorse_Horse" Association="KumysnaFermaKursModel.FK_MoreInfoHorse_Horse">
+            <End Role="Horse" EntitySet="Horse" />
+            <End Role="MoreInfoHorse" EntitySet="MoreInfoHorse" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SborMilk_Horse" Association="KumysnaFermaKursModel.FK_SborMilk_Horse">
+            <End Role="Horse" EntitySet="Horse" />
+            <End Role="SborMilk" EntitySet="SborMilk" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SborMilk_Konsistention" Association="KumysnaFermaKursModel.FK_SborMilk_Konsistention">
+            <End Role="Konsistention" EntitySet="Konsistention" />
+            <End Role="SborMilk" EntitySet="SborMilk" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SborMilk_StatusSbora" Association="KumysnaFermaKursModel.FK_SborMilk_StatusSbora">
+            <End Role="StatusSbora" EntitySet="StatusSbora" />
+            <End Role="SborMilk" EntitySet="SborMilk" />
+          </AssociationSet>
+          <EntitySet Name="Poroda" EntityType="KumysnaFermaKursModel.Poroda" />
+          <AssociationSet Name="FK_Horse_Poroda" Association="KumysnaFermaKursModel.FK_Horse_Poroda">
+            <End Role="Poroda" EntitySet="Poroda" />
+            <End Role="Horse" EntitySet="Horse" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Bak">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Vmestimost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SborMilk" Relationship="KumysnaFermaKursModel.FK_SborMilk_Bak" FromRole="Bak" ToRole="SborMilk" />
+        </EntityType>
+        <EntityType Name="Konsistention">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SborMilk" Relationship="KumysnaFermaKursModel.FK_SborMilk_Konsistention" FromRole="Konsistention" ToRole="SborMilk" />
+        </EntityType>
+        <EntityType Name="MoreInfoHorse">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdHorse" Type="Int32" />
+          <Property Name="Weight" Type="Int32" />
+          <Property Name="IndexBody" Type="Int32" />
+          <Property Name="TemperatureBody" Type="Int32" />
+          <Property Name="Puls" Type="Int32" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Horse" Relationship="KumysnaFermaKursModel.FK_MoreInfoHorse_Horse" FromRole="MoreInfoHorse" ToRole="Horse" />
+        </EntityType>
+        <EntityType Name="SborMilk">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="IdHorse" Type="Int32" />
+          <Property Name="IdBak" Type="Int32" />
+          <Property Name="IdKonsistention" Type="Int32" />
+          <Property Name="Color" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="IdStatus" Type="Int32" />
+          <NavigationProperty Name="Bak" Relationship="KumysnaFermaKursModel.FK_SborMilk_Bak" FromRole="SborMilk" ToRole="Bak" />
+          <NavigationProperty Name="Horse" Relationship="KumysnaFermaKursModel.FK_SborMilk_Horse" FromRole="SborMilk" ToRole="Horse" />
+          <NavigationProperty Name="Konsistention" Relationship="KumysnaFermaKursModel.FK_SborMilk_Konsistention" FromRole="SborMilk" ToRole="Konsistention" />
+          <NavigationProperty Name="StatusSbora" Relationship="KumysnaFermaKursModel.FK_SborMilk_StatusSbora" FromRole="SborMilk" ToRole="StatusSbora" />
+        </EntityType>
+        <EntityType Name="StatusSbora">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SborMilk" Relationship="KumysnaFermaKursModel.FK_SborMilk_StatusSbora" FromRole="StatusSbora" ToRole="SborMilk" />
+        </EntityType>
+        <Association Name="FK_SborMilk_Bak">
+          <End Type="KumysnaFermaKursModel.Bak" Role="Bak" Multiplicity="0..1" />
+          <End Type="KumysnaFermaKursModel.SborMilk" Role="SborMilk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bak">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SborMilk">
+              <PropertyRef Name="IdBak" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MoreInfoHorse_Horse">
+          <End Type="KumysnaFermaKursModel.Horse" Role="Horse" Multiplicity="0..1" />
+          <End Type="KumysnaFermaKursModel.MoreInfoHorse" Role="MoreInfoHorse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Horse">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MoreInfoHorse">
+              <PropertyRef Name="IdHorse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SborMilk_Horse">
+          <End Type="KumysnaFermaKursModel.Horse" Role="Horse" Multiplicity="0..1" />
+          <End Type="KumysnaFermaKursModel.SborMilk" Role="SborMilk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Horse">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SborMilk">
+              <PropertyRef Name="IdHorse" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SborMilk_Konsistention">
+          <End Type="KumysnaFermaKursModel.Konsistention" Role="Konsistention" Multiplicity="0..1" />
+          <End Type="KumysnaFermaKursModel.SborMilk" Role="SborMilk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Konsistention">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SborMilk">
+              <PropertyRef Name="IdKonsistention" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SborMilk_StatusSbora">
+          <End Type="KumysnaFermaKursModel.StatusSbora" Role="StatusSbora" Multiplicity="0..1" />
+          <End Type="KumysnaFermaKursModel.SborMilk" Role="SborMilk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusSbora">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SborMilk">
+              <PropertyRef Name="IdStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Poroda">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Horse" Relationship="KumysnaFermaKursModel.FK_Horse_Poroda" FromRole="Poroda" ToRole="Horse" />
+        </EntityType>
+        <Association Name="FK_Horse_Poroda">
+          <End Type="KumysnaFermaKursModel.Poroda" Role="Poroda" Multiplicity="0..1" />
+          <End Type="KumysnaFermaKursModel.Horse" Role="Horse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poroda">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Horse">
+              <PropertyRef Name="IdPoroda" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="KumysnaFermaKursModelStoreContainer" CdmEntityContainer="KumysnaFermaEntities">
-          <EntitySetMapping Name="Breed">
-            <EntityTypeMapping TypeName="KumysnaFermaKursModel.Breed">
-              <MappingFragment StoreEntitySet="Breed">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Employee">
             <EntityTypeMapping TypeName="KumysnaFermaKursModel.Employee">
               <MappingFragment StoreEntitySet="Employee">
@@ -776,22 +952,13 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Gender">
-            <EntityTypeMapping TypeName="KumysnaFermaKursModel.Gender">
-              <MappingFragment StoreEntitySet="Gender">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Horse">
             <EntityTypeMapping TypeName="KumysnaFermaKursModel.Horse">
               <MappingFragment StoreEntitySet="Horse">
+                <ScalarProperty Name="IdPoroda" ColumnName="IdPoroda" />
+                <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="IdBreed" ColumnName="IdBreed" />
-                <ScalarProperty Name="Age" ColumnName="Age" />
-                <ScalarProperty Name="IdGender" ColumnName="IdGender" />
                 <ScalarProperty Name="IdType" ColumnName="IdType" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -885,6 +1052,64 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="IdEmployee" ColumnName="IdEmployee" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bak">
+            <EntityTypeMapping TypeName="KumysnaFermaKursModel.Bak">
+              <MappingFragment StoreEntitySet="Bak">
+                <ScalarProperty Name="Vmestimost" ColumnName="Vmestimost" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Konsistention">
+            <EntityTypeMapping TypeName="KumysnaFermaKursModel.Konsistention">
+              <MappingFragment StoreEntitySet="Konsistention">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MoreInfoHorse">
+            <EntityTypeMapping TypeName="KumysnaFermaKursModel.MoreInfoHorse">
+              <MappingFragment StoreEntitySet="MoreInfoHorse">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Puls" ColumnName="Puls" />
+                <ScalarProperty Name="TemperatureBody" ColumnName="TemperatureBody" />
+                <ScalarProperty Name="IndexBody" ColumnName="IndexBody" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="IdHorse" ColumnName="IdHorse" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SborMilk">
+            <EntityTypeMapping TypeName="KumysnaFermaKursModel.SborMilk">
+              <MappingFragment StoreEntitySet="SborMilk">
+                <ScalarProperty Name="IdStatus" ColumnName="IdStatus" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="IdKonsistention" ColumnName="IdKonsistention" />
+                <ScalarProperty Name="IdBak" ColumnName="IdBak" />
+                <ScalarProperty Name="IdHorse" ColumnName="IdHorse" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusSbora">
+            <EntityTypeMapping TypeName="KumysnaFermaKursModel.StatusSbora">
+              <MappingFragment StoreEntitySet="StatusSbora">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Poroda">
+            <EntityTypeMapping TypeName="KumysnaFermaKursModel.Poroda">
+              <MappingFragment StoreEntitySet="Poroda">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

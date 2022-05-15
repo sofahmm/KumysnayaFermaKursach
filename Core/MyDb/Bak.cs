@@ -12,16 +12,16 @@ namespace Core.MyDb
     using System;
     using System.Collections.Generic;
     
-    public partial class Breed
+    public partial class Bak
     {
-        public Breed()
+        public Bak()
         {
-            this.Horse = new HashSet<Horse>();
+            this.SborMilk = new HashSet<SborMilk>();
         }
     
         public int ID { get; set; }
-        public string Name { get; set; }
+        public string Vmestimost { get; set; }
     
-        public virtual ICollection<Horse> Horse { get; set; }
+        public virtual ICollection<SborMilk> SborMilk { get; set; }
     }
 }

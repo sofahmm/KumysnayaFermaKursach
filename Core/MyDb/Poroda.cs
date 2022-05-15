@@ -12,18 +12,16 @@ namespace Core.MyDb
     using System;
     using System.Collections.Generic;
     
-    public partial class Gender
+    public partial class Poroda
     {
-        public Gender()
+        public Poroda()
         {
             this.Horse = new HashSet<Horse>();
-            this.Horse1 = new HashSet<Horse>();
         }
     
         public int ID { get; set; }
         public string Name { get; set; }
     
         public virtual ICollection<Horse> Horse { get; set; }
-        public virtual ICollection<Horse> Horse1 { get; set; }
     }
 }

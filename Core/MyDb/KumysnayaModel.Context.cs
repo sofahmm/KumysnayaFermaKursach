@@ -25,10 +25,8 @@ namespace Core.MyDb
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Breed> Breed { get; set; }
         public DbSet<Employee> Employee { get; set; }
         public DbSet<EmployeeHorse> EmployeeHorse { get; set; }
-        public DbSet<Gender> Gender { get; set; }
         public DbSet<Horse> Horse { get; set; }
         public DbSet<HorseType> HorseType { get; set; }
         public DbSet<Order> Order { get; set; }
@@ -40,5 +38,11 @@ namespace Core.MyDb
         public DbSet<sysdiagrams> sysdiagrams { get; set; }
         public DbSet<Unit> Unit { get; set; }
         public DbSet<User> User { get; set; }
+        public DbSet<Bak> Bak { get; set; }
+        public DbSet<Konsistention> Konsistention { get; set; }
+        public DbSet<MoreInfoHorse> MoreInfoHorse { get; set; }
+        public DbSet<SborMilk> SborMilk { get; set; }
+        public DbSet<StatusSbora> StatusSbora { get; set; }
+        public DbSet<Poroda> Poroda { get; set; }
     }
 }

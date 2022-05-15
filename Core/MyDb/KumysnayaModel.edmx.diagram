@@ -5,10 +5,8 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="1d94b2aaf31a4299814c2fbc1a55179d" Name="Diagram1">
-        <EntityTypeShape EntityType="KumysnaFermaKursModel.Breed" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="KumysnaFermaKursModel.Employee" Width="1.5" PointX="3" PointY="10.25" IsExpanded="true" />
         <EntityTypeShape EntityType="KumysnaFermaKursModel.EmployeeHorse" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="KumysnaFermaKursModel.Gender" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="KumysnaFermaKursModel.Horse" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="KumysnaFermaKursModel.HorseType" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
         <EntityTypeShape EntityType="KumysnaFermaKursModel.Order" Width="1.5" PointX="10.25" PointY="5" IsExpanded="true" />
@@ -20,19 +18,28 @@
         <EntityTypeShape EntityType="KumysnaFermaKursModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KumysnaFermaKursModel.Unit" Width="1.5" PointX="8" PointY="11.25" IsExpanded="true" />
         <EntityTypeShape EntityType="KumysnaFermaKursModel.User" Width="1.5" PointX="5.25" PointY="10.625" IsExpanded="true" />
-        <AssociationConnector Association="KumysnaFermaKursModel.FK_Horse_Breed" ManuallyRouted="false" />
         <AssociationConnector Association="KumysnaFermaKursModel.FK_Employee_Post" ManuallyRouted="false" />
         <AssociationConnector Association="KumysnaFermaKursModel.FK_EmployeeHorse_Employee1" ManuallyRouted="false" />
         <AssociationConnector Association="KumysnaFermaKursModel.FK_User_Employee" ManuallyRouted="false" />
         <AssociationConnector Association="KumysnaFermaKursModel.FK_EmployeeHorse_Horse" ManuallyRouted="false" />
-        <AssociationConnector Association="KumysnaFermaKursModel.FK_Horse_Gender" ManuallyRouted="false" />
-        <AssociationConnector Association="KumysnaFermaKursModel.FK_Horse_Gender1" ManuallyRouted="false" />
         <AssociationConnector Association="KumysnaFermaKursModel.FK_Horse_HorseType" ManuallyRouted="false" />
         <AssociationConnector Association="KumysnaFermaKursModel.FK_Order_Product" ManuallyRouted="false" />
         <AssociationConnector Association="KumysnaFermaKursModel.FK_Order_SposobOplati" ManuallyRouted="false" />
         <AssociationConnector Association="KumysnaFermaKursModel.FK_Order_StatusOrder" ManuallyRouted="false" />
         <AssociationConnector Association="KumysnaFermaKursModel.FK_Order_Unit" ManuallyRouted="false" />
         <AssociationConnector Association="KumysnaFermaKursModel.FK_Product_ProductCategory" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="KumysnaFermaKursModel.Bak" Width="1.5" PointX="6" PointY="25" />
+        <EntityTypeShape EntityType="KumysnaFermaKursModel.Konsistention" Width="1.5" PointX="6" PointY="19.25" />
+        <EntityTypeShape EntityType="KumysnaFermaKursModel.MoreInfoHorse" Width="1.5" PointX="5.25" PointY="15.875" />
+        <EntityTypeShape EntityType="KumysnaFermaKursModel.SborMilk" Width="1.5" PointX="8.25" PointY="0.75" />
+        <EntityTypeShape EntityType="KumysnaFermaKursModel.StatusSbora" Width="1.5" PointX="6" PointY="22.625" />
+        <AssociationConnector Association="KumysnaFermaKursModel.FK_SborMilk_Bak" />
+        <AssociationConnector Association="KumysnaFermaKursModel.FK_MoreInfoHorse_Horse" />
+        <AssociationConnector Association="KumysnaFermaKursModel.FK_SborMilk_Horse" />
+        <AssociationConnector Association="KumysnaFermaKursModel.FK_SborMilk_Konsistention" />
+        <AssociationConnector Association="KumysnaFermaKursModel.FK_SborMilk_StatusSbora" />
+        <EntityTypeShape EntityType="KumysnaFermaKursModel.Poroda" Width="1.5" PointX="10.375" PointY="0.875" />
+        <AssociationConnector Association="KumysnaFermaKursModel.FK_Horse_Poroda" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

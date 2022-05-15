@@ -68,10 +68,10 @@ namespace Core.DB
             ObservableCollection<Unit> units = new ObservableCollection<Unit>(DbConnection.fermaEntities.Unit);
             return units;
         }
-        public static ObservableCollection<Breed> GetBreeds()
+        public static ObservableCollection<Poroda> GetBreeds()
         {
-            ObservableCollection<Breed> breeds = new ObservableCollection<Breed>(DbConnection.fermaEntities.Breed);
-            return breeds;
+            ObservableCollection<Poroda> poroda = new ObservableCollection<Poroda>(DbConnection.fermaEntities.Poroda);
+            return poroda;
         }
         public static ObservableCollection<StatusOrder> GetStatusOrders()
         {

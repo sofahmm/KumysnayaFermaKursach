@@ -52,7 +52,7 @@
   <ItemGroup>
     <Compile Include="DB\DbConnection.cs" />
     <Compile Include="DB\ToGetData.cs" />
-    <Compile Include="MyDb\Breed.cs">
+    <Compile Include="MyDb\Bak.cs">
       <DependentUpon>KumysnayaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MyDb\Employee.cs">
@@ -61,13 +61,13 @@
     <Compile Include="MyDb\EmployeeHorse.cs">
       <DependentUpon>KumysnayaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="MyDb\Gender.cs">
-      <DependentUpon>KumysnayaModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="MyDb\Horse.cs">
       <DependentUpon>KumysnayaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MyDb\HorseType.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyDb\Konsistention.cs">
       <DependentUpon>KumysnayaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MyDb\KumysnayaModel.Context.cs">
@@ -85,7 +85,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>KumysnayaModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="MyDb\MoreInfoHorse.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="MyDb\Order.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyDb\Poroda.cs">
       <DependentUpon>KumysnayaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MyDb\Post.cs">
@@ -97,10 +103,16 @@
     <Compile Include="MyDb\ProductCategory.cs">
       <DependentUpon>KumysnayaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="MyDb\SborMilk.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="MyDb\SposobOplati.cs">
       <DependentUpon>KumysnayaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MyDb\StatusOrder.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyDb\StatusSbora.cs">
       <DependentUpon>KumysnayaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MyDb\sysdiagrams.cs">
