@@ -106,11 +106,14 @@
                         </Button.Effect>
                     </Button>
                     <TextBlock Margin="5"
-                       HorizontalAlignment="Center">
-                    <Hyperlink 
+                       HorizontalAlignment="Center"
+                               MouseDown="TextBlock_MouseDown"
+                               Text="Я клиент"
+                               Foreground="White">
+                    <!--<Hyperlink 
                         Foreground="White"
                         FontWeight="Bold"
-                        NavigateUri="MenuUserPage.xaml">Я клиент</Hyperlink>
+                        NavigateUri="AuthorizationKlientWindow.xaml">Я клиент</Hyperlink>-->
                     </TextBlock>
                 </StackPanel>
             </Border>

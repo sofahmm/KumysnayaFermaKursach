@@ -49,5 +49,11 @@ namespace KumysnayaFermaKursach.Pages
         {
 
         }
+
+        private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            AuthorizationKlientWindow authorizationKlientWindow = new AuthorizationKlientWindow();
+            authorizationKlientWindow.Show();
+        }
     }
 }

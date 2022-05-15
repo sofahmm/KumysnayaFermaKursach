@@ -16,11 +16,38 @@ namespace Core.DB
             var currentUser = users.Where(a => a.IdEmployee.ToString() == Id && a.Password.ToString() == password).ToList();
             return currentUser.Count == 1;
         }
+        public static bool IsCorrectKlient(string phoneNumber)
+        {
+            var klient = DbConnection.fermaEntities.KlientAuth.ToList();
+            var currentKlient = klient.Where(a => a.PhoneNumber == phoneNumber).ToList();
+            return currentKlient.Count == 1;
+        }
+
         public static bool IsUncurrentUser(string Id, string password)
         {
-            ObservableCollection<User> users = new ObservableCollection<User>(DbConnection.fermaEntities.User);
+            var users = DbConnection.fermaEntities.User;
             var currentUser = users.Where(a => a.IdEmployee.ToString() == Id && a.Password.ToString() == password).ToList();
             return currentUser.Count == 0;
+        }
+        public static bool IsUncurrentUser(string phoneNumber)
+        {
+            var klients = DbConnection.fermaEntities.KlientAuth;
+            var currenKlient = klients.Where(a => a.PhoneNumber == phoneNumber).ToList();
+            return currenKlient.Count == 0;
+
+        }
+        public static bool AddKlient(KlientAuth klient)
+        {
+            try
+            {
+                DbConnection.fermaEntities.KlientAuth.Add(klient);
+                DbConnection.fermaEntities.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
         public static bool AddHorse(Horse horse)
         {
@@ -107,6 +134,13 @@ namespace Core.DB
             ObservableCollection<User> users = new ObservableCollection<User>(DbConnection.fermaEntities.User);
             var currentUser = users.Where(u => u.IdEmployee.ToString() == idEmployee && u.Password.ToString() == password).FirstOrDefault();
             return currentUser;
+        }
+
+        public static KlientAuth GetKlient(string phoneNumber)
+        {
+            var klients = DbConnection.fermaEntities.KlientAuth;
+            var currentKlient = klients.Where(u => u.PhoneNumber == phoneNumber).FirstOrDefault();
+            return currentKlient;
         }
     }
 }

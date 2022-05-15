@@ -10,29 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Core.DB;
-using Core.MyDb;
 
 namespace KumysnayaFermaKursach.Pages
 {
     /// <summary>
-    /// Interaction logic for RegistrationKlient.xaml
+    /// Interaction logic for MenuKlientPage.xaml
     /// </summary>
-    public partial class RegistrationKlient : Window
+    public partial class MenuKlientPage : Page
     {
-        public RegistrationKlient()
+        public MenuKlientPage()
         {
             InitializeComponent();
-        }
-
-        private void registrBtn_Click(object sender, RoutedEventArgs e)
-        {
-            var klient = new KlientAuth();
-            klient.Name = nameTb.Text;
-            klient.PhoneNumber = numberPhoneTb.Text;
-            ToGetData.AddKlient(klient);
-            
         }
     }
 }

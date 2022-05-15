@@ -17,5 +17,6 @@ namespace KumysnayaFermaKursach
     public partial class App : Application
     {
         public static User user { get; set; }
+        public static KlientAuth klient { get; set; }
     }
 }

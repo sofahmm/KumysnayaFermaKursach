@@ -82,6 +82,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\MenuKlientPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\MoreInfoHorseListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -133,6 +137,9 @@
     </Compile>
     <Compile Include="Pages\AuthorizationKlientWindow.xaml.cs">
       <DependentUpon>AuthorizationKlientWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MenuKlientPage.xaml.cs">
+      <DependentUpon>MenuKlientPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MoreInfoHorseListPage.xaml.cs">
       <DependentUpon>MoreInfoHorseListPage.xaml</DependentUpon>

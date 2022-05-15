@@ -7,6 +7,77 @@
         mc:Ignorable="d"
         Title="RegistrationKlient" Height="450" Width="800">
     <Grid>
-        
+        <Border BorderBrush="#FFFF7A00"
+                    Background="#FFFD8618"
+                    OpacityMask="#FFFF7A00"
+                    CornerRadius="20 20 20 20"
+                    BorderThickness="20 20 20 20"
+                    Margin="100 0 0 0"
+                    Height="350"
+                    Width="430">
+            <StackPanel VerticalAlignment="Center">
+                <Label Content="Как к вам обращаться?:"
+                       FontFamily="Arial"
+                       FontSize="22"
+                       FontWeight="Bold"
+                       VerticalContentAlignment="Center"
+                       HorizontalContentAlignment="Center"/>
+                <TextBox x:Name="nameTb"
+                         Height="40"
+                         FontSize="20"
+                         Width="370"
+                         BorderBrush="#FFFF7A00"
+                         BorderThickness="2"
+                         VerticalContentAlignment="Center"
+                         HorizontalContentAlignment="Center">
+                    <TextBox.Effect>
+                        <DropShadowEffect ShadowDepth="4"
+                                                  Direction="330"
+                                                  Color="Black"
+                                                  Opacity="0.5"
+                                                  BlurRadius="4"/>
+                    </TextBox.Effect>
+                </TextBox>
+                <Label Content="Введите ваш номер телефона:"
+                       FontFamily="Arial"
+                       FontSize="22"
+                       FontWeight="Bold"
+                       VerticalContentAlignment="Center"
+                       HorizontalContentAlignment="Center"/>
+                <TextBox x:Name="numberPhoneTb"
+                         Height="40"
+                         FontSize="20"
+                         Width="370"
+                         BorderBrush="#FFFF7A00"
+                         BorderThickness="2"
+                         VerticalContentAlignment="Center"
+                         HorizontalContentAlignment="Center">
+                    <TextBox.Effect>
+                        <DropShadowEffect ShadowDepth="4"
+                                                  Direction="330"
+                                                  Color="Black"
+                                                  Opacity="0.5"
+                                                  BlurRadius="4"/>
+                    </TextBox.Effect>
+                </TextBox>
+                <Button x:Name="registrBtn"
+                        Click="registrBtn_Click"
+                        Content="Зарегистрироваться"
+                        Height="35"
+                        Width="150"
+                        Background="Black"
+                        Foreground="White"
+                        Margin="15">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="4"
+                                                  Direction="330"
+                                                  Color="Black"
+                                                  Opacity="0.5"
+                                                  BlurRadius="4"/>    
+                    </Button.Effect>
+                    
+                </Button>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>

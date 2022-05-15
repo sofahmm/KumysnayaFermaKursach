@@ -5,8 +5,61 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KumysnayaFermaKursach.Pages"
         mc:Ignorable="d"
-        Title="AuthorizationKlientWindow" Height="450" Width="800">
+        Title="Авторизация клиента" Height="340" Width="410">
     <Grid>
-        
+        <StackPanel Orientation="Vertical"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+            <Border BorderBrush="#FFFF7A00"
+                    OpacityMask="#FFFF7A00"
+                    CornerRadius="20 20 20 20"
+                    BorderThickness="10"
+                    HorizontalAlignment="Center"
+                    Height="300"
+                    Width="400">
+                <StackPanel Orientation="Vertical"
+                            VerticalAlignment="Center">
+                    
+                    <Label Content="Введите ваш номер телефона:"
+                       FontFamily="Arial"
+                       FontSize="22"
+                       FontWeight="Bold"
+                       VerticalContentAlignment="Center"
+                       HorizontalContentAlignment="Center"/>
+                    <TextBox x:Name="numberPhoneTb"
+                         Height="40"
+                         FontSize="20"
+                         Width="370"
+                         BorderBrush="#FFFF7A00"
+                         BorderThickness="2"
+                         VerticalContentAlignment="Center"
+                         HorizontalContentAlignment="Center">
+                        <TextBox.Effect>
+                            <DropShadowEffect ShadowDepth="4"
+                                                  Direction="330"
+                                                  Color="Black"
+                                                  Opacity="0.5"
+                                                  BlurRadius="4"/>
+                        </TextBox.Effect>
+                    </TextBox>
+                    <Button x:Name="authBtn"
+                            Content="Войти"
+                            Margin="10 20 10 10"
+                            Height="30"
+                            Click="authBtn_Click"
+                            Width="150"
+                            BorderBrush="#FFFF7A00"
+                            Background="#FFFF7A00"
+                            Foreground="White"/>
+                    <TextBlock HorizontalAlignment="Center"
+                               Margin="0 5 0 0"
+                               Text="Еще не с нами? Зарегистрируйтесь!"
+                               MouseDown="TextBlock_MouseDown"
+                               FontWeight="Bold">
+                    </TextBlock>
+                </StackPanel>
+            </Border>
+           
+        </StackPanel>
     </Grid>
 </Window>
