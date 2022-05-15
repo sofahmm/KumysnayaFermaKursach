@@ -78,6 +78,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\AuthorizationKlientWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\MoreInfoHorseListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -110,6 +114,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\RegistrationKlient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\SborMilkListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -122,6 +130,9 @@
   <ItemGroup>
     <Compile Include="Pages\AddOrderPage.xaml.cs">
       <DependentUpon>AddOrderPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AuthorizationKlientWindow.xaml.cs">
+      <DependentUpon>AuthorizationKlientWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MoreInfoHorseListPage.xaml.cs">
       <DependentUpon>MoreInfoHorseListPage.xaml</DependentUpon>
@@ -146,6 +157,9 @@
     </Compile>
     <Compile Include="Pages\OurProductsPage.xaml.cs">
       <DependentUpon>OurProductsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RegistrationKlient.xaml.cs">
+      <DependentUpon>RegistrationKlient.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SborMilkListPage.xaml.cs">
       <DependentUpon>SborMilkListPage.xaml</DependentUpon>

@@ -44,5 +44,8 @@ namespace Core.MyDb
         public DbSet<SborMilk> SborMilk { get; set; }
         public DbSet<StatusSbora> StatusSbora { get; set; }
         public DbSet<Poroda> Poroda { get; set; }
+        public DbSet<Breed> Breed { get; set; }
+        public DbSet<Gender> Gender { get; set; }
+        public DbSet<KlientAuth> KlientAuth { get; set; }
     }
 }

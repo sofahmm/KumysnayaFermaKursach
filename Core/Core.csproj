@@ -55,16 +55,25 @@
     <Compile Include="MyDb\Bak.cs">
       <DependentUpon>KumysnayaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="MyDb\Breed.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="MyDb\Employee.cs">
       <DependentUpon>KumysnayaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MyDb\EmployeeHorse.cs">
       <DependentUpon>KumysnayaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="MyDb\Gender.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="MyDb\Horse.cs">
       <DependentUpon>KumysnayaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MyDb\HorseType.cs">
+      <DependentUpon>KumysnayaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MyDb\KlientAuth.cs">
       <DependentUpon>KumysnayaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MyDb\Konsistention.cs">

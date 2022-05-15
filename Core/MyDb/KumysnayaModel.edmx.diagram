@@ -40,6 +40,9 @@
         <AssociationConnector Association="KumysnaFermaKursModel.FK_SborMilk_StatusSbora" />
         <EntityTypeShape EntityType="KumysnaFermaKursModel.Poroda" Width="1.5" PointX="10.375" PointY="0.875" />
         <AssociationConnector Association="KumysnaFermaKursModel.FK_Horse_Poroda" />
+        <EntityTypeShape EntityType="KumysnaFermaKursModel.Breed" Width="1.5" PointX="10.375" PointY="9.75" />
+        <EntityTypeShape EntityType="KumysnaFermaKursModel.Gender" Width="1.5" PointX="12.375" PointY="0.75" />
+        <EntityTypeShape EntityType="KumysnaFermaKursModel.KlientAuth" Width="1.5" PointX="12.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
