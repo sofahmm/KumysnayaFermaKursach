@@ -103,10 +103,6 @@ namespace KumysnayaFermaKursach.Pages
         private void SborkaMilkListBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new SborMilkListPage());
-            var mainWin = Application.Current.Windows
-           .Cast<Window>()
-           .FirstOrDefault(window => window is MainWindow) as MainWindow;
-            mainWin.MainLabel.Content = "Сбор молока";
         }
     }
 }

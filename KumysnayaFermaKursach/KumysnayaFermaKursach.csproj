@@ -114,7 +114,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\SborMolokaPage.xaml">
+    <Page Include="Pages\SborMolokaWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -150,8 +150,8 @@
     <Compile Include="Pages\SborMilkListPage.xaml.cs">
       <DependentUpon>SborMilkListPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\SborMolokaPage.xaml.cs">
-      <DependentUpon>SborMolokaPage.xaml</DependentUpon>
+    <Compile Include="Pages\SborMolokaWindow.xaml.cs">
+      <DependentUpon>SborMolokaWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

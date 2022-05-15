@@ -17,6 +17,9 @@
                        FontWeight="DemiBold"
                        FontFamily="Arial"/>
                 <TextBox x:Name="searchDataTb"
+                         TextChanged="searchDataTb_TextChanged"
+                         HorizontalContentAlignment="Center"
+                         VerticalContentAlignment="Center"
                      Height="35"
                      Width="200"
                      Margin="10"
@@ -41,9 +44,14 @@
                     <ComboBoxItem Content="Доступно для продажи"/>
                     <ComboBoxItem Content="На экспертизу"/>
                 </ComboBox>
-                <Button Content="lhvldfv"
-               Name="jf"
-               Click="jf_Click"/>
+                <Button Content="Добавить ин-ю"
+                        Name="addSborBtn"
+                        Click="addSbor_Click"
+                        Height="30"
+                        Width="150"
+                        Background="#FFFF7A00"
+                        BorderBrush="#FFFF7A00"
+                        Foreground="White"/>  
             </StackPanel>
             
             <DataGrid Height="250"

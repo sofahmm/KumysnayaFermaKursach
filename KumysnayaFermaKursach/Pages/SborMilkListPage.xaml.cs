@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Core.DB;
 using Core.MyDb;
 
 namespace KumysnayaFermaKursach.Pages
@@ -24,11 +25,21 @@ namespace KumysnayaFermaKursach.Pages
         public SborMilkListPage()
         {
             InitializeComponent();
+            var milk = ToGetData.GetSborMilks();
+            HorsesLV.ItemsSource = milk;
+            DataContext = this;
         }
 
-        private void jf_Click(object sender, RoutedEventArgs e)
+        private void addSbor_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new SborMolokaPage());
+            // NavigationService.Navigate(new SborMolokaPage());
+            SborMolokaWindow sborMolokaWindow = new SborMolokaWindow();
+            sborMolokaWindow.Show();
+        }
+
+        private void searchDataTb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            HorsesLV.ItemsSource = DbConnection.fermaEntities.SborMilk.Where(x => x.IdHorse.ToString().Contains(searchDataTb.Text) || x.Date.ToString().Contains(searchDataTb.Text)).ToList();
         }
     }
 }

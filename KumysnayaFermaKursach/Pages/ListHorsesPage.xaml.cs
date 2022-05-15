@@ -30,10 +30,8 @@ namespace KumysnayaFermaKursach.Pages
             var horses = ToGetData.GetHorses();
             HorsesLV.ItemsSource = horses;
             DataContext = this;
-            var mainWin = Application.Current.Windows
-            .Cast<Window>()
-            .FirstOrDefault(window => window is MainWindow) as MainWindow;
-            mainWin.MainLabel.Content = "Список лошадей";
+            var FilterProduct = (IEnumerable<Horse>)DbConnection.fermaEntities.Horse.ToList();
+            HorsesLV.ItemsSource = FilterProduct;
         }
 
         private void SortAge_SelectionChanged(object sender, SelectionChangedEventArgs e)

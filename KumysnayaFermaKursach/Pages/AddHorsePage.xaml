@@ -45,10 +45,19 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal"
                             Margin="10">
-                    <Label Content="Возраст:"
+                    <Label Content="Д/рож.:"
                            FontFamily="Arial"
                            FontSize="24"
+                           Margin="20 0 0 0"
                            FontWeight="Bold"/>
+                    <DatePicker x:Name="DateTb"
+                        Width="150"
+                        Margin="5 15 15 0"
+                        Text="Выберите дату"
+                        HorizontalAlignment="Left"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        SelectedDateFormat="Short"/>
                     <TextBox x:Name="ageTxt"
                              FontFamily="Arial"
                              FontSize="18"

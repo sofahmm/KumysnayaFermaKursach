@@ -23,30 +23,32 @@ namespace KumysnayaFermaKursach.Pages
     /// </summary>
     public partial class AddHorsePage : Page
     {
-        public static Core.MyDb.Horse horse { get; set; }
+        Horse horse;
         public static ObservableCollection<Poroda> poroda { get; set; }
         public AddHorsePage()
         {
             InitializeComponent();
             poroda = new ObservableCollection<Poroda>(DbConnection.fermaEntities.Poroda.ToList());
-            //horseTypes = new ObservableCollection<HorseType>(DbConnection.fermaEntities.HorseType.ToList());
-            //porodaCB.ItemsSource = ToGetData.GetBreeds();
             TypeCB.ItemsSource = ToGetData.GetHorseTypes();
             this.DataContext = this;
         }
 
         private void saveBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            var h = new Horse();   
+            h.Name = nameTxt.Text;
+            h.Birthdate = DateTb.SelectedDate;
+            var poroda = porodaCB.SelectedItem as Poroda;
+            h.IdPoroda = poroda.ID;
+            var type = TypeCB.SelectedItem as HorseType;
+            h.IdType = type.ID;
+            ToGetData.AddHorse(h);
+            NavigationService.GoBack();
         }
 
         private void dopInfoBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new MoreInfoHorsePage());
-            var mainWin = Application.Current.Windows
-            .Cast<Window>()
-            .FirstOrDefault(window => window is MainWindow) as MainWindow;
-            mainWin.MainLabel.Content = "Дополнительная информация";
         }
     }
 }
