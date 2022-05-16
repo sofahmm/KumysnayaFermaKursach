@@ -22,7 +22,7 @@ namespace KumysnayaFermaKursach.Pages
     /// </summary>
     public partial class MoreInfoHorsePage : Page
     {
-        MoreInfoHorse infoHorse;
+        
         public MoreInfoHorsePage()
         {
             InitializeComponent();

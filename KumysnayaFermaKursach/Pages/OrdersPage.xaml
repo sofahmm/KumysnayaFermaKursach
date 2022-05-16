@@ -27,32 +27,45 @@
                 </ComboBox>
             </StackPanel>
             <StackPanel>
-                <DataGrid x:Name="OrdersLV">
+                <DataGrid x:Name="OrdersLV"
+                          ItemsSource="{Binding Order}"
+                          AutoGenerateColumns="False">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="ID:"
                                             FontFamily="Arial"
                                             FontWeight="Bold"
-                                            Width="160"/>
-                        <DataGridTextColumn Header="ФИО заказчика:"
+                                            Width="80"
+                                            Binding="{Binding ID}"/>
+                        <DataGridTextColumn Header="Телефон заказчика:"
                                             FontFamily="Arial"
                                             FontWeight="Bold"
-                                            Width="160"/>
-                        <DataGridTextColumn Header="Товар:"
+                                            Width="150"
+                                            Binding="{Binding PhoneNumber}"/>
+                        <DataGridTextColumn Header="Продукт:"
                                             FontFamily="Arial"
                                             FontWeight="Bold"
-                                            Width="160"/>
+                                            Width="100"
+                                            Binding="{Binding Product.Name}"/>
                         <DataGridTextColumn Header="Дата:"
                                             FontFamily="Arial"
                                             FontWeight="Bold"
-                                            Width="160"/>
+                                            Width="100"
+                                            Binding="{Binding Date}"/>
                         <DataGridTextColumn Header="Сумма:"
                                             FontFamily="Arial"
                                             FontWeight="Bold"
-                                            Width="160"/>
+                                            Width="100"
+                                            Binding="{Binding Sum}"/>
+                        <DataGridTextColumn Header="Оформление:"
+                                            FontFamily="Arial"
+                                            FontWeight="Bold"
+                                            Width="140"
+                                            Binding="{Binding Oformlenie}"/>
                         <DataGridTextColumn Header="Статус:"
                                             FontFamily="Arial"
                                             FontWeight="Bold"
-                                            Width="160"/>
+                                            Width="130"
+                                            Binding="{Binding StatusOrder.Name}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>

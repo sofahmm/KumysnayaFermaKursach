@@ -24,6 +24,7 @@ namespace Core.MyDb
         public Nullable<int> IdStatusOrder { get; set; }
         public Nullable<int> IdUnit { get; set; }
         public string PhoneNumber { get; set; }
+        public Nullable<bool> Oformlenie { get; set; }
     
         public virtual Product Product { get; set; }
         public virtual SposobOplati SposobOplati { get; set; }

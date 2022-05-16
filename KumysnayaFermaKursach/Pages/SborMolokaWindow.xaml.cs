@@ -13,6 +13,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace KumysnayaFermaKursach.Pages
@@ -38,7 +39,19 @@ namespace KumysnayaFermaKursach.Pages
 
         private void saveMilkBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            var sbor = new SborMilk();
+            sbor.Date = dataTb.SelectedDate;
+            var horse = idHorseCb.SelectedItem as Horse;
+            sbor.IdHorse = horse.ID;
+            var bak = idHBakCb.SelectedItem as Bak;
+            sbor.IdBak = bak.ID;
+            var konsistention = idKonsistetionCb.SelectedItem as Konsistention;
+            sbor.IdKonsistention = konsistention.ID;
+            sbor.Color = colorMilkTb.Text;
+            var status = idStatusSborCb.SelectedItem as StatusSbora;
+            sbor.IdStatus = status.ID;
+            ToGetData.AddSborMilk(sbor);
+            MessageBox.Show("Данные успешно записаны");
         }
     }
 }

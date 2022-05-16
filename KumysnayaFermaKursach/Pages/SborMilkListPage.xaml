@@ -56,7 +56,7 @@
             
             <DataGrid Height="250"
                   x:Name="HorsesLV"
-                  ItemsSource="{Binding Horse}"
+                  ItemsSource="{Binding SborMilk}"
                   HorizontalAlignment="Center"
                   AutoGenerateColumns="False">
                 <DataGrid.Columns>
@@ -74,17 +74,17 @@
                                         FontFamily="Arial"
                                         FontWeight="Bold"
                                         Width="160"
-                                        Binding="{Binding Name}"/>
+                                        Binding="{Binding IdHorse}"/>
                     <DataGridTextColumn Header="Дата:"
                                         FontFamily="Arial"
                                         FontWeight="Bold"
                                         Width="160"
-                                        Binding="{Binding Age}"/>
+                                        Binding="{Binding Date, StringFormat='dd.MM.yy'}"/>
                     <DataGridTextColumn Header="Статус:"
                                         FontFamily="Arial"
                                         FontWeight="Bold"
                                         Width="160"
-                                        Binding="{Binding Age}"/>
+                                        Binding="{Binding StatusSbora.Description}"/>
                 </DataGrid.Columns>
             </DataGrid>
             

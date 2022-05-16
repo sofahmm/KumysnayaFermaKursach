@@ -105,6 +105,7 @@
           <Property Name="IdStatusOrder" Type="int" />
           <Property Name="IdUnit" Type="int" />
           <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Oformlenie" Type="bit" />
         </EntityType>
         <EntityType Name="Poroda">
           <Key>
@@ -544,6 +545,7 @@
           <NavigationProperty Name="StatusOrder" Relationship="Self.FK_Order_StatusOrder" FromRole="Order" ToRole="StatusOrder" />
           <NavigationProperty Name="Unit" Relationship="Self.FK_Order_Unit" FromRole="Order" ToRole="Unit" />
           <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Oformlenie" Type="Boolean" />
         </EntityType>
         <EntityType Name="Post">
           <Key>
@@ -1026,6 +1028,7 @@
           <EntitySetMapping Name="Order">
             <EntityTypeMapping TypeName="KumysnaFermaKursModel.Order">
               <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="Oformlenie" ColumnName="Oformlenie" />
                 <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="FullNameCustomer" ColumnName="FullNameCustomer" />

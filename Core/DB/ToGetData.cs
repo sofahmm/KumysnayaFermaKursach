@@ -29,7 +29,7 @@ namespace Core.DB
             var currentUser = users.Where(a => a.IdEmployee.ToString() == Id && a.Password.ToString() == password).ToList();
             return currentUser.Count == 0;
         }
-        public static bool IsUncurrentUser(string phoneNumber)
+        public static bool IsUncurrentKlient(string phoneNumber)
         {
             var klients = DbConnection.fermaEntities.KlientAuth;
             var currenKlient = klients.Where(a => a.PhoneNumber == phoneNumber).ToList();
@@ -54,6 +54,19 @@ namespace Core.DB
             try
             {
                 DbConnection.fermaEntities.MoreInfoHorse.Add(moreInfoHorse);
+                DbConnection.fermaEntities.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public static bool AddSborMilk(SborMilk sborMilk)
+        {
+            try
+            {
+                DbConnection.fermaEntities.SborMilk.Add(sborMilk);
                 DbConnection.fermaEntities.SaveChanges();
                 return true;
             }

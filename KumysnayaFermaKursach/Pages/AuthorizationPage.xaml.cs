@@ -22,11 +22,11 @@ namespace KumysnayaFermaKursach.Pages
     /// </summary>
     public partial class AuthorizationPage : Page
     {
-        
+
         public AuthorizationPage()
         {
             InitializeComponent();
-            
+
         }
 
         private void authBtn_Click(object sender, RoutedEventArgs e)
@@ -37,7 +37,7 @@ namespace KumysnayaFermaKursach.Pages
                 NavigationService.Navigate(new Pages.MenuUserPage());
                 //NavigationService.Navigated += frame_Navigated;
             }
-                
+
             else if (ToGetData.IsUncurrentUser(idTb.Text.ToString(), passwordTb.ToString()))
                 MessageBox.Show("Введите верные данные!");
         }
@@ -50,10 +50,5 @@ namespace KumysnayaFermaKursach.Pages
 
         }
 
-        private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            AuthorizationKlientWindow authorizationKlientWindow = new AuthorizationKlientWindow();
-            authorizationKlientWindow.Show();
-        }
-    }
+    }  
 }
