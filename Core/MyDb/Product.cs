@@ -22,6 +22,7 @@ namespace Core.MyDb
         public int ID { get; set; }
         public string Name { get; set; }
         public Nullable<int> IdProductCategory { get; set; }
+        public Nullable<int> Amount { get; set; }
     
         public virtual ICollection<Order> Order { get; set; }
         public virtual ProductCategory ProductCategory { get; set; }

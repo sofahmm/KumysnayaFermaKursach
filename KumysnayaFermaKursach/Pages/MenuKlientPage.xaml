@@ -9,6 +9,107 @@
       Title="MenuKlientPage">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0"
+                    Orientation="Vertical"
+                    Background="#FFE26D00">
+            <Button x:Name="OurProductsBtn"
+                    Click="OurProductsBtn_Click"
+                    Height="40"
+                    Content="Наша продукция"
+                    FontSize="16"
+                    Margin="5"
+                    Background="#FFFF7A00"
+                    BorderBrush="Black"/>
+            <Button x:Name="MineOrdersBtn"
+                    Click="MineOrdersBtn_Click"
+                    Height="40"
+                    Margin="5"
+                    Content="Мои заказы"
+                    FontSize="16"
+                    Background="#FFFF7A00"
+                    BorderBrush="Black"/>
+            <Button x:Name="CreateOrderBtn"
+                    Click="CreateOrderBtn_Click"
+                    Height="40"
+                    Margin="5"
+                    Content="Сделать заказ"
+                    FontSize="16"
+                    Background="#FFFF7A00"
+                    BorderBrush="Black"/>
+            <Button x:Name="AboutUsBtn"
+                    Click="AboutUsBtn_Click"
+                    Height="40"
+                    Margin="5"
+                    Content="О нас"
+                    FontSize="16"
+                   Background="#FFFF7A00"
+                    BorderBrush="Black"/>
+            <Label Content="kumysnayaFerma97@gmail.com"
+                   Foreground="White"
+                   BorderBrush="Black"/>
+            <Label Content="+7(987)724 94-34"
+                   Foreground="White"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Stretch"
+                    
+                    Margin="10 30 0 0"
+                    Grid.Column="2">
+            <Image Source="/Img/User.png" 
+                   Height="150"
+                   HorizontalAlignment="Right" />
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                <Label Content="ID:"
+                       FontWeight="Bold"/>
+                <Label Content="100000"
+                       Name="IdLbl"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Column="1"
+                    Orientation="Vertical">
+            <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        Margin="0 65 0 0">
+                <StackPanel HorizontalAlignment="Left">
+                    <Label Content="Имя:"
+                       Margin="5 0 0 0"
+                       FontSize="22"
+                       HorizontalContentAlignment="Right"
+                       FontWeight="DemiBold"/>
+                    <Label Content="Номер телефона:"
+                       FontSize="22"
+                       HorizontalContentAlignment="Right"
+                       FontWeight="DemiBold"
+                       Margin="5 5 0 0"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Right"
+                            VerticalAlignment="Center">
+                    <Label Content="{Binding KlientAuth.Name}"
+                           Name="LblName"
+                       FontSize="20"
+                       Margin="5 5 0 0"/>
+                    <Label Content="{Binding KlientAuth.PhoneNumber}"
+                       FontSize="20"
+                       Margin="5 5 0 0"/>
+
+                </StackPanel>
+            </StackPanel>
+            <TextBlock Text="Не забывайте соблюдать правила гигиены!                                  Хорошего Вам дня!"
+                       HorizontalAlignment="Center"
+                       Margin="30"
+                       TextAlignment="Center"
+                       Foreground="#FFFF7A00"
+                       FontWeight="Bold"
+                       TextWrapping="Wrap"
+                       FontSize="20"/>
+        </StackPanel>
     </Grid>
 </Page>

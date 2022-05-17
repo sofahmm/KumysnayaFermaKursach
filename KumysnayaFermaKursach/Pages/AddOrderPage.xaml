@@ -68,6 +68,7 @@
             <TextBox x:Name="FirstNameTb"
                      Height="35"
                      Width="360"
+                     FontSize="22"
                      Margin="10"
                      BorderBrush="White"
                      HorizontalContentAlignment="Center"
@@ -86,25 +87,26 @@
                       Margin="13 0 0 0"
                       HorizontalAlignment="Left"
                       HorizontalContentAlignment="Center"
-                      VerticalContentAlignment="Center">
-                <ComboBoxItem Content="{Binding Order.IdProduct}"/>
+                      VerticalContentAlignment="Center"
+                      ItemsSource="{Binding product}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
             </ComboBox>
             <StackPanel Orientation="Horizontal"
                         Margin="10">
                 <TextBox x:Name="AmountTb"
-                     Height="35"
-                     Width="100"
-                     Margin="5"
-                     HorizontalContentAlignment="Center"
-                     VerticalContentAlignment="Center"/>
-                <ComboBox x:Name="AmountProductCb"
-                      Height="30"
-                      Width="50"
-                      Margin="5"
-                      HorizontalContentAlignment="Center"
-                      VerticalContentAlignment="Center">
-                    <ComboBoxItem Content="{Binding Order.IdUnit}"/>
-                </ComboBox>
+                         FontSize="22"
+                         Height="35"
+                         Width="100"
+                         Margin="5"
+                         TextChanged="AmountTb_TextChanged"
+                         HorizontalContentAlignment="Center"
+                         VerticalContentAlignment="Center"/>
+                    <Label FontSize="18"
+                           Name="llblUnit"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal"
@@ -129,6 +131,7 @@
                        Margin="20 0 0 0"/>
             <TextBox x:Name="PhoneNumber"
                      Height="27"
+                     FontSize="22"
                      Width="280"
                      Margin="10"
                      BorderBrush="White"

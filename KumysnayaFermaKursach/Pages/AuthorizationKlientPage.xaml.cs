@@ -41,8 +41,8 @@ namespace KumysnayaFermaKursach.Pages
         {
             if (ToGetData.IsCorrectKlient(numberPhoneTb.Text))
             {
-                //App.klient = ToGetData.GetKlient(numberPhoneTb.ToString());
-                NavigationService.Navigate(new Pages.ListHorsesPage());
+                App.klient = ToGetData.GetKlient(numberPhoneTb.Text.ToString());
+                NavigationService.Navigate(new Pages.MenuKlientPage());
             }
             else if (ToGetData.IsUncurrentKlient(numberPhoneTb.Text))
                 MessageBox.Show("Введите верные данные!");

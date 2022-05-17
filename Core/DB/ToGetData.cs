@@ -101,6 +101,13 @@ namespace Core.DB
                 return false;
             }
         }
+        //public static User UpdateAmountHours(User amount)
+        //{
+        //    try
+        //    {
+        //        DbConnection.fermaEntities.Employee.Add
+        //    }
+        //}
         public static ObservableCollection<Order> GetOrders()
         {
             ObservableCollection<Order> orders = new ObservableCollection<Order>(DbConnection.fermaEntities.Order);
@@ -168,5 +175,6 @@ namespace Core.DB
             var currentKlient = klients.Where(u => u.PhoneNumber == phoneNumber).FirstOrDefault();
             return currentKlient;
         }
+
     }
 }

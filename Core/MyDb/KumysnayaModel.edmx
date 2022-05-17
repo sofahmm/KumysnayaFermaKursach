@@ -128,6 +128,7 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar(max)" />
           <Property Name="IdProductCategory" Type="int" />
+          <Property Name="Amount" Type="int" />
         </EntityType>
         <EntityType Name="ProductCategory">
           <Key>
@@ -564,6 +565,7 @@
           <Property Name="IdProductCategory" Type="Int32" />
           <NavigationProperty Name="Order" Relationship="Self.FK_Order_Product" FromRole="Product" ToRole="Order" />
           <NavigationProperty Name="ProductCategory" Relationship="Self.FK_Product_ProductCategory" FromRole="Product" ToRole="ProductCategory" />
+          <Property Name="Amount" Type="Int32" />
         </EntityType>
         <EntityType Name="ProductCategory">
           <Key>
@@ -1053,6 +1055,7 @@
           <EntitySetMapping Name="Product">
             <EntityTypeMapping TypeName="KumysnaFermaKursModel.Product">
               <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="IdProductCategory" ColumnName="IdProductCategory" />

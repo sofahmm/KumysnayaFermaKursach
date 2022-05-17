@@ -26,7 +26,7 @@ namespace KumysnayaFermaKursach.Pages
     {
         
         public static Core.MyDb.User user { get; set; }
-        public static ObservableCollection<Core.MyDb.Horse> Horse { get; set; }
+        //public static ObservableCollection<Core.MyDb.Horse> Horse { get; set; }
         public MenuUserPage()
         {
             InitializeComponent();

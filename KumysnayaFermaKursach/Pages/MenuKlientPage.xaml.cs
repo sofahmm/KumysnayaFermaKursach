@@ -24,5 +24,25 @@ namespace KumysnayaFermaKursach.Pages
         {
             InitializeComponent();
         }
+
+        private void OurProductsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new OurProductsPage());
+        }
+
+        private void MineOrdersBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new OrdersPage());
+        }
+
+        private void CreateOrderBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddOrderPage());
+        }
+
+        private void AboutUsBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

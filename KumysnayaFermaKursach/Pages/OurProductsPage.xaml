@@ -12,7 +12,8 @@
         <StackPanel>
             <StackPanel>
                 <StackPanel Orientation="Horizontal"
-                            HorizontalAlignment="Center">
+                            HorizontalAlignment="Center"
+                            Margin="0 10 0 0">
                     <Border BorderBrush="#FFF6C475"
                             Background="#FFF6C475"
                             OpacityMask="#FFF6C475"
@@ -150,15 +151,12 @@
                            TextAlignment="Center"
                             Text="улучшение обмена веществ;
                            
-                            нормализация работы желудочно-кишечного тракта;
                            
                             вывод токсинов из организма;
                            
                             благотворное влияние на нервную систему;
                            
                             улучшение работы печени;
-                           
-                            повышение качества крови;
                            
                             нормализация артериального давления."
                                TextWrapping="Wrap">
