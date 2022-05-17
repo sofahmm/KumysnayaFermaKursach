@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using Core.DB;
 using Core.MyDb;
 
+
 namespace KumysnayaFermaKursach.Pages
 {
     /// <summary>
@@ -35,11 +36,14 @@ namespace KumysnayaFermaKursach.Pages
             // NavigationService.Navigate(new SborMolokaPage());
             SborMolokaWindow sborMolokaWindow = new SborMolokaWindow();
             sborMolokaWindow.Show();
+            
         }
 
         private void searchDataTb_TextChanged(object sender, TextChangedEventArgs e)
         {
-            HorsesLV.ItemsSource = DbConnection.fermaEntities.SborMilk.Where(x => x.IdHorse.ToString().Contains(searchDataTb.Text) || x.Date.ToString().Contains(searchDataTb.Text)).ToList();
+            int a = Convert.ToInt32(searchDataTb.Text);
+            DateTime d = Convert.ToDateTime(searchDataTb.Text);
+            HorsesLV.ItemsSource = DbConnection.fermaEntities.SborMilk.Where(x => x.IdHorse == a || x.Date == d).ToList();
         }
     }
 }

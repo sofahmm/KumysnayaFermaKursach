@@ -48,7 +48,7 @@
                             Content="Войти"
                             Margin="10 20 10 10"
                             Height="30"
-                            Click="authBtn_Click"
+                            Click="authBtn_Click_1"
                             Width="150"
                             BorderBrush="#FFFF7A00"
                             Background="#FFFF7A00"

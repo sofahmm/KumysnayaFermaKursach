@@ -34,12 +34,17 @@ namespace KumysnayaFermaKursach.Pages
 
         private void authBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (ToGetData.IsCorrectKlient(numberPhoneTb.ToString()))
+           
+        }
+
+        private void authBtn_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (ToGetData.IsCorrectKlient(numberPhoneTb.Text))
             {
                 //App.klient = ToGetData.GetKlient(numberPhoneTb.ToString());
                 NavigationService.Navigate(new Pages.ListHorsesPage());
             }
-            else if (ToGetData.IsUncurrentKlient(numberPhoneTb.Text.ToString()))
+            else if (ToGetData.IsUncurrentKlient(numberPhoneTb.Text))
                 MessageBox.Show("Введите верные данные!");
         }
     }
