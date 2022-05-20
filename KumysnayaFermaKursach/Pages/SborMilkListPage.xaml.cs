@@ -42,8 +42,8 @@ namespace KumysnayaFermaKursach.Pages
         private void searchDataTb_TextChanged(object sender, TextChangedEventArgs e)
         {
             int a = Convert.ToInt32(searchDataTb.Text);
-            DateTime d = Convert.ToDateTime(searchDataTb.Text);
-            HorsesLV.ItemsSource = DbConnection.fermaEntities.SborMilk.Where(x => x.IdHorse == a || x.Date == d).ToList();
+            //DateTime d = Convert.ToDateTime(searchDataTb.Text);
+            HorsesLV.ItemsSource = DbConnection.fermaEntities.SborMilk.Where(x => x.IdHorse == a).ToList();
         }
     }
 }

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Core.MyDb;
+using Core.DB;
 
 namespace KumysnayaFermaKursach.Pages
 {
@@ -24,6 +25,14 @@ namespace KumysnayaFermaKursach.Pages
         public MoreInfoHorseListPage()
         {
             InitializeComponent();
+            HorsesLV.ItemsSource = ToGetData.GetMoreInfoHorse();
+            this.DataContext = this;
+
+        }
+
+        private void AddHorseInfoBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new MoreInfoHorsePage());
 
         }
     }

@@ -136,7 +136,7 @@
                            Name="LblPost"
                        FontSize="20"
                        Margin="5 5 0 0"/>
-                    <Label Content="{Binding Employee.AmountHours}"
+                    <Label x:Name="lblHours" Content="{Binding Employee.AmountHours}"
                        FontSize="20"
                        Margin="5 10 0 0"/>
                 </StackPanel>

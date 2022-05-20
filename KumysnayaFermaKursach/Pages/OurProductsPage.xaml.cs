@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Core.MyDb;
+using Core.DB;
 
 namespace KumysnayaFermaKursach.Pages
 {
@@ -28,7 +29,20 @@ namespace KumysnayaFermaKursach.Pages
 
         private void CreateOrderBtn_Click(object sender, RoutedEventArgs e)
         {
+            var category = ToGetData.GetProductCategory("Выпечка");
+            NavigationService.Navigate(new AddOrderPage(category));
+        }
 
+        private void CreateOrderBtn2_Click(object sender, RoutedEventArgs e)
+        {
+            var category = ToGetData.GetProductCategory("Кумыс");
+            NavigationService.Navigate(new AddOrderPage(category));
+        }
+
+        private void CreateOrderBtn3_Click(object sender, RoutedEventArgs e)
+        {
+            var category = ToGetData.GetProductCategory("Курт");
+            NavigationService.Navigate(new AddOrderPage(category));
         }
     }
 }

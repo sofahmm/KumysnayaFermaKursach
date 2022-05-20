@@ -101,17 +101,22 @@ namespace Core.DB
                 return false;
             }
         }
-        //public static User UpdateAmountHours(User amount)
+        //public static Employee UpdateAmountHours(Employee amount)
         //{
         //    try
         //    {
-        //        DbConnection.fermaEntities.Employee.Add
+        //        DbConnection.fermaEntities.Employee.Add;
         //    }
         //}
         public static ObservableCollection<Order> GetOrders()
         {
             ObservableCollection<Order> orders = new ObservableCollection<Order>(DbConnection.fermaEntities.Order);
             return orders;
+        }
+        public static ObservableCollection<Employee> GetEmployees()
+        {
+            ObservableCollection<Employee> employees = new ObservableCollection<Employee>(DbConnection.fermaEntities.Employee);
+            return employees;
         }
         public static ObservableCollection<Horse> GetHorses()
         {
@@ -154,6 +159,11 @@ namespace Core.DB
             ObservableCollection<ProductCategory> productCategories = new ObservableCollection<ProductCategory>(DbConnection.fermaEntities.ProductCategory);
             return productCategories;
         }
+        public static ProductCategory GetProductCategory(string name)
+        {
+            return GetProductCategories().FirstOrDefault(pc => pc.Name == name);
+        }
+
         public static User GetUserId(int idUser)
         {
             ObservableCollection<User> users = new ObservableCollection<User>(DbConnection.fermaEntities.User);
@@ -176,5 +186,18 @@ namespace Core.DB
             return currentKlient;
         }
 
+       public static ObservableCollection<MoreInfoHorse> GetMoreInfoHorse()
+        {
+            ObservableCollection<MoreInfoHorse> moreInfoHorses = new ObservableCollection<MoreInfoHorse>(DbConnection.fermaEntities.MoreInfoHorse);
+            return moreInfoHorses;
+        }
+        public static void RefreshData()
+        {
+            DbConnection.fermaEntities.SaveChanges();
+            NewItemAddedEvent?.Invoke();
+        }
+        public delegate void NewItemAddedDelegate();
+
+        public static event NewItemAddedDelegate NewItemAddedEvent;
     }
 }

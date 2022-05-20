@@ -82,7 +82,9 @@
                                         Binding="{Binding HorseType.Name}"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <Button x:Name="AddHorseBtn"
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center">
+                <Button x:Name="AddHorseBtn"
                     Click="AddHorseBtn_Click"
                     Content="Добавить лошадь"
                     FontWeight="Bold"
@@ -93,6 +95,29 @@
                     Background="#FFFF7A00"
                     BorderBrush="#FFFF7A00"
                     Foreground="Black"/>
+                <Button x:Name="dopInfoBtn"
+                            Click="dopInfoBtn_Click"
+                            Width="255"
+                            HorizontalAlignment="Left"
+                            Margin="10 10 5 0"
+                            Content="Доп. информация"
+                            FontFamily="Arial"
+                            FontSize="12"
+                            FontWeight="Bold"
+                            Height="50"
+                            Background="White" 
+                            BorderBrush="#FFFF7A00"
+                            BorderThickness="2">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="4"
+                                                  Direction="330"
+                                                  Color="Black"
+                                                  Opacity="0.5"
+                                                  BlurRadius="4"/>
+                    </Button.Effect>
+                </Button>
+            </StackPanel>
+            
         </StackPanel>
     </Grid>
 </Page>

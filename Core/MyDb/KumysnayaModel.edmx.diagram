@@ -31,7 +31,7 @@
         <EntityTypeShape EntityType="KumysnaFermaKursModel.Bak" Width="1.5" PointX="6" PointY="25" />
         <EntityTypeShape EntityType="KumysnaFermaKursModel.Konsistention" Width="1.5" PointX="6" PointY="19.25" />
         <EntityTypeShape EntityType="KumysnaFermaKursModel.MoreInfoHorse" Width="1.5" PointX="5.25" PointY="15.875" />
-        <EntityTypeShape EntityType="KumysnaFermaKursModel.SborMilk" Width="1.5" PointX="8.25" PointY="0.75" />
+        <EntityTypeShape EntityType="KumysnaFermaKursModel.SborMilk" Width="1.5" PointX="8.125" PointY="0.5" />
         <EntityTypeShape EntityType="KumysnaFermaKursModel.StatusSbora" Width="1.5" PointX="6" PointY="22.625" />
         <AssociationConnector Association="KumysnaFermaKursModel.FK_SborMilk_Bak" />
         <AssociationConnector Association="KumysnaFermaKursModel.FK_MoreInfoHorse_Horse" />

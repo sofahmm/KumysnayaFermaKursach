@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using Core.DB;
 //using KumysnayaFermaKursach.DB;
 using Core.MyDb;
 
@@ -52,11 +53,19 @@ namespace KumysnayaFermaKursach
         {
             //var em = user.Employee.AmountHours;
             //var amount = employee.AmountHours;
+          
             while (true)
             {
-                Thread.Sleep(10000);
+                Thread.Sleep(60000);
                 if (user != null)
-                    MessageBox.Show("sgddsg");
+                {
+
+                    //MessageBox.Show("sgddsg");
+                    user.Employee.AmountHours += 1;
+                    ToGetData.RefreshData();
+                    
+                    
+                }
                 //em += 1;
             }
         }

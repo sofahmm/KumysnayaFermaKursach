@@ -105,33 +105,11 @@
 
                     </ComboBox>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal">
-                    <Button x:Name="dopInfoBtn"
-                            Click="dopInfoBtn_Click"
-                            Width="150"
-                            HorizontalAlignment="Left"
-                            Margin="0 5 5 0"
-                            Content="Доп. информация"
-                            FontFamily="Arial"
-                            FontSize="12"
-                            FontWeight="Bold"
-                            Height="45"
-                            Background="White" 
-                            BorderBrush="#FFFF7A00"
-                            BorderThickness="2">
-                        <Button.Effect>
-                            <DropShadowEffect ShadowDepth="4"
-                                                  Direction="330"
-                                                  Color="Black"
-                                                  Opacity="0.5"
-                                                  BlurRadius="4"/>
-                        </Button.Effect>
-                    </Button>
-
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center">
                     <Button x:Name="saveBtn"
                         Click="saveBtn_Click"
                         Width="150"
-                        HorizontalAlignment="Right"
                         Margin="5 5 0 0"
                         Content="Сохранить"
                         FontFamily="Arial"
@@ -149,7 +127,6 @@
                         </Button.Effect>
                     </Button>
                 </StackPanel>
-                
             </StackPanel>
             <StackPanel>
                 <Image Source="/Img/addHorse.png"

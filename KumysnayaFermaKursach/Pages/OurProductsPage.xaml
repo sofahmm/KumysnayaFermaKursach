@@ -75,7 +75,7 @@
                                FontSize="24" 
                                FontWeight="Bold"/>
                             <Button x:Name="CreateOrderBtn3"
-                                Click="CreateOrderBtn_Click"
+                                Click="CreateOrderBtn3_Click"
                                 Content="Сделать заказ"
                                 Width="150"
                                 Height="45"
@@ -115,7 +115,7 @@
                                FontSize="24" 
                                FontWeight="Bold"/>
                             <Button x:Name="CreateOrderBtn2"
-                                Click="CreateOrderBtn_Click"
+                                Click="CreateOrderBtn2_Click"
                                 Content="Сделать заказ"
                                 Width="150"
                                 Height="45"

@@ -9,16 +9,32 @@
       Title="Здоровье лошади">
 
     <Grid>
-        <StackPanel>
-            <TextBox x:Name="dataSearchTb"
-                     Height="30"
-                     Width="200"
-                     Margin="5"
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical"
+                        VerticalAlignment="Center">
+                <TextBox x:Name="dataSearchTb"
+                     Height="35"
+                     Width="255"
+                     Margin="15 5 5 5"
                      BorderBrush="#FFFF7A00"
                      BorderThickness="2"/>
-            <DataGrid Height="250"
+                <Button x:Name="AddHorseInfoBtn"
+                    Click="AddHorseInfoBtn_Click"
+                    Content="Добавить информацию"
+                    FontWeight="Bold"
+                    FontSize="18"
+                    Height="45"
+                    Width="255"
+                    Margin="10 10 0 0"
+                    Background="#FFFF7A00"
+                    BorderBrush="#FFFF7A00"
+                    Foreground="Black"/>
+            </StackPanel>
+            
+            <DataGrid Height="300"
                   x:Name="HorsesLV"
-                  ItemsSource="{Binding Horse}"
+                      Margin=" 20 0 0 0"
+                  ItemsSource="{Binding MoreInfoHorse}"
                   HorizontalAlignment="Center"
                   AutoGenerateColumns="False">
                 <DataGrid.Columns>
@@ -36,14 +52,15 @@
                                         FontFamily="Arial"
                                         FontWeight="Bold"
                                         Width="160"
-                                        Binding="{Binding Name}"/>
+                                        Binding="{Binding IdHorse}"/>
                     <DataGridTextColumn Header="Дата:"
                                         FontFamily="Arial"
                                         FontWeight="Bold"
                                         Width="160"
-                                        Binding="{Binding Age}"/>
+                                        Binding="{Binding Date}"/>
                 </DataGrid.Columns>
             </DataGrid>
+           
         </StackPanel>
        
     </Grid>

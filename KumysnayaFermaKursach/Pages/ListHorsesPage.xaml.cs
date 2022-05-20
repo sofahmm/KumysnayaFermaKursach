@@ -30,8 +30,8 @@ namespace KumysnayaFermaKursach.Pages
             var horses = ToGetData.GetHorses();
             HorsesLV.ItemsSource = horses;
             DataContext = this;
-            var FilterProduct = (IEnumerable<Horse>)DbConnection.fermaEntities.Horse.ToList();
-            HorsesLV.ItemsSource = FilterProduct;
+            //var FilterProduct = (IEnumerable<Horse>)DbConnection.fermaEntities.Horse.ToList();
+            //HorsesLV.ItemsSource = FilterProduct;
         }
 
         private void SortAge_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -56,6 +56,11 @@ namespace KumysnayaFermaKursach.Pages
             .Cast<Window>()
             .FirstOrDefault(window => window is MainWindow) as MainWindow;
             mainWin.MainLabel.Content = "Добавить лошадь ";
+        }
+
+        private void dopInfoBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new MoreInfoHorseListPage());
         }
     }
 }

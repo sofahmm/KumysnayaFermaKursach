@@ -35,6 +35,14 @@ namespace KumysnayaFermaKursach.Pages
             //llblUnit.Content = 
             //NameProductCb.ItemsSource = ToGetData.GetProducts();
         }
+        public AddOrderPage(ProductCategory category)
+        {
+            product = new ObservableCollection<Product>(DbConnection.fermaEntities.Product
+                                    .Where(p => p.IdProductCategory == category.ID).ToList());
+            InitializeComponent();
+            this.DataContext = this;
+            var ordd = ToGetData.GetOrders();
+        }
 
         private void chernovikBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -54,6 +62,7 @@ namespace KumysnayaFermaKursach.Pages
             order.IdUnit = unit.ID;
             order.PhoneNumber = PhoneNumber.Text;
             order.Oformlenie = false;
+            ToGetData.AddOrder(order);
         }
 
         private void createOrderBtn_Click(object sender, RoutedEventArgs e)
@@ -74,14 +83,15 @@ namespace KumysnayaFermaKursach.Pages
             order.IdUnit = unit.ID;
             order.PhoneNumber = PhoneNumber.Text;
             order.Oformlenie = true;
-
+            ToGetData.AddOrder(order);
         }
 
         private void AmountTb_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var pr = new Product();
-            var t = Convert.ToInt32(AmountTb.Text) * pr.Amount;
-            SumLbl.Content = t;
+            //var pr = new Product();
+            //var t = Convert.ToInt32(AmountTb.Text) * pr.Amount;
+            var selCb = NameProductCb.SelectedItem as Product;
+                SumLbl.Content =selCb.Amount * int.Parse(AmountTb.Text);
         }
     }
 }

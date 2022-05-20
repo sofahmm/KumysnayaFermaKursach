@@ -46,9 +46,6 @@ namespace KumysnayaFermaKursach.Pages
             NavigationService.GoBack();
         }
 
-        private void dopInfoBtn_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new MoreInfoHorsePage());
-        }
+       
     }
 }

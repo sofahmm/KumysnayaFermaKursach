@@ -25,7 +25,9 @@ namespace KumysnayaFermaKursach.Pages
         
         public MoreInfoHorsePage()
         {
+            Title = "ЫАЫААЫ";
             InitializeComponent();
+            
             this.DataContext = this;
             
              
