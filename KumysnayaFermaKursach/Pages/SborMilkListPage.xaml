@@ -16,6 +16,13 @@
                        FontSize="16"
                        FontWeight="DemiBold"
                        FontFamily="Arial"/>
+                <DatePicker x:Name="dataSearchDP"
+                            SelectedDateChanged="dataSearchDP_SelectedDateChanged"
+                            FontWeight="DemiBold"/>
+                <Label Content="Поиск по ID:"
+                       FontSize="16"
+                       FontWeight="DemiBold"
+                       FontFamily="Arial"/>
                 <TextBox x:Name="searchDataTb"
                          TextChanged="searchDataTb_TextChanged"
                          HorizontalContentAlignment="Center"
@@ -34,16 +41,32 @@
                                                   BlurRadius="4"/>
                     </TextBox.Effect>
                 </TextBox>
-                <Label Content="Сортировка по статусу:"
+                <!--<Label Content="Сортировка по статусу:"
                        FontSize="16"
                        FontWeight="DemiBold"
                        FontFamily="Arial"/>
                 <ComboBox Height="35"
+                          HorizontalContentAlignment="Center"
+                          VerticalContentAlignment="Center"
                      Width="200"
-                     Margin="10">
-                    <ComboBoxItem Content="Доступно для продажи"/>
-                    <ComboBoxItem Content="На экспертизу"/>
-                </ComboBox>
+                     Margin="10"
+                          x:Name="statusCb"
+                          ItemsSource="{Binding StatusSbora}"
+                          SelectionChanged="ComboBox_SelectionChanged">
+                    --><!--<ComboBoxItem Content="Доступно для продажи"/>
+                    <ComboBoxItem Content="На экспертизу"/>--><!--
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Description}"/>        
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                    
+                </ComboBox>-->
+                <Button x:Name="sbrosit"
+                        Click="sbrosit_Click"
+                        Height="20"
+                        Width="150"
+                        Content="test"/>
                 <Button Content="Добавить ин-ю"
                         Name="addSborBtn"
                         Click="addSbor_Click"
@@ -51,7 +74,15 @@
                         Width="150"
                         Background="#FFFF7A00"
                         BorderBrush="#FFFF7A00"
-                        Foreground="White"/>  
+                        Foreground="White"/>
+                <Button Content="Отчет"
+                        Name="OtchetBtn"
+                        Click="OtchetBtn_Click"
+                        Height="30"
+                        Width="150"
+                        Background="#FFFF7A00"
+                        BorderBrush="#FFFF7A00"
+                        Foreground="White"/>
             </StackPanel>
             
             <DataGrid Height="250"

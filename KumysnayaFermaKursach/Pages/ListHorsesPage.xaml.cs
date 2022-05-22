@@ -29,19 +29,19 @@ namespace KumysnayaFermaKursach.Pages
             InitializeComponent();
             var horses = ToGetData.GetHorses();
             HorsesLV.ItemsSource = horses;
+            SortPoroda.ItemsSource = ToGetData.GetBreeds();
             DataContext = this;
-            //var FilterProduct = (IEnumerable<Horse>)DbConnection.fermaEntities.Horse.ToList();
-            //HorsesLV.ItemsSource = FilterProduct;
         }
 
-        private void SortAge_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
 
         private void SortPoroda_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            /* DateTime dat = Convert.ToDateTime(dataSearchDP.SelectedDate);
+            HorsesLV.ItemsSource = DbConnection.fermaEntities.SborMilk.Where(d => d.Date == dat).ToList();
+        }*/
+            var poroda = SortPoroda.SelectedItem;
+            var n = new Poroda();
+            HorsesLV.ItemsSource = DbConnection.fermaEntities.Horse.Where(d => d.Poroda.Name == poroda).ToList();
         }
 
         private void SortType_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -62,5 +62,6 @@ namespace KumysnayaFermaKursach.Pages
         {
             NavigationService.Navigate(new MoreInfoHorseListPage());
         }
+
     }
 }

@@ -35,13 +35,13 @@ namespace KumysnayaFermaKursach.Pages
 
         private void CreateOrderBtn2_Click(object sender, RoutedEventArgs e)
         {
-            var category = ToGetData.GetProductCategory("Кумыс");
+            var category = ToGetData.GetProductCategory("Курт");
             NavigationService.Navigate(new AddOrderPage(category));
         }
 
         private void CreateOrderBtn3_Click(object sender, RoutedEventArgs e)
         {
-            var category = ToGetData.GetProductCategory("Курт");
+            var category = ToGetData.GetProductCategory("Кумыс");
             NavigationService.Navigate(new AddOrderPage(category));
         }
     }

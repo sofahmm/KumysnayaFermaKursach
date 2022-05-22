@@ -13,37 +13,19 @@
             <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Center"
                         Height="75">
-                <ComboBox x:Name="SortAge"
-                          Height="25"
-                          Width="150"
-                          Margin="50 0 50 0"
-                          SelectionChanged="SortAge_SelectionChanged">
-                    <ComboBoxItem Content="Старше 10"/>
-                    <ComboBoxItem Content="Младше 10"/>
-                    <ComboBoxItem Content="от 1 до 4"/>
-
-                   
-                </ComboBox>
                 <ComboBox x:Name="SortPoroda"
                           Height="25"
                           Width="150"
                           Margin="50 0 50 0"
-                          SelectionChanged="SortPoroda_SelectionChanged">
-                    <ComboBoxItem Content="Старше 10"/>
-                    <ComboBoxItem Content="Младше 10"/>
-                    <ComboBoxItem Content="от 1 до 4"/>
+                          SelectionChanged="SortPoroda_SelectionChanged"
+                          ItemsSource="{Binding Poroda}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
                 </ComboBox>
-                <ComboBox x:Name="SortType"
-                          HorizontalAlignment="Right"
-                          Background="#FFFF7A00"
-                          Height="25"
-                          Width="150"
-                          Margin="50 0 50 0"
-                          SelectionChanged="SortType_SelectionChanged" BorderBrush="#FFFF7A00">
-                    <ComboBoxItem Content="Type 1"/>
-                    <ComboBoxItem Content="Type 2"/>
-                    <ComboBoxItem Content="Type 3"/>
-                </ComboBox>
+                
             </StackPanel>
             <DataGrid Height="250"
                       x:Name="HorsesLV"

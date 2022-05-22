@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Core.DB;
+using Core.MyDb;
 
 namespace KumysnayaFermaKursach.Pages
 {
@@ -20,9 +22,14 @@ namespace KumysnayaFermaKursach.Pages
     /// </summary>
     public partial class MenuKlientPage : Page
     {
+        public static KlientAuth klient { get; set; }
         public MenuKlientPage()
         {
             InitializeComponent();
+            LblNameKl.Content = App.klient.Name;
+            LblNumberPhone.Content = App.klient.PhoneNumber;
+            klient = App.klient;           
+            DataContext = klient;
         }
 
         private void OurProductsBtn_Click(object sender, RoutedEventArgs e)

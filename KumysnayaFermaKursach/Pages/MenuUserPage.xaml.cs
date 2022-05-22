@@ -32,7 +32,7 @@ namespace KumysnayaFermaKursach.Pages
             InitializeComponent();
             IdLbl.Content = App.user.IdEmployee;
             user = App.user;
-            LblPost.Content = App.user.Employee.Post;
+            LblPost.Content = App.user.Employee.Post.Name;
 
             // var mainWin = Application.Current.Windows
             //.Cast<Window>()

@@ -57,9 +57,9 @@ namespace KumysnayaFermaKursach.Pages
                 order.IdSposobOplat = 1;
             else if (nalichCb.IsChecked == true)
                 order.IdSposobOplat = 2;
-            order.IdStatusOrder = 1;
+            order.IdStatusOrder = 5;
             var unit = llblUnit.Content as Unit;
-            order.IdUnit = unit.ID;
+            order.IdUnit = 2;
             order.PhoneNumber = PhoneNumber.Text;
             order.Oformlenie = false;
             ToGetData.AddOrder(order);
@@ -78,9 +78,9 @@ namespace KumysnayaFermaKursach.Pages
                 order.IdSposobOplat = 1;
             else if (nalichCb.IsChecked == true)
                 order.IdSposobOplat = 2;
-            order.IdStatusOrder = 5;
+            order.IdStatusOrder = 1;
             var unit = llblUnit.Content as Unit;
-            order.IdUnit = unit.ID;
+            order.IdUnit = 2;
             order.PhoneNumber = PhoneNumber.Text;
             order.Oformlenie = true;
             ToGetData.AddOrder(order);

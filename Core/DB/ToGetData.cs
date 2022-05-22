@@ -153,7 +153,11 @@ namespace Core.DB
             ObservableCollection<SborMilk> sborMilks = new ObservableCollection<SborMilk>(DbConnection.fermaEntities.SborMilk);
             return sborMilks;
         }
-
+        public static ObservableCollection<StatusSbora> GetStatusSbora()
+        {
+            ObservableCollection<StatusSbora> statusSbora = new ObservableCollection<StatusSbora>(DbConnection.fermaEntities.StatusSbora);
+            return statusSbora;
+        }
         public static ObservableCollection<ProductCategory> GetProductCategories()
         {
             ObservableCollection<ProductCategory> productCategories = new ObservableCollection<ProductCategory>(DbConnection.fermaEntities.ProductCategory);
@@ -170,7 +174,8 @@ namespace Core.DB
             var currentUser = users.Where(u => u.ID == idUser).FirstOrDefault();
             return currentUser;
         }
-
+        
+        //public static User GetPostId()
 
         public static User GetUser(string idEmployee, string password)
         {

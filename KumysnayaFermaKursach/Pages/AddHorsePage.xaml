@@ -58,13 +58,6 @@
                         HorizontalContentAlignment="Center"
                         VerticalContentAlignment="Center"
                         SelectedDateFormat="Short"/>
-                    <TextBox x:Name="ageTxt"
-                             FontFamily="Arial"
-                             FontSize="18"
-                             VerticalContentAlignment="Center"
-                             HorizontalContentAlignment="Center"
-                             Margin="2 0 0 3"
-                             Width="210"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal"
                             Margin="10">

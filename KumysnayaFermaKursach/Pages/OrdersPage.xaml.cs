@@ -27,6 +27,8 @@ namespace KumysnayaFermaKursach
             InitializeComponent();
             var order = ToGetData.GetOrders();
             OrdersLV.ItemsSource = order;
+            statusOrderCb.ItemsSource = ToGetData.GetStatusOrders();
+            sortProductCb.ItemsSource = ToGetData.GetProducts();
             DataContext = this;
         }
     }

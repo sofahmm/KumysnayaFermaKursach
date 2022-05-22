@@ -82,10 +82,12 @@
                     <Label Content="Имя:"
                        Margin="5 0 0 0"
                        FontSize="22"
+                           
                        HorizontalContentAlignment="Right"
                        FontWeight="DemiBold"/>
                     <Label Content="Номер телефона:"
                        FontSize="22"
+                           
                        HorizontalContentAlignment="Right"
                        FontWeight="DemiBold"
                        Margin="5 5 0 0"/>
@@ -93,11 +95,12 @@
                 <StackPanel HorizontalAlignment="Right"
                             VerticalAlignment="Center">
                     <Label Content="{Binding KlientAuth.Name}"
-                           Name="LblName"
+                           Name="LblNameKl"
                        FontSize="20"
                        Margin="5 5 0 0"/>
                     <Label Content="{Binding KlientAuth.PhoneNumber}"
                        FontSize="20"
+                           Name="LblNumberPhone"
                        Margin="5 5 0 0"/>
 
                 </StackPanel>
