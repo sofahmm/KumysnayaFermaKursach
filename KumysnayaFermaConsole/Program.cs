@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,10 +35,27 @@ namespace KumysnayaFermaConsole
             {
                 switch (idPostCurrentUser)
                 {
-                    case "1":
+                    case 1:
+                        //ObservableCollection<Horse> horses = new ObservableCollection<Horse>(DbConnection.fermaEntities.Horse).ToList();
                         Console.WriteLine("1. Список лошадей");
-                        var listHorses = ToGetData.GetHorses();
+                        int act = Convert.ToInt32(Console.ReadLine());
+                        if(act == 1)
+                        {
+                            var listHorses = ToGetData.GetHorses();
+                            for (int i = 0; listHorses.Count > i; i++)
+                            {
 
+                            }
+                            Console.WriteLine(listHorses);
+                        }
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    default:
+                        Console.WriteLine("Bye!");
+                        break;
                 }
             }
 
