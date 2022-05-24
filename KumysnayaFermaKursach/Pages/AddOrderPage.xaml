@@ -112,8 +112,8 @@
             <StackPanel Orientation="Horizontal"
                         Margin="20 15 15 15">
                 <CheckBox Content="Наличные"
-                          IsChecked="True"
-                          Name="nalichCb"/>
+                          Name="nalichCb"
+                          IsChecked="True"/>
                 <CheckBox Content="Банковская карта"
                           Name="bankKardCb"
                           Margin="15 0 0 0"/>

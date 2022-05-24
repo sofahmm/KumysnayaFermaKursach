@@ -17,6 +17,7 @@
                           Width="150"
                           Margin="50 0 50 0"
                           x:Name="sortProductCb"
+                          SelectionChanged="sortProductCb_SelectionChanged"
                           ItemsSource="{Binding Product}">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
@@ -28,6 +29,7 @@
                           Width="150"
                           Margin="50 0 50 0"
                           x:Name="statusOrderCb"
+                          SelectionChanged="statusOrderCb_SelectionChanged"
                           ItemsSource="{Binding StatusOrder}">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>

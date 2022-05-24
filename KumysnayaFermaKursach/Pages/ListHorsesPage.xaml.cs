@@ -24,6 +24,7 @@ namespace KumysnayaFermaKursach.Pages
     /// </summary>
     public partial class ListHorsesPage : Page
     {
+        public static Horse horse { get; set; }
         public ListHorsesPage()
         {
             InitializeComponent();
@@ -33,29 +34,15 @@ namespace KumysnayaFermaKursach.Pages
             DataContext = this;
         }
 
-
         private void SortPoroda_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            /* DateTime dat = Convert.ToDateTime(dataSearchDP.SelectedDate);
-            HorsesLV.ItemsSource = DbConnection.fermaEntities.SborMilk.Where(d => d.Date == dat).ToList();
-        }*/
-            var poroda = SortPoroda.SelectedItem;
-            var n = new Poroda();
-            HorsesLV.ItemsSource = DbConnection.fermaEntities.Horse.Where(d => d.Poroda.Name == poroda).ToList();
-        }
-
-        private void SortType_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
+            var poroda = SortPoroda.SelectedItem as Poroda;
+            HorsesLV.ItemsSource = SortData.SortHorseBreed(poroda);
         }
 
         private void AddHorseBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AddHorsePage());
-            var mainWin = Application.Current.Windows
-            .Cast<Window>()
-            .FirstOrDefault(window => window is MainWindow) as MainWindow;
-            mainWin.MainLabel.Content = "Добавить лошадь ";
         }
 
         private void dopInfoBtn_Click(object sender, RoutedEventArgs e)
@@ -63,5 +50,9 @@ namespace KumysnayaFermaKursach.Pages
             NavigationService.Navigate(new MoreInfoHorseListPage());
         }
 
+        private void sbrosBtn_Click(object sender, RoutedEventArgs e)
+        {
+            HorsesLV.ItemsSource = ToGetData.GetHorses();
+        }
     }
 }

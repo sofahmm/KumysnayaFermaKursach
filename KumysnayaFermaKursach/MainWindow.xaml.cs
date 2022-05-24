@@ -58,6 +58,11 @@ namespace KumysnayaFermaKursach
 
         }
 
-       
+        private void ExitBtn_Click(object sender, RoutedEventArgs e)
+        {
+            App.klient = null;
+            App.user = null;
+            navFr.Navigate(new Pages.AuthorizationPage());
+        }
     }
 }

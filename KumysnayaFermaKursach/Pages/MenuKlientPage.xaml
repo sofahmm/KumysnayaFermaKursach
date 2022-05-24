@@ -17,7 +17,8 @@
 
         <StackPanel Grid.Column="0"
                     Orientation="Vertical"
-                    Background="#FFE26D00">
+                    Background="#FFE26D00"
+                    Height="450">
             <Button x:Name="OurProductsBtn"
                     Click="OurProductsBtn_Click"
                     Height="40"

@@ -17,7 +17,8 @@
 
         <StackPanel Grid.Column="0"
                     Orientation="Vertical"
-                    Background="#FFE26D00">
+                    Background="#FFE26D00"
+                    Height="450">
             <Button x:Name="HorsesListBtn"
                     Click="HorsesList_Click"
                     Height="40"
@@ -76,7 +77,8 @@
                     BorderBrush="Black"/>
             <Label Content="kumysnayaFerma97@gmail.com"
                    Foreground="White"
-                   BorderBrush="Black"/>
+                   BorderBrush="Black"
+                   Margin="0 35 0 0"/>
             <Label Content="+7(987)724 94-34"
                    Foreground="White"/>
         </StackPanel>

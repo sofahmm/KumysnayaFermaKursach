@@ -25,9 +25,8 @@ namespace KumysnayaFermaKursach.Pages
         
         public MoreInfoHorsePage()
         {
-            Title = "ЫАЫААЫ";
             InitializeComponent();
-            
+            idHorseCb.ItemsSource = ToGetData.GetHorses();
             this.DataContext = this;
             
              
@@ -40,13 +39,14 @@ namespace KumysnayaFermaKursach.Pages
             t = Convert.ToInt32(indexBodyTb.Text) / 100;
 
             var info = new MoreInfoHorse();
-            info.IdHorse = Convert.ToInt32(idTb.Text);
+            var hor = idHorseCb.SelectedItem as Horse;
+            info.IdHorse = hor.ID;
             info.Date = DateTb.SelectedDate;
             info.Puls = Convert.ToInt32(pulsTb.Text);
             info.TemperatureBody = Convert.ToInt32(temperatureTb.Text);
             info.IndexBody = Convert.ToInt32(indexBodyTb.Text);
             info.Weight = Convert.ToInt32(weightTb.Text);
-            ToGetData.AddMoreInfoHorse(info);
+            AddData.AddMoreInfoHorse(info);
             if (Convert.ToInt32(weightTb.Text) / (t*t) > 20)
                 MessageBox.Show("Присутствует избыточный вес!");
         }

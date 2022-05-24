@@ -25,7 +25,15 @@
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
-                
+                <Button x:Name="sbrosBtn"
+                        Click="sbrosBtn_Click"
+                        Content="Сбросить фильтр"
+                        FontWeight="DemiBold"
+                        Height="30"
+                        Width="150"
+                        Background= "DarkGray"
+                        BorderBrush="#FFFF7A00"
+                        BorderThickness="3"/>
             </StackPanel>
             <DataGrid Height="250"
                       x:Name="HorsesLV"
@@ -47,11 +55,11 @@
                                         FontWeight="Bold"
                                         Width="160"
                                         Binding="{Binding Name}"/>
-                    <DataGridTextColumn Header="Возраст:"
+                    <DataGridTextColumn Header="Дата рождения:"
                                         FontFamily="Arial"
                                         FontWeight="Bold"
                                         Width="160"
-                                        Binding="{Binding Birthdate}"/>
+                                        Binding="{Binding Birthdate, StringFormat='dd.MM.yy'}"/>
                     <DataGridTextColumn Header="Порода:"
                                         FontFamily="Arial"
                                         FontWeight="Bold"

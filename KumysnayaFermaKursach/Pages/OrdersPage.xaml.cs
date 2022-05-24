@@ -26,10 +26,28 @@ namespace KumysnayaFermaKursach
         {
             InitializeComponent();
             var order = ToGetData.GetOrders();
-            OrdersLV.ItemsSource = order;
+          
+            if (App.klient != null)        
+                OrdersLV.ItemsSource = order.Where(x => x.PhoneNumber == App.klient.PhoneNumber).ToList();
+            else
+                OrdersLV.ItemsSource = order;
+
+           
             statusOrderCb.ItemsSource = ToGetData.GetStatusOrders();
             sortProductCb.ItemsSource = ToGetData.GetProducts();
             DataContext = this;
+        }
+
+        private void sortProductCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var product = sortProductCb.SelectedItem as Product;
+            OrdersLV.ItemsSource = SortData.SortOrdeProductName(product);
+        }
+
+        private void statusOrderCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var status = statusOrderCb.SelectedItem as StatusOrder;
+            OrdersLV.ItemsSource = SortData.SortStatusOrder(status);
         }
     }
 }

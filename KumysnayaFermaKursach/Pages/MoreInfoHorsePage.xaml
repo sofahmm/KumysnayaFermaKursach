@@ -24,13 +24,18 @@
                             FontFamily="Arial"
                             FontWeight="Bold"
                             FontSize="24"/>
-                    <TextBox x:Name="idTb"
-                             FontFamily="Arial"
-                             FontSize="18"
-                             VerticalContentAlignment="Center"
-                             HorizontalContentAlignment="Center"
-                             Margin="8 0 0 3"
-                             Width="210"/>
+                    <ComboBox Width="205"
+                              ItemsSource="{Binding Horse}"
+                              x:Name="idHorseCb"
+                              HorizontalContentAlignment="Center"
+                              VerticalContentAlignment="Center">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ID}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    
                 </StackPanel>
                 <StackPanel Orientation="Horizontal"
                             HorizontalAlignment="Right"

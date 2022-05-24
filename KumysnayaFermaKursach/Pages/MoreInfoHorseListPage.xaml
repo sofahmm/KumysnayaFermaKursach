@@ -12,12 +12,27 @@
         <StackPanel Orientation="Horizontal">
             <StackPanel Orientation="Vertical"
                         VerticalAlignment="Center">
-                <TextBox x:Name="dataSearchTb"
-                     Height="35"
-                     Width="255"
-                     Margin="15 5 5 5"
-                     BorderBrush="#FFFF7A00"
-                     BorderThickness="2"/>
+                <ComboBox x:Name="sortIDHorseCb"
+                          Height="35"
+                          Width="230"
+                          Margin="0 0 0 10"
+                          SelectionChanged="sortIDHorseCb_SelectionChanged"
+                          ItemsSource="{Binding Horse}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding ID}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <Button x:Name="sbrosBtn"
+                        Click="sbrosBtn_Click"
+                        Content="Сбросить фильтр"
+                        FontWeight="DemiBold"
+                        Height="30"
+                        Width="210"
+                        Background= "DarkGray"
+                        BorderBrush="#FFFF7A00"
+                        BorderThickness="3"/>
                 <Button x:Name="AddHorseInfoBtn"
                     Click="AddHorseInfoBtn_Click"
                     Content="Добавить информацию"
@@ -57,7 +72,7 @@
                                         FontFamily="Arial"
                                         FontWeight="Bold"
                                         Width="160"
-                                        Binding="{Binding Date}"/>
+                                        Binding="{Binding Date, StringFormat='dd.MM.yy'}"/>
                 </DataGrid.Columns>
             </DataGrid>
            

@@ -26,6 +26,8 @@ namespace KumysnayaFermaKursach.Pages
         {
             InitializeComponent();
             HorsesLV.ItemsSource = ToGetData.GetMoreInfoHorse();
+            sortIDHorseCb.ItemsSource = ToGetData.GetHorses();
+
             this.DataContext = this;
 
         }
@@ -34,6 +36,20 @@ namespace KumysnayaFermaKursach.Pages
         {
             NavigationService.Navigate(new MoreInfoHorsePage());
 
+        }
+
+        private void sortIDHorseCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            /* var poroda = SortPoroda.SelectedItem as Poroda;
+            var n = new Poroda();
+            HorsesLV.ItemsSource = DbConnection.fermaEntities.Horse.Where(d => d.Poroda.Name == poroda.Name).ToList();*/
+            var idHorse = sortIDHorseCb.SelectedItem as Horse;
+            HorsesLV.ItemsSource = SortData.SortDopInfoIdHorse(idHorse);
+        }
+
+        private void sbrosBtn_Click(object sender, RoutedEventArgs e)
+        {
+            HorsesLV.ItemsSource = ToGetData.GetMoreInfoHorse();
         }
     }
 }

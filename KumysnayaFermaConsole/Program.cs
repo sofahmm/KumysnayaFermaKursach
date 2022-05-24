@@ -19,20 +19,18 @@ namespace KumysnayaFermaConsole
             Console.WriteLine("Введите свой пароль:");
             string password = Console.ReadLine();
 
-            if (ToGetData.IsCorrectUser(id, password))
+            if (Authorization.IsCorrectUser(id, password))
             {
                 user = ToGetData.GetUser(id, password);
                 Console.WriteLine("Привет, " + user.Employee.FirstName + user.Employee.Name + "(id:" +user.IdEmployee + ")");
             }
 
-            else if (ToGetData.IsUncurrentUser(id, password))
+            else if (Authorization.IsUncurrentUser(id, password))
                 Console.WriteLine("Упс! Введите верные данные");
 
 
             Console.WriteLine("Вот твоё меню:");
             var idPostCurrentUser = user.Employee.IdPost;
-            while (true)
-            {
                 switch (idPostCurrentUser)
                 {
                     case 1:
@@ -57,8 +55,6 @@ namespace KumysnayaFermaConsole
                         Console.WriteLine("Bye!");
                         break;
                 }
-            }
-
             Console.ReadKey();
         }
     }

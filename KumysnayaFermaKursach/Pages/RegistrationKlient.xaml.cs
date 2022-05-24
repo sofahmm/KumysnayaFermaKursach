@@ -31,7 +31,7 @@ namespace KumysnayaFermaKursach.Pages
             var klient = new KlientAuth();
             klient.Name = nameTb.Text;
             klient.PhoneNumber = numberPhoneTb.Text;
-            ToGetData.AddKlient(klient);
+            AddData.AddKlient(klient);
             
         }
     }

@@ -42,7 +42,7 @@ namespace KumysnayaFermaKursach.Pages
             h.IdPoroda = poroda.ID;
             var type = TypeCB.SelectedItem as HorseType;
             h.IdType = type.ID;
-            ToGetData.AddHorse(h);
+            AddData.AddHorse(h);
             NavigationService.GoBack();
         }
 

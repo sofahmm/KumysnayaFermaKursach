@@ -31,14 +31,14 @@ namespace KumysnayaFermaKursach.Pages
 
         private void authBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (ToGetData.IsCorrectUser(idTb.Text.ToString(), passwordTb.Text.ToString()))
+            if (Authorization.IsCorrectUser(idTb.Text.ToString(), passwordTb.Text.ToString()))
             {
                 App.user = ToGetData.GetUser(idTb.Text.ToString(), passwordTb.Text.ToString());
                 NavigationService.Navigate(new Pages.MenuUserPage());
                 //NavigationService.Navigated += frame_Navigated;
             }
 
-            else if (ToGetData.IsUncurrentUser(idTb.Text.ToString(), passwordTb.ToString()))
+            else if (Authorization.IsUncurrentUser(idTb.Text.ToString(), passwordTb.ToString()))
                 MessageBox.Show("Введите верные данные!");
         }
         //void frame_Navigated(object sender, NavigationEventArgs e)

@@ -50,7 +50,7 @@ namespace KumysnayaFermaKursach.Pages
             sbor.Color = colorMilkTb.Text;
             var status = idStatusSborCb.SelectedItem as StatusSbora;
             sbor.IdStatus = status.ID;
-            ToGetData.AddSborMilk(sbor);
+            AddData.AddSborMilk(sbor);
             MessageBox.Show("Данные успешно записаны");
         }
     }

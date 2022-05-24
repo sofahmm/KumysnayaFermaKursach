@@ -50,8 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DB\AddData.cs" />
+    <Compile Include="DB\Authorization.cs" />
     <Compile Include="DB\DbConnection.cs" />
     <Compile Include="DB\SearchData.cs" />
+    <Compile Include="DB\SortData.cs" />
     <Compile Include="DB\ToGetData.cs" />
     <Compile Include="MyDb\Bak.cs">
       <DependentUpon>KumysnayaModel.tt</DependentUpon>

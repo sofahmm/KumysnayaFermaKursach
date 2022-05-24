@@ -62,7 +62,7 @@ namespace KumysnayaFermaKursach.Pages
             order.IdUnit = 2;
             order.PhoneNumber = PhoneNumber.Text;
             order.Oformlenie = false;
-            ToGetData.AddOrder(order);
+            AddData.AddOrder(order);
         }
 
         private void createOrderBtn_Click(object sender, RoutedEventArgs e)
@@ -83,7 +83,7 @@ namespace KumysnayaFermaKursach.Pages
             order.IdUnit = 2;
             order.PhoneNumber = PhoneNumber.Text;
             order.Oformlenie = true;
-            ToGetData.AddOrder(order);
+            AddData.AddOrder(order);
         }
 
         private void AmountTb_TextChanged(object sender, TextChangedEventArgs e)
@@ -91,7 +91,7 @@ namespace KumysnayaFermaKursach.Pages
             //var pr = new Product();
             //var t = Convert.ToInt32(AmountTb.Text) * pr.Amount;
             var selCb = NameProductCb.SelectedItem as Product;
-                SumLbl.Content =selCb.Amount * int.Parse(AmountTb.Text);
+            SumLbl.Content = selCb.Amount * int.Parse(AmountTb.Text);
         }
     }
 }

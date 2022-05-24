@@ -39,12 +39,12 @@ namespace KumysnayaFermaKursach.Pages
 
         private void authBtn_Click_1(object sender, RoutedEventArgs e)
         {
-            if (ToGetData.IsCorrectKlient(numberPhoneTb.Text))
+            if (Authorization.IsCorrectKlient(numberPhoneTb.Text))
             {
                 App.klient = ToGetData.GetKlient(numberPhoneTb.Text.ToString());
                 NavigationService.Navigate(new Pages.MenuKlientPage());
             }
-            else if (ToGetData.IsUncurrentKlient(numberPhoneTb.Text))
+            else if (Authorization.IsUncurrentKlient(numberPhoneTb.Text))
                 MessageBox.Show("Введите верные данные!");
         }
     }

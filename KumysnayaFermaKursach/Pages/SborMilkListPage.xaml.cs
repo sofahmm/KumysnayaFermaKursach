@@ -38,23 +38,20 @@ namespace KumysnayaFermaKursach.Pages
 
         private void addSbor_Click(object sender, RoutedEventArgs e)
         {
-            // NavigationService.Navigate(new SborMolokaPage());
             SborMolokaWindow sborMolokaWindow = new SborMolokaWindow();
             sborMolokaWindow.Show();
-            
         }
 
         private void searchDataTb_TextChanged(object sender, TextChangedEventArgs e)
         {
             int a = Convert.ToInt32(searchDataTb.Text);
-            //DateTime d = Convert.ToDateTime(searchDataTb.Text);
-            HorsesLV.ItemsSource = DbConnection.fermaEntities.SborMilk.Where(x => x.IdHorse == a).ToList();
+            HorsesLV.ItemsSource = SearchData.SearchSborMilksIdH(a);
         }
 
         private void dataSearchDP_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             DateTime dat = Convert.ToDateTime(dataSearchDP.SelectedDate);
-            HorsesLV.ItemsSource = DbConnection.fermaEntities.SborMilk.Where(d => d.Date == dat).ToList();
+            HorsesLV.ItemsSource = SearchData.SearchSborMilksDate(dat);
         }
 
         private void sbrosit_Click(object sender, RoutedEventArgs e)
