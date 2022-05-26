@@ -21,7 +21,6 @@ namespace KumysnayaFermaKursach
     {
         public static User user { get; set; }
         public static KlientAuth klient { get; set; }
-        public static Employee employee { get; set; }
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
@@ -51,28 +50,15 @@ namespace KumysnayaFermaKursach
 
         public async void SetTimer()
         {
-            //var em = user.Employee.AmountHours;
-            //var amount = employee.AmountHours;
-          
             while (true)
             {
                 Thread.Sleep(60000);
                 if (user != null)
                 {
-
-                    //MessageBox.Show("sgddsg");
                     user.Employee.AmountHours += 1;
-                    ToGetData.RefreshData();
-                    
-                    
+                    ToGetData.RefreshData();  
                 }
-                //em += 1;
             }
-        }
-        protected override void OnExit(ExitEventArgs e)
-        {
-            base.OnExit(e);
-
         }
     }
 }

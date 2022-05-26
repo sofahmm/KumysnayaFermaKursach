@@ -51,7 +51,8 @@
                       Margin=" 20 0 0 0"
                   ItemsSource="{Binding MoreInfoHorse}"
                   HorizontalAlignment="Center"
-                  AutoGenerateColumns="False">
+                  AutoGenerateColumns="False"
+                      >
                 <DataGrid.Columns>
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>

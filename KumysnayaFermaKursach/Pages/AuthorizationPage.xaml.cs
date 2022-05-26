@@ -38,7 +38,7 @@ namespace KumysnayaFermaKursach.Pages
                 //NavigationService.Navigated += frame_Navigated;
             }
 
-            else if (Authorization.IsUncurrentUser(idTb.Text.ToString(), passwordTb.ToString()))
+            else if (Authorization.IsUncurrentUser(Convert.ToInt32(idTb.Text), Convert.ToInt32(passwordTb.Text)))
                 MessageBox.Show("Введите верные данные!");
         }
         //void frame_Navigated(object sender, NavigationEventArgs e)

@@ -37,10 +37,7 @@
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
-                <ComboBox Height="25"
-                          Width="150"
-                          Margin="50 0 50 0">
-                </ComboBox>
+                <Button/>
             </StackPanel>
             <StackPanel>
                 <DataGrid x:Name="OrdersLV"

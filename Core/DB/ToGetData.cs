@@ -16,14 +16,14 @@ namespace Core.DB
             ObservableCollection<Order> orders = new ObservableCollection<Order>(DbConnection.fermaEntities.Order);
             return orders;
         }
-        public static ObservableCollection<Employee> GetEmployees()
-        {
-            ObservableCollection<Employee> employees = new ObservableCollection<Employee>(DbConnection.fermaEntities.Employee);
-            return employees;
-        }
         public static ObservableCollection<Horse> GetHorses()
         {
             ObservableCollection<Horse> horses = new ObservableCollection<Horse>(DbConnection.fermaEntities.Horse);
+            return horses;
+        }
+        public static ObservableCollection<Horse> GetHorses1()
+        {
+            ObservableCollection<Horse> horses = new ObservableCollection<Horse>(DbConnection.fermaEntities.Horse.ToList());
             return horses;
         }
         public static ObservableCollection<HorseType> GetHorseTypes()
@@ -31,14 +31,20 @@ namespace Core.DB
             ObservableCollection<HorseType> horseTypes = new ObservableCollection<HorseType>(DbConnection.fermaEntities.HorseType);
             return horseTypes;
         }
-        public static ObservableCollection<Unit> GetUnits()
-        {
-            ObservableCollection<Unit> units = new ObservableCollection<Unit>(DbConnection.fermaEntities.Unit);
-            return units;
-        }
         public static ObservableCollection<Poroda> GetBreeds()
         {
             ObservableCollection<Poroda> poroda = new ObservableCollection<Poroda>(DbConnection.fermaEntities.Poroda);
+            return poroda;
+        }
+
+        public static Poroda GetPoroda(int id)
+        {
+            Poroda selected = DbConnection.fermaEntities.Poroda.Where(porodaId => porodaId.ID == id).FirstOrDefault();
+            Poroda poroda = new Poroda()
+            {
+                ID = selected.ID,
+                Name = selected.Name
+            };
             return poroda;
         }
         public static ObservableCollection<StatusOrder> GetStatusOrders()
@@ -56,11 +62,6 @@ namespace Core.DB
             ObservableCollection<SborMilk> sborMilks = new ObservableCollection<SborMilk>(DbConnection.fermaEntities.SborMilk);
             return sborMilks;
         }
-        public static ObservableCollection<StatusSbora> GetStatusSbora()
-        {
-            ObservableCollection<StatusSbora> statusSbora = new ObservableCollection<StatusSbora>(DbConnection.fermaEntities.StatusSbora);
-            return statusSbora;
-        }
         public static ObservableCollection<ProductCategory> GetProductCategories()
         {
             ObservableCollection<ProductCategory> productCategories = new ObservableCollection<ProductCategory>(DbConnection.fermaEntities.ProductCategory);
@@ -71,14 +72,6 @@ namespace Core.DB
             return GetProductCategories().FirstOrDefault(pc => pc.Name == name);
         }
 
-        public static User GetUserId(int idUser)
-        {
-            ObservableCollection<User> users = new ObservableCollection<User>(DbConnection.fermaEntities.User);
-            var currentUser = users.Where(u => u.ID == idUser).FirstOrDefault();
-            return currentUser;
-        }
-        
-        //public static User GetPostId()
 
         public static User GetUser(string idEmployee, string password)
         {

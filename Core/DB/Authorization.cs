@@ -21,10 +21,10 @@ namespace Core.DB
             return currentKlient.Count == 1;
         }
 
-        public static bool IsUncurrentUser(string Id, string password)
+        public static bool IsUncurrentUser(int Id, int password)
         {
             var users = DbConnection.fermaEntities.User;
-            var currentUser = users.Where(a => a.IdEmployee.ToString() == Id && a.Password.ToString() == password).ToList();
+            var currentUser = users.Where(a => a.IdEmployee == Id && a.Password == password).ToList();
             return currentUser.Count == 0;
         }
         public static bool IsUncurrentKlient(string phoneNumber)

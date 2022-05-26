@@ -73,7 +73,7 @@ namespace KumysnayaFermaKursach.Pages
             for(int i= 0; i < allSborMoloka.Count(); i++)
             {
                 Excel.Worksheet worksheet = application.Worksheets.Item[i + 1];
-                worksheet.Name = allSborMoloka[i].Date.ToString();
+                worksheet.Name = allSborMoloka[i].Horse.Name;
 
                 worksheet.Cells[1][startRowIndex] = "Дата";
                 worksheet.Cells[2][startRowIndex] = "Лошадь";
@@ -84,9 +84,16 @@ namespace KumysnayaFermaKursach.Pages
 
                 startRowIndex++;
 
-               // var SborCategories = allSborMoloka[i].StatusSbora.SborMilk.OrderBy(p => p.StatusSbora).GroupBy(p => p.IdStatus).OrderBy(p => p.Key.Value);
+                Excel.Range rangeBorders = worksheet.Range[worksheet.Cells[1][1], worksheet.Cells[6][startRowIndex - 1]];
+                rangeBorders.Borders[Excel.XlBordersIndex.xlEdgeBottom].LineStyle =
+                rangeBorders.Borders[Excel.XlBordersIndex.xlEdgeLeft].LineStyle =
+                rangeBorders.Borders[Excel.XlBordersIndex.xlEdgeRight].LineStyle =
+                rangeBorders.Borders[Excel.XlBordersIndex.xlInsideHorizontal].LineStyle =
+                rangeBorders.Borders[Excel.XlBordersIndex.xlInsideVertical].LineStyle = Excel.XlLineStyle.xlContinuous;
 
+                worksheet.Columns.AutoFit();
 
+                application.Visible = true;
             }
         }
     }
