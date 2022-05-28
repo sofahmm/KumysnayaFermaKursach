@@ -62,7 +62,7 @@ namespace KumysnayaFermaKursach.Pages
 
         private void OtchetBtn_Click(object sender, RoutedEventArgs e)
         {
-            var allSborMoloka = ToGetData.GetHorses().OrderBy(p => p.ID).ToList();
+            var allSborMoloka = ToGetData.GetSborMilks().OrderBy(p => p.ID).ToList();
 
             var application = new Excel.Application();
             application.SheetsInNewWorkbook = allSborMoloka.Count();
@@ -84,18 +84,75 @@ namespace KumysnayaFermaKursach.Pages
                 worksheet.Cells[6][startRowIndex] = "Статус";
 
                 startRowIndex++;
-
-                Excel.Range rangeBorders = worksheet.Range[worksheet.Cells[1][1], worksheet.Cells[6][startRowIndex - 1]];
-                rangeBorders.Borders[Excel.XlBordersIndex.xlEdgeBottom].LineStyle =
-                rangeBorders.Borders[Excel.XlBordersIndex.xlEdgeLeft].LineStyle =
-                rangeBorders.Borders[Excel.XlBordersIndex.xlEdgeRight].LineStyle =
-                rangeBorders.Borders[Excel.XlBordersIndex.xlInsideHorizontal].LineStyle =
-                rangeBorders.Borders[Excel.XlBordersIndex.xlInsideVertical].LineStyle = Excel.XlLineStyle.xlContinuous;
-
+                var results = allSborMoloka[i].Horse.SborMilk.OrderBy(p => p.Horse.ID).GroupBy(p => p.Horse.ID);
+                foreach(var result in results)
+                {
+                    Excel.Range headerRange = worksheet.Range[worksheet.Cells[1][startRowIndex], worksheet.Cells[3][startRowIndex]];
+                    headerRange.Merge();
+                    headerRange.Value = result.Key.ToString();
+                    headerRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+                    headerRange.Font.Italic = true;
+                    startRowIndex++;
+                    foreach (var j in result)
+                    {
+                        worksheet.Cells[1][startRowIndex] = j.IdHorse;
+                        worksheet.Cells[2][startRowIndex] = j.IdStatus;
+                        worksheet.Cells[3][startRowIndex] = j.Date;
+                    }
+                    startRowIndex++;
+                }
                 worksheet.Columns.AutoFit();
-
-                application.Visible = true;
+                worksheet.Rows.AutoFit();
+                startRowIndex = 1;
+            
+            application.Visible = true;
             }
         }
     }
 }
+/*public static void ExportExcel()
+{
+var allCommands = ConnectionCommands.GetCommands().OrderBy(p => p.Name).ToList();
+
+Excel.Application application = new Excel.Application();
+application.SheetsInNewWorkbook = allCommands.Count();
+
+Excel.Workbook workbook = application.Workbooks.Add(Type.Missing);
+
+int startRowIndex = 1;
+
+for (int i = 0; i < allCommands.Count(); i++)
+{
+Excel.Worksheet worksheet = application.Worksheets.Item[i + 1];
+worksheet.Name = allCommands[i].Name;
+worksheet.Cells[1][startRowIndex] = "Команда из города";
+worksheet.Cells[2][startRowIndex] = allCommands[i].City.Name;
+startRowIndex = 2;
+
+worksheet.Cells[1][startRowIndex] = "Название соревнования";
+worksheet.Cells[2][startRowIndex] = "Дата соревнования";
+worksheet.Cells[3][startRowIndex] = "Место в соревновании";
+startRowIndex++;
+var results = allCommands[i].ResultCompetition.OrderBy(p => p.Competition.Date).GroupBy(p => p.Competition.Date);
+foreach (var result in results)
+{
+Excel.Range headerRange = worksheet.Range[worksheet.Cells[1][startRowIndex], worksheet.Cells[3][startRowIndex]];
+headerRange.Merge();
+headerRange.Value = result.Key.Date;
+headerRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+headerRange.Font.Italic = true;
+startRowIndex++;
+foreach (var j in result)
+{
+worksheet.Cells[1][startRowIndex] = j.Competition.Name;
+worksheet.Cells[2][startRowIndex] = j.Competition.NameVenue;
+worksheet.Cells[3][startRowIndex] = j.Rank;
+}
+startRowIndex++;
+}
+worksheet.Columns.AutoFit();
+worksheet.Rows.AutoFit();
+startRowIndex = 1;
+}
+application.Visible = true;
+}*/
