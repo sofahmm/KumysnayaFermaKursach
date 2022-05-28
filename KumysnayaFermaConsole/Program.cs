@@ -67,20 +67,20 @@ namespace KumysnayaFermaConsole
                             {
                                 Horse f = new Horse();
                                 Console.WriteLine("Введите айди лошади:");
-                                f.ID  idHorse = int.Parse(Console.ReadLine());
-                                if(idHorse == 100002)
-                                {
+                                //f.ID  idHorse = int.Parse(Console.ReadLine());
+                                //if(idHorse == 100002)
+                                //{
                                     
-                                    idHorse = f.ID;
-                                    foreach (var he in SortData.SortDopInfoIdHorse(idHorse))
-                                    {
-                                        Console.WriteLine(horse.IdHorse);
-                                        Console.WriteLine(horse.IndexBody);
-                                        Console.WriteLine(horse.Weight);
-                                        Console.WriteLine(horse.Puls);
-                                        Console.WriteLine(horse.TemperatureBody);
-                                    }
-                                }
+                                //    idHorse = f.ID;
+                                //    foreach (var he in SortData.SortDopInfoIdHorse(idHorse))
+                                //    {
+                                //        Console.WriteLine(horse.IdHorse);
+                                //        Console.WriteLine(horse.IndexBody);
+                                //        Console.WriteLine(horse.Weight);
+                                //        Console.WriteLine(horse.Puls);
+                                //        Console.WriteLine(horse.TemperatureBody);
+                                //    }
+                                //}
                             }
                         }
                     }

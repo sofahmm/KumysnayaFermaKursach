@@ -10,7 +10,6 @@ namespace Core.DB
 {
     public class ToGetData
     {
-        
         public static ObservableCollection<Order> GetOrders()
         {
             ObservableCollection<Order> orders = new ObservableCollection<Order>(DbConnection.fermaEntities.Order);

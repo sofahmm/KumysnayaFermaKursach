@@ -62,7 +62,7 @@ namespace KumysnayaFermaKursach.Pages
 
         private void OtchetBtn_Click(object sender, RoutedEventArgs e)
         {
-            var allSborMoloka = ToGetData.GetSborMilks().OrderBy(p => p.ID).ToList();
+            var allSborMoloka = ToGetData.GetHorses().OrderBy(p => p.ID).ToList();
 
             var application = new Excel.Application();
             application.SheetsInNewWorkbook = allSborMoloka.Count();
@@ -73,7 +73,8 @@ namespace KumysnayaFermaKursach.Pages
             for(int i= 0; i < allSborMoloka.Count(); i++)
             {
                 Excel.Worksheet worksheet = application.Worksheets.Item[i + 1];
-                worksheet.Name = allSborMoloka[i].Horse.Name;
+                
+                worksheet.Name = allSborMoloka[i].ID.ToString();
 
                 worksheet.Cells[1][startRowIndex] = "Дата";
                 worksheet.Cells[2][startRowIndex] = "Лошадь";
