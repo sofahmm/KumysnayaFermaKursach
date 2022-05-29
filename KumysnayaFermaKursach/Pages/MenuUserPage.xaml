@@ -71,7 +71,7 @@
                     Click="AboutUsBtn_Click"
                     Height="40"
                     Margin="5"
-                    Content="О нас"
+                    Content="Отчёты"
                     FontSize="16"
                    Background="#FFFF7A00"
                     BorderBrush="Black"/>

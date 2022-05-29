@@ -36,6 +36,7 @@ namespace KumysnayaFermaKursach
             statusOrderCb.ItemsSource = ToGetData.GetStatusOrders();
             sortProductCb.ItemsSource = ToGetData.GetProducts();
             DataContext = this;
+            changedBtn.Visibility = Visibility.Hidden;
         }
 
         private void sortProductCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -48,6 +49,16 @@ namespace KumysnayaFermaKursach
         {
             var status = statusOrderCb.SelectedItem as StatusOrder;
             OrdersLV.ItemsSource = SortData.SortStatusOrder(status);
+        }
+
+        private void sbrosBtn_Click(object sender, RoutedEventArgs e)
+        {
+            OrdersLV.ItemsSource = ToGetData.GetOrders();
+        }
+
+        private void changedBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

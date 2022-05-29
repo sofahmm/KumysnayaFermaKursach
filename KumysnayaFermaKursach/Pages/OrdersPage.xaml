@@ -14,7 +14,7 @@
                         HorizontalAlignment="Center"
                         Margin="0 15 0 15">
                 <ComboBox Height="25"
-                          Width="150"
+                          Width="130"
                           Margin="50 0 50 0"
                           x:Name="sortProductCb"
                           SelectionChanged="sortProductCb_SelectionChanged"
@@ -26,7 +26,7 @@
                     </ComboBox.ItemTemplate>
                 </ComboBox>
                 <ComboBox Height="25"
-                          Width="150"
+                          Width="130"
                           Margin="50 0 50 0"
                           x:Name="statusOrderCb"
                           SelectionChanged="statusOrderCb_SelectionChanged"
@@ -37,7 +37,23 @@
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
-                <Button/>
+                <Button x:Name="sbrosBtn"
+                        Click="sbrosBtn_Click"
+                        Content="Сбросить фильтр"
+                        FontWeight="DemiBold"
+                        Height="30"
+                        Width="150"
+                        Background= "DarkGray"
+                        BorderBrush="#FFFF7A00"
+                        BorderThickness="3"/>
+                <Button x:Name="changedBtn"
+                        Click="changedBtn_Click"
+                        Content="Изменить/просмотреть"
+                        Height="30"
+                        Width="150"
+                        Margin="10"
+                        Background="#FFFF7A00"
+                        BorderBrush="#FFFF7A00"/>
             </StackPanel>
             <StackPanel>
                 <DataGrid x:Name="OrdersLV"

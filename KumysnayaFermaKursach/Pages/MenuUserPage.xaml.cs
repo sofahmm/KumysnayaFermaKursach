@@ -63,7 +63,7 @@ namespace KumysnayaFermaKursach.Pages
 
         private void AboutUsBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new ReportsPage());
         }
 
         private void CreateOrderBtn_Click(object sender, RoutedEventArgs e)
