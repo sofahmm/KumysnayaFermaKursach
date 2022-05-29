@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Core.DB;
 using Core.MyDb;
+using KumysnayaFermaKursach.Pages;
 
 namespace KumysnayaFermaKursach
 {
@@ -58,7 +59,18 @@ namespace KumysnayaFermaKursach
 
         private void changedBtn_Click(object sender, RoutedEventArgs e)
         {
+            //var selOrder = OrdersLV.SelectedItem as Order;
+            //if (selOrder != null)
+            //    NavigationService.Navigate(new AddOrderPage(selOrder));
+            //else
+            //    MessageBox.Show("Nothing select!");
+        }
 
+
+        private void OrdersLV_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var x = ((sender as DataGrid).SelectedItem as Order);
+            NavigationService.Navigate(new EditOrderPage(x));
         }
     }
 }

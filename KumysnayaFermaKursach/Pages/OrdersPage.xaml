@@ -47,7 +47,7 @@
                         BorderBrush="#FFFF7A00"
                         BorderThickness="3"/>
                 <Button x:Name="changedBtn"
-                        Click="changedBtn_Click"
+
                         Content="Изменить/просмотреть"
                         Height="30"
                         Width="150"
@@ -57,6 +57,7 @@
             </StackPanel>
             <StackPanel>
                 <DataGrid x:Name="OrdersLV"
+                          SelectionChanged="OrdersLV_SelectionChanged"
                           ItemsSource="{Binding Order}"
                           AutoGenerateColumns="False">
                     <DataGrid.Columns>
@@ -79,7 +80,7 @@
                                             FontFamily="Arial"
                                             FontWeight="Bold"
                                             Width="100"
-                                            Binding="{Binding Date}"/>
+                                            Binding="{Binding Date,  StringFormat=dd.MM.yy}"/>
                         <DataGridTextColumn Header="Сумма:"
                                             FontFamily="Arial"
                                             FontWeight="Bold"

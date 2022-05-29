@@ -82,6 +82,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ChangedWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\EditOrderPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\MenuKlientPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -141,6 +149,12 @@
     </Compile>
     <Compile Include="Pages\AuthorizationKlientPage.xaml.cs">
       <DependentUpon>AuthorizationKlientPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ChangedWindow.xaml.cs">
+      <DependentUpon>ChangedWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditOrderPage.xaml.cs">
+      <DependentUpon>EditOrderPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MenuKlientPage.xaml.cs">
       <DependentUpon>MenuKlientPage.xaml</DependentUpon>

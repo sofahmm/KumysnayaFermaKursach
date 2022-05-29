@@ -28,8 +28,10 @@ namespace KumysnayaFermaKursach.Pages
         {
             InitializeComponent();
             product = new ObservableCollection<Product>(DbConnection.fermaEntities.Product.ToList());
+            
             this.DataContext = this;
             var ordd = ToGetData.GetOrders();
+            
 
             //int t = Convert.ToInt32(AmountTb.Text)*
             //llblUnit.Content = 
@@ -88,8 +90,8 @@ namespace KumysnayaFermaKursach.Pages
 
         private void AmountTb_TextChanged(object sender, TextChangedEventArgs e)
         {
-            //var pr = new Product();
-            //var t = Convert.ToInt32(AmountTb.Text) * pr.Amount;
+            var pr = new Product();
+            var t = Convert.ToInt32(AmountTb.Text) * pr.Amount;
             var selCb = NameProductCb.SelectedItem as Product;
             SumLbl.Content = selCb.Amount * int.Parse(AmountTb.Text);
         }

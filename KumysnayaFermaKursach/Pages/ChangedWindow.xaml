@@ -1,0 +1,25 @@
+﻿<Window x:Class="KumysnayaFermaKursach.Pages.ChangedWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KumysnayaFermaKursach.Pages"
+        mc:Ignorable="d"
+        Title="ChangedWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <Label Content="Выберите что вы хотите сделать:"
+                   FontSize="24"
+                   HorizontalContentAlignment="Center"/>
+            <Button x:Name="ChagStatus"
+                    Click="ChagStatus_Click"
+                    Height="35"
+                    Width="150"/>
+            <Button x:Name="ChagOformlenie"
+                    Click="ChagOformlenie_Click"
+                    Height="35"
+                    Margin="0 10 0 0"
+                    Width="150"/>
+        </StackPanel>
+    </Grid>
+</Window>
