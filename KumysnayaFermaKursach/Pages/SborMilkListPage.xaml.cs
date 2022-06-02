@@ -59,56 +59,5 @@ namespace KumysnayaFermaKursach.Pages
             var tt = ToGetData.GetSborMilks();
             HorsesLV.ItemsSource = tt;
         }
-
-        private void OtchetBtn_Click(object sender, RoutedEventArgs e)
-        {
-           
-        }
     }
 }
-/*public static void ExportExcel()
-{
-var allCommands = ConnectionCommands.GetCommands().OrderBy(p => p.Name).ToList();
-
-Excel.Application application = new Excel.Application();
-application.SheetsInNewWorkbook = allCommands.Count();
-
-Excel.Workbook workbook = application.Workbooks.Add(Type.Missing);
-
-int startRowIndex = 1;
-
-for (int i = 0; i < allCommands.Count(); i++)
-{
-Excel.Worksheet worksheet = application.Worksheets.Item[i + 1];
-worksheet.Name = allCommands[i].Name;
-worksheet.Cells[1][startRowIndex] = "Команда из города";
-worksheet.Cells[2][startRowIndex] = allCommands[i].City.Name;
-startRowIndex = 2;
-
-worksheet.Cells[1][startRowIndex] = "Название соревнования";
-worksheet.Cells[2][startRowIndex] = "Дата соревнования";
-worksheet.Cells[3][startRowIndex] = "Место в соревновании";
-startRowIndex++;
-var results = allCommands[i].ResultCompetition.OrderBy(p => p.Competition.Date).GroupBy(p => p.Competition.Date);
-foreach (var result in results)
-{
-Excel.Range headerRange = worksheet.Range[worksheet.Cells[1][startRowIndex], worksheet.Cells[3][startRowIndex]];
-headerRange.Merge();
-headerRange.Value = result.Key.Date;
-headerRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
-headerRange.Font.Italic = true;
-startRowIndex++;
-foreach (var j in result)
-{
-worksheet.Cells[1][startRowIndex] = j.Competition.Name;
-worksheet.Cells[2][startRowIndex] = j.Competition.NameVenue;
-worksheet.Cells[3][startRowIndex] = j.Rank;
-}
-startRowIndex++;
-}
-worksheet.Columns.AutoFit();
-worksheet.Rows.AutoFit();
-startRowIndex = 1;
-}
-application.Visible = true;
-}*/

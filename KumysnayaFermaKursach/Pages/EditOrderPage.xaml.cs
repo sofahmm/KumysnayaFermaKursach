@@ -50,8 +50,8 @@ namespace KumysnayaFermaKursach.Pages
 
         private void createOrderBtn_Click(object sender, RoutedEventArgs e)
         {
-            var ord = new Order();
-            ord.Oformlenie = true;
+            
+            order.Oformlenie = true;
             Core.DB.DbConnection.fermaEntities.SaveChanges();
             NavigationService.GoBack();
         }

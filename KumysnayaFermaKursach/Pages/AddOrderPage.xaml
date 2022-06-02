@@ -87,7 +87,8 @@
                       Margin="13 0 0 0"
                       HorizontalAlignment="Left"
                       HorizontalContentAlignment="Center"
-                      VerticalContentAlignment="Center">
+                      VerticalContentAlignment="Center"
+                      ItemsSource="{Binding product}">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding Name}"/>

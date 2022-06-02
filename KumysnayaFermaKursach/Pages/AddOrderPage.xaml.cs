@@ -33,7 +33,7 @@ namespace KumysnayaFermaKursach.Pages
             var ordd = ToGetData.GetOrders();
             
 
-            //int t = Convert.ToInt32(AmountTb.Text)*
+           // int t = Convert.ToInt32(AmountTb.Text)*Convert.ToInt32(product)
             //llblUnit.Content = 
             //NameProductCb.ItemsSource = ToGetData.GetProducts();
         }

@@ -47,8 +47,8 @@ namespace KumysnayaFermaKursach.Pages
             info.IndexBody = Convert.ToInt32(indexBodyTb.Text);
             info.Weight = Convert.ToInt32(weightTb.Text);
             AddData.AddMoreInfoHorse(info);
-            if (Convert.ToInt32(weightTb.Text) / (t*t) > 20)
-                MessageBox.Show("Присутствует избыточный вес!");
+            //if (Convert.ToInt32(weightTb.Text) / (t*t) > 20)
+            //    MessageBox.Show("Присутствует избыточный вес!");
         }
     }
 }
